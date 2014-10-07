@@ -51,7 +51,7 @@ class YBRightToLeftAnimator: YBBasicAnimator {
     override  func performDismissAnimation(transitionContext:UIViewControllerContextTransitioning){
         
         //position target view in place
-        toViewController.view.frame = CGRectMake(0, 0, toViewController.view.frame.size.width, toViewController.view.frame.size.height)
+        toViewController.view.frame = CGRectMake(0 ,0, toViewController.view.frame.size.width, toViewController.view.frame.size.height)
         inView.insertSubview(toViewController.view, belowSubview:fromViewController.view)
         
         
