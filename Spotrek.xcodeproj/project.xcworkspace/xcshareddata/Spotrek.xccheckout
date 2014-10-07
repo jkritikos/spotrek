@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>23B817EE-447A-4A1C-8ACF-8928E37EEC7E</string>
+	<string>06647CEA-530A-44CF-ABAB-CFFB39CDF33E</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Spotrek</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5678743CC043DE3A2E7ED02C82A0B144D54BDEB1</key>
-		<string>https://github.com/jkritikos/spotrek.git</string>
+		<string>https://github.com/jkritikos/Spotrek.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Spotrek.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/jkritikos/spotrek.git</string>
+	<string>https://github.com/jkritikos/Spotrek.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>5678743CC043DE3A2E7ED02C82A0B144D54BDEB1</string>
 			<key>IDESourceControlWCCName</key>
-			<string>spotrek</string>
+			<string>Spotrek</string>
 		</dict>
 	</array>
 </dict>
