@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE119DF092A00BC003C /* AppDelegate.swift */; };
+		0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE819DF092A00BC003C /* Images.xcassets */; };
+		0E1D8BF819DF092A00BC003C /* SpotrekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */; };
+		0E1D8C0319DF09DC00BC003C /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8C0219DF09DC00BC003C /* mainViewController.swift */; };
+		0EDFD53E19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */; };
+		0EDFD54219E1BE1300AF87C2 /* YBBasicAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */; };
+		0EDFD54419E1BE5200AF87C2 /* SPEnumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54319E1BE5200AF87C2 /* SPEnumerations.swift */; };
+		0EDFD54619E1BF0900AF87C2 /* YBRightToLeftAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54519E1BF0900AF87C2 /* YBRightToLeftAnimator.swift */; };
+		0EDFD54819E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */; };
+		0EDFD54B19E1C7C200AF87C2 /* selectTrekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */; };
+		0EDFD54E19E1CC5E00AF87C2 /* trekStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E1D8BF219DF092A00BC003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E1D8BD419DF092A00BC003C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E1D8BDB19DF092A00BC003C;
+			remoteInfo = Spotrek;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E1D8BDC19DF092A00BC003C /* Spotrek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotrek.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E1D8BE019DF092A00BC003C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E1D8BE119DF092A00BC003C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0E1D8BE819DF092A00BC003C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0E1D8BF119DF092A00BC003C /* SpotrekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotrekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E1D8BF619DF092A00BC003C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotrekTests.swift; sourceTree = "<group>"; };
+		0E1D8C0219DF09DC00BC003C /* mainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = mainViewController.swift; path = Spotrek/startScreen/mainViewController.swift; sourceTree = "<group>"; };
+		0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBNavigationControllerDelegate.swift; path = Spotrek/customAnimators/YBNavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBBasicAnimator.swift; path = Spotrek/customAnimators/YBBasicAnimator.swift; sourceTree = "<group>"; };
+		0EDFD54319E1BE5200AF87C2 /* SPEnumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPEnumerations.swift; path = Spotrek/customAnimators/SPEnumerations.swift; sourceTree = "<group>"; };
+		0EDFD54519E1BF0900AF87C2 /* YBRightToLeftAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBRightToLeftAnimator.swift; path = Spotrek/customAnimators/YBRightToLeftAnimator.swift; sourceTree = "<group>"; };
+		0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBCrossDisolveAnimator.swift; path = Spotrek/customAnimators/YBCrossDisolveAnimator.swift; sourceTree = "<group>"; };
+		0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = selectTrekViewController.swift; path = Spotrek/selectTrek/selectTrekViewController.swift; sourceTree = "<group>"; };
+		0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = trekStatusViewController.swift; path = Spotrek/trekStatus/trekStatusViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E1D8BD919DF092A00BC003C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E1D8BEE19DF092A00BC003C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E1D8BD319DF092A00BC003C = {
+			isa = PBXGroup;
+			children = (
+				0EDFD53C19E1BB5A00AF87C2 /* customAnimators */,
+				0E1D8C0119DF09A100BC003C /* startScreen */,
+				0EDFD54919E1C79600AF87C2 /* selectTrek */,
+				0EDFD54C19E1CC3900AF87C2 /* trekStatus */,
+				0E1D8BDE19DF092A00BC003C /* Spotrek */,
+				0E1D8BF419DF092A00BC003C /* SpotrekTests */,
+				0E1D8BDD19DF092A00BC003C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0E1D8BDD19DF092A00BC003C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E1D8BDC19DF092A00BC003C /* Spotrek.app */,
+				0E1D8BF119DF092A00BC003C /* SpotrekTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E1D8BDE19DF092A00BC003C /* Spotrek */ = {
+			isa = PBXGroup;
+			children = (
+				0E1D8BE119DF092A00BC003C /* AppDelegate.swift */,
+				0E1D8BE819DF092A00BC003C /* Images.xcassets */,
+				0E1D8BDF19DF092A00BC003C /* Supporting Files */,
+			);
+			path = Spotrek;
+			sourceTree = "<group>";
+		};
+		0E1D8BDF19DF092A00BC003C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E1D8BE019DF092A00BC003C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E1D8BF419DF092A00BC003C /* SpotrekTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */,
+				0E1D8BF519DF092A00BC003C /* Supporting Files */,
+			);
+			path = SpotrekTests;
+			sourceTree = "<group>";
+		};
+		0E1D8BF519DF092A00BC003C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E1D8BF619DF092A00BC003C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E1D8C0119DF09A100BC003C /* startScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0E1D8C0219DF09DC00BC003C /* mainViewController.swift */,
+			);
+			name = startScreen;
+			sourceTree = "<group>";
+		};
+		0EDFD53C19E1BB5A00AF87C2 /* customAnimators */ = {
+			isa = PBXGroup;
+			children = (
+				0EDFD54319E1BE5200AF87C2 /* SPEnumerations.swift */,
+				0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */,
+				0EDFD54519E1BF0900AF87C2 /* YBRightToLeftAnimator.swift */,
+				0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */,
+				0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */,
+			);
+			name = customAnimators;
+			sourceTree = "<group>";
+		};
+		0EDFD54919E1C79600AF87C2 /* selectTrek */ = {
+			isa = PBXGroup;
+			children = (
+				0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */,
+			);
+			name = selectTrek;
+			sourceTree = "<group>";
+		};
+		0EDFD54C19E1CC3900AF87C2 /* trekStatus */ = {
+			isa = PBXGroup;
+			children = (
+				0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */,
+			);
+			name = trekStatus;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E1D8BDB19DF092A00BC003C /* Spotrek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E1D8BFB19DF092A00BC003C /* Build configuration list for PBXNativeTarget "Spotrek" */;
+			buildPhases = (
+				0E1D8BD819DF092A00BC003C /* Sources */,
+				0E1D8BD919DF092A00BC003C /* Frameworks */,
+				0E1D8BDA19DF092A00BC003C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spotrek;
+			productName = Spotrek;
+			productReference = 0E1D8BDC19DF092A00BC003C /* Spotrek.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0E1D8BF019DF092A00BC003C /* SpotrekTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E1D8BFE19DF092A00BC003C /* Build configuration list for PBXNativeTarget "SpotrekTests" */;
+			buildPhases = (
+				0E1D8BED19DF092A00BC003C /* Sources */,
+				0E1D8BEE19DF092A00BC003C /* Frameworks */,
+				0E1D8BEF19DF092A00BC003C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E1D8BF319DF092A00BC003C /* PBXTargetDependency */,
+			);
+			name = SpotrekTests;
+			productName = SpotrekTests;
+			productReference = 0E1D8BF119DF092A00BC003C /* SpotrekTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E1D8BD419DF092A00BC003C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Boomar;
+				TargetAttributes = {
+					0E1D8BDB19DF092A00BC003C = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					0E1D8BF019DF092A00BC003C = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 0E1D8BDB19DF092A00BC003C;
+					};
+				};
+			};
+			buildConfigurationList = 0E1D8BD719DF092A00BC003C /* Build configuration list for PBXProject "Spotrek" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0E1D8BD319DF092A00BC003C;
+			productRefGroup = 0E1D8BDD19DF092A00BC003C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E1D8BDB19DF092A00BC003C /* Spotrek */,
+				0E1D8BF019DF092A00BC003C /* SpotrekTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E1D8BDA19DF092A00BC003C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E1D8BEF19DF092A00BC003C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E1D8BD819DF092A00BC003C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EDFD54E19E1CC5E00AF87C2 /* trekStatusViewController.swift in Sources */,
+				0EDFD54419E1BE5200AF87C2 /* SPEnumerations.swift in Sources */,
+				0EDFD54219E1BE1300AF87C2 /* YBBasicAnimator.swift in Sources */,
+				0EDFD54619E1BF0900AF87C2 /* YBRightToLeftAnimator.swift in Sources */,
+				0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */,
+				0EDFD53E19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift in Sources */,
+				0E1D8C0319DF09DC00BC003C /* mainViewController.swift in Sources */,
+				0EDFD54B19E1C7C200AF87C2 /* selectTrekViewController.swift in Sources */,
+				0EDFD54819E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E1D8BED19DF092A00BC003C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1D8BF819DF092A00BC003C /* SpotrekTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E1D8BF319DF092A00BC003C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E1D8BDB19DF092A00BC003C /* Spotrek */;
+			targetProxy = 0E1D8BF219DF092A00BC003C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E1D8BF919DF092A00BC003C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		0E1D8BFA19DF092A00BC003C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0E1D8BFC19DF092A00BC003C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Spotrek/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		0E1D8BFD19DF092A00BC003C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Spotrek/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		0E1D8BFF19DF092A00BC003C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SpotrekTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spotrek.app/Spotrek";
+			};
+			name = Debug;
+		};
+		0E1D8C0019DF092A00BC003C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SpotrekTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spotrek.app/Spotrek";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E1D8BD719DF092A00BC003C /* Build configuration list for PBXProject "Spotrek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E1D8BF919DF092A00BC003C /* Debug */,
+				0E1D8BFA19DF092A00BC003C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E1D8BFB19DF092A00BC003C /* Build configuration list for PBXNativeTarget "Spotrek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E1D8BFC19DF092A00BC003C /* Debug */,
+				0E1D8BFD19DF092A00BC003C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E1D8BFE19DF092A00BC003C /* Build configuration list for PBXNativeTarget "SpotrekTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E1D8BFF19DF092A00BC003C /* Debug */,
+				0E1D8C0019DF092A00BC003C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E1D8BD419DF092A00BC003C /* Project object */;
+}
