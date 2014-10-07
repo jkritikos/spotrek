@@ -121,7 +121,7 @@ class mainViewController: UIViewController, RingButtonActions {
         sideMenuButton.center = sideMenuButtonCenter
         sideMenuButton.enabled = true
         sideMenuButton.exclusiveTouch = true
-        sideMenuButton.addTarget(self, action: "sideMenuButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        sideMenuButton.addTarget(self, action: "sideMenuButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         sideMenuButton.alpha = 0.0
         backgroundImage.addSubview(sideMenuButton)
         
