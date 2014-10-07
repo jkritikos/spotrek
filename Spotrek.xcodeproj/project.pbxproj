@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034DBA0919E40EBF00C905DA /* images in Resources */ = {isa = PBXBuildFile; fileRef = 034DBA0819E40EBF00C905DA /* images */; };
 		0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE119DF092A00BC003C /* AppDelegate.swift */; };
 		0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE819DF092A00BC003C /* Images.xcassets */; };
 		0E1D8BF819DF092A00BC003C /* SpotrekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034DBA0819E40EBF00C905DA /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		0E1D8BDC19DF092A00BC003C /* Spotrek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotrek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1D8BE019DF092A00BC003C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1D8BE119DF092A00BC003C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		0E1D8BDF19DF092A00BC003C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				034DBA0819E40EBF00C905DA /* images */,
 				0E1D8BE019DF092A00BC003C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034DBA0919E40EBF00C905DA /* images in Resources */,
 				0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
