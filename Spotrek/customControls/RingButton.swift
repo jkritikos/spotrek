@@ -101,7 +101,7 @@ class RingButton: UIView {
                 self.setNeedsDisplay()
             }
             
-            delegate.RingButtonSingleTap(self)
+            delegate.ringButtonSingleTap(self)
         }
     }
     

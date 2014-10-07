@@ -9,5 +9,5 @@
 import Foundation
 
 protocol RingButtonActions {
-    func RingButtonSingleTap(sender: AnyObject)
+    func ringButtonSingleTap(sender: AnyObject)
 }

@@ -191,18 +191,7 @@ class mainViewController: UIViewController, RingButtonActions {
       
         if (event.touchesForView(self.view)?.count > 1 ) {
 
-
-            
         } else {
-
-                navigationDelegate = YBNavigationControllerDelegate()
-                navigationDelegate.typeOfTransition = YBTransitionType.LeftToRight
-                navigationDelegate.presentationDuration = 0.3
-                navigationDelegate.dismissalDuration = 0.3
-                navigationController?.delegate  = navigationDelegate
-                let selectTrekView = selectTrekViewController(nibName: nil,bundle: nil)
-                selectTrekView.modalPresentationStyle = UIModalPresentationStyle.Custom
-                navigationController?.pushViewController(selectTrekView, animated: true)
             
         }
         
@@ -211,8 +200,39 @@ class mainViewController: UIViewController, RingButtonActions {
     
     //MARK: RingButtonDelegate
 
-    func RingButtonSingleTap(sender: AnyObject) {
+    func ringButtonSingleTap(sender: AnyObject) {
         
+        UIView.animateWithDuration(0.75, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            
+            self.startButton.alpha = 0.0
+            self.takeOffLabel.alpha = 0.0
+            
+            }, completion: {
+            
+                finished in
+                
+                UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    
+                    self.dart.center = CGPointMake(self.backgroundImage.frame.size.width, self.backgroundImage.frame.size.height/3)
+                    self.dart.transform = CGAffineTransformMakeScale(0.1, 0.1)
+                    
+                    }, completion: {
+                        
+                        finished in
+                        
+                        self.dart.removeFromSuperview()
+                        
+                        self.navigationDelegate = YBNavigationControllerDelegate()
+                        self.navigationDelegate.typeOfTransition = YBTransitionType.LeftToRight
+                        self.navigationDelegate.presentationDuration = 0.3
+                        self.navigationDelegate.dismissalDuration = 0.3
+                        self.navigationController?.delegate  = self.navigationDelegate
+                        let selectTrekView = selectTrekViewController(nibName: nil,bundle: nil)
+                        selectTrekView.modalPresentationStyle = UIModalPresentationStyle.Custom
+                        self.navigationController?.pushViewController(selectTrekView, animated: true)
+                        
+                })
+        })
     }
    
 }
