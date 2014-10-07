@@ -8,18 +8,55 @@
 
 import UIKit
 
-class mainViewController: UIViewController {
+class mainViewController: UIViewController, RingButtonActions {
 
     
     var navigationDelegate:YBNavigationControllerDelegate!
     
-    
+    var startButton: RingButton!
     
     override func loadView() {
         
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
-        self.view.backgroundColor=UIColor.blueColor()
+        self.view.backgroundColor=UIColor.whiteColor()
         
+        setupHomeStartButton()
+    }
+    
+    func setupHomeStartButton() {
+        
+        var startButtonRect, spotrekLogoRect, unlockWorldLabelRect, takeOffLabelRect: CGRect!
+        var startButtonCenter, spotrekLogoCenter, unlockWorldCenter: CGPoint!
+        var unlockWorldLabelSize, takeOffLabelSize: CGFloat!
+        
+        if SharedEnvironment.Instance().isPad() {
+        
+            startButtonRect = CGRectMake(0, 0, 288, 288)
+            startButtonCenter = CGPointMake(CGRectGetMidY(self.view.frame), 560)
+
+            spotrekLogoRect = CGRectMake(0, 0, self.view.frame.size.height, 200)
+            spotrekLogoCenter = CGPointMake(CGRectGetMidY(self.view.frame), 144)
+            
+            unlockWorldCenter = CGPointMake(734, 234)
+            unlockWorldLabelRect = CGRectMake(0, 0, 240, 26)
+            
+            takeOffLabelRect = CGRectMake(0, 0, 108, 26)
+            
+            unlockWorldLabelSize = 24.0
+            takeOffLabelSize = 22.0
+            
+        } else {
+            
+        }
+        
+        startButton = RingButton(frame: startButtonRect, color: UIColor.blueColor(), highlightColor: UIColor.blackColor())
+        startButton.center = startButtonCenter
+        startButton.keepsHighlightedState = true
+        startButton.allowGestures = false
+        startButton.alpha = 1.0
+        startButton.exclusiveTouch = true
+        startButton.delegate = self
+        self.view.addSubview(startButton)
     }
     
     
@@ -37,9 +74,7 @@ class mainViewController: UIViewController {
 
     }
     
-    
-    
-    
+    //MARK: Touches
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
       
@@ -47,7 +82,7 @@ class mainViewController: UIViewController {
 
 
             
-        }else{
+        } else {
 
                 navigationDelegate = YBNavigationControllerDelegate()
                 navigationDelegate.typeOfTransition = YBTransitionType.LeftToRight
@@ -59,6 +94,13 @@ class mainViewController: UIViewController {
                 navigationController?.pushViewController(selectTrekView, animated: true)
             
         }
+        
+    }
+    
+    
+    //MARK: RingButtonDelegate
+
+    func RingButtonSingleTap(sender: AnyObject) {
         
     }
    
