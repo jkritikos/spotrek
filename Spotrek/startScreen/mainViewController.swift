@@ -50,7 +50,7 @@ class mainViewController: UIViewController {
         }else{
 
                 navigationDelegate = YBNavigationControllerDelegate()
-                navigationDelegate.typeOfTransition = YBTransitionType.RightToLeft
+                navigationDelegate.typeOfTransition = YBTransitionType.LeftToRight
                 navigationDelegate.presentationDuration = 0.3
                 navigationDelegate.dismissalDuration = 0.3
                 navigationController?.delegate  = navigationDelegate

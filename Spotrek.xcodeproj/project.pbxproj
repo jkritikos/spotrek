@@ -20,6 +20,7 @@
 		0EDFD54819E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */; };
 		0EDFD54B19E1C7C200AF87C2 /* selectTrekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */; };
 		0EDFD54E19E1CC5E00AF87C2 /* trekStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */; };
+		15E6B6A919E42BF5005E3483 /* YBLeftToRightAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6B6A819E42BF5005E3483 /* YBLeftToRightAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBCrossDisolveAnimator.swift; path = Spotrek/customAnimators/YBCrossDisolveAnimator.swift; sourceTree = "<group>"; };
 		0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = selectTrekViewController.swift; path = Spotrek/selectTrek/selectTrekViewController.swift; sourceTree = "<group>"; };
 		0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = trekStatusViewController.swift; path = Spotrek/trekStatus/trekStatusViewController.swift; sourceTree = "<group>"; };
+		15E6B6A819E42BF5005E3483 /* YBLeftToRightAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBLeftToRightAnimator.swift; path = Spotrek/customAnimators/YBLeftToRightAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				0EDFD54319E1BE5200AF87C2 /* SPEnumerations.swift */,
 				0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */,
 				0EDFD54519E1BF0900AF87C2 /* YBRightToLeftAnimator.swift */,
+				15E6B6A819E42BF5005E3483 /* YBLeftToRightAnimator.swift */,
 				0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */,
 				0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */,
 			);
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E6B6A919E42BF5005E3483 /* YBLeftToRightAnimator.swift in Sources */,
 				0EDFD54E19E1CC5E00AF87C2 /* trekStatusViewController.swift in Sources */,
 				0ECBC7DD19E422E30095A014 /* singletons.swift in Sources */,
 				0EDFD54419E1BE5200AF87C2 /* SPEnumerations.swift in Sources */,
