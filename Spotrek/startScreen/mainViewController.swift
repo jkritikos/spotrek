@@ -12,22 +12,29 @@ class mainViewController: UIViewController, RingButtonActions {
 
     
     var navigationDelegate:YBNavigationControllerDelegate!
+    var panGesture: UIPanGestureRecognizer!
     
+    //UI Elements
     var backgroundImage: UIImageView!
+    var spotrekLogo: UIImageView!
+    var unlockWorldLabel: UILabel!
+    var unlockWorldLabelCenter: CGPoint!
     var startButton: RingButton!
+    var dart: UIImageView!
+    var takeOffLabel: UILabel!
     
     override func loadView() {
         
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
         self.view.backgroundColor=UIColor.whiteColor()
         
-        setupHomeStartButton()
+        setupHomeElements()
     }
     
-    func setupHomeStartButton() {
+    func setupHomeElements() {
         
-        var startButtonRect, spotrekLogoRect, unlockWorldLabelRect, takeOffLabelRect: CGRect!
-        var startButtonCenter, spotrekLogoCenter, unlockWorldCenter: CGPoint!
+        var startButtonRect, unlockWorldLabelRect, takeOffLabelRect: CGRect!
+        var startButtonCenter, spotrekLogoCenter: CGPoint!
         var unlockWorldLabelSize, takeOffLabelSize: CGFloat!
         
         if SharedEnvironment.Instance().isPad() {
@@ -35,10 +42,9 @@ class mainViewController: UIViewController, RingButtonActions {
             startButtonRect = CGRectMake(0, 0, 288, 288)
             startButtonCenter = CGPointMake(CGRectGetMidY(self.view.frame), 560)
 
-            spotrekLogoRect = CGRectMake(0, 0, self.view.frame.size.height, 200)
             spotrekLogoCenter = CGPointMake(CGRectGetMidY(self.view.frame), 144)
             
-            unlockWorldCenter = CGPointMake(734, 234)
+            unlockWorldLabelCenter = CGPointMake(734, 234)
             unlockWorldLabelRect = CGRectMake(0, 0, 240, 26)
             
             takeOffLabelRect = CGRectMake(0, 0, 108, 26)
@@ -50,24 +56,91 @@ class mainViewController: UIViewController, RingButtonActions {
             
         }
         
-        let imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/image1.jpg")
-        println(imagePath)
-
+        //Initializing background image
+        var imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/image1.jpg")
         backgroundImage = UIImageView(image: UIImage(contentsOfFile: imagePath))
         backgroundImage.userInteractionEnabled = true
-        backgroundImage.alpha = 1.0
+        backgroundImage.alpha = 0.2
         self.view.addSubview(backgroundImage)
         
+        //Initializing spotrek logo
+        //Spotrek image
+        imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/spotrek_logo.png")
+        spotrekLogo = UIImageView(image: UIImage(contentsOfFile: imagePath))
+        spotrekLogo.center = spotrekLogoCenter
+        backgroundImage.addSubview(spotrekLogo)
+        
+        //Spotrek unlock world label
+        unlockWorldLabel = UILabel(frame: unlockWorldLabelRect)
+        unlockWorldLabel.textAlignment = NSTextAlignment.Center
+        unlockWorldLabel.textColor = UIColor.blueColor()
+        unlockWorldLabel.font = UIFont(name: "GillSans", size: unlockWorldLabelSize)
+        unlockWorldLabel.text = "UNLOCK THE WORLD"
+        unlockWorldLabel.center = CGPointMake(-unlockWorldLabelRect.size.width/2, unlockWorldLabelCenter.y)
+        unlockWorldLabel.alpha = 0.0
+        backgroundImage.addSubview(unlockWorldLabel)
+        
+        //Initializing startButton
+        //Button background
         startButton = RingButton(frame: startButtonRect, color: UIColor.blueColor(), highlightColor: UIColor.blackColor())
         startButton.center = startButtonCenter
         startButton.keepsHighlightedState = true
         startButton.allowGestures = false
-        startButton.alpha = 1.0
+        startButton.alpha = 0.0
         startButton.exclusiveTouch = true
         startButton.delegate = self
         backgroundImage.addSubview(startButton)
+        
+        //Button image
+        imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/saita.png")
+        dart = UIImageView(image: UIImage(contentsOfFile: imagePath))
+        dart.center = startButton.center
+        dart.alpha = 0.0
+        backgroundImage.addSubview(dart)
+        
+        //Take off label
+        takeOffLabel = UILabel(frame: takeOffLabelRect)
+        takeOffLabel.textAlignment = NSTextAlignment.Center
+        takeOffLabel.textColor = UIColor.whiteColor()
+        takeOffLabel.font = UIFont(name: "GillSans", size: takeOffLabelSize)
+        takeOffLabel.text = "TAKE OFF"
+        takeOffLabel.center = CGPointMake(dart.center.x, dart.center.y+60)
+        takeOffLabel.alpha = 0.0
+        backgroundImage.addSubview(takeOffLabel)
+        
+        addGestures()
     }
     
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.backgroundImage.alpha = 1.0
+            }, completion: {
+                finished in
+                
+                self.backgroundImage.layer.zPosition = 0
+                self.startButton.setNeedsDisplay()
+                self.startButton.transform = CGAffineTransformMakeScale(0.4, 0.4)
+                self.dart.transform = CGAffineTransformMakeScale(0.4, 0.4)
+                self.takeOffLabel.transform = CGAffineTransformMakeScale(0.4, 0.4)
+
+                UIView.animateWithDuration(0.5, animations: {
+                    
+                    self.unlockWorldLabel.alpha = 1.0
+                    self.unlockWorldLabel.center = self.unlockWorldLabelCenter
+                    self.startButton.alpha = 1.0
+                    self.dart.alpha = 1.0
+                    self.takeOffLabel.alpha = 1.0
+                    self.startButton.transform = CGAffineTransformIdentity
+                    self.dart.transform = CGAffineTransformIdentity
+                    self.takeOffLabel.transform = CGAffineTransformIdentity
+                    
+                    }, completion: {
+                        finished in
+                })
+        })
+    }
     
     override func viewDidLoad() {
       
@@ -76,11 +149,40 @@ class mainViewController: UIViewController, RingButtonActions {
         self.title = "Home"
 
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        dart.center = startButton.center
+        dart.alpha = 0.0
+        backgroundImage.addSubview(dart)
+        unlockWorldLabel.center = CGPointMake(-unlockWorldLabel.frame.size.width/2, unlockWorldLabelCenter.y)
+        unlockWorldLabel.alpha = 0.0
+        takeOffLabel.center = CGPointMake(dart.center.x, dart.center.y+60)
+        takeOffLabel.alpha = 0.0
+        
+    }
 
     override func didReceiveMemoryWarning() {
     
         super.didReceiveMemoryWarning()
 
+    }
+    
+    //MARK: Gestures
+    
+    func addGestures() {
+        panGesture = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.maximumNumberOfTouches = 1
+        self.view.addGestureRecognizer(panGesture)
+    }
+    
+    func handlePan(gesture: UIPanGestureRecognizer) {
+        
+        if gesture.state == UIGestureRecognizerState.Began {
+            
+        } else if gesture.state == UIGestureRecognizerState.Ended {
+            
+        }
     }
     
     //MARK: Touches
