@@ -18,7 +18,7 @@ class mainViewController: UIViewController {
     override func loadView() {
         
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
-        self.view.backgroundColor=UIColor.whiteColor()
+        self.view.backgroundColor=UIColor.blueColor()
         
     }
     
