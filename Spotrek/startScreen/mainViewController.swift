@@ -86,7 +86,10 @@ class mainViewController: UIViewController, RingButtonActions {
         
         //Initializing startButton
         //Button background
-        startButton = RingButton(frame: startButtonRect, color: UIColor.blueColor(), highlightColor: UIColor.blackColor())
+        
+        let ringButtonColor = UIColor(hex: SharedEnvironment.Instance().trekColors["Walker"]!)
+        
+        startButton = RingButton(frame: startButtonRect, color: ringButtonColor, highlightColor: UIColor.blackColor())
         startButton.center = startButtonCenter
         startButton.keepsHighlightedState = true
         startButton.allowGestures = false

@@ -25,6 +25,7 @@
 		15BB0B9119E4670C00340337 /* RingButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B9019E4670C00340337 /* RingButtonActions.swift */; };
 		15BB0B9419E4671D00340337 /* singletons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B9319E4671D00340337 /* singletons.swift */; };
 		15BB0B9719E4672900340337 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B9619E4672900340337 /* SpringAnimation.swift */; };
+		15BB0B9919E4684500340337 /* UIColorHexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B9819E4684500340337 /* UIColorHexExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		15BB0B9019E4670C00340337 /* RingButtonActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingButtonActions.swift; sourceTree = "<group>"; };
 		15BB0B9319E4671D00340337 /* singletons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singletons.swift; sourceTree = "<group>"; };
 		15BB0B9619E4672900340337 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		15BB0B9819E4684500340337 /* UIColorHexExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHexExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				15BB0B8D19E466F800340337 /* MathHelpers.swift */,
+				15BB0B9819E4684500340337 /* UIColorHexExtension.swift */,
 			);
 			name = helpers;
 			path = Spotrek/helpers;
@@ -327,6 +330,7 @@
 				15BB0B8819E466E100340337 /* YBLeftToRightAnimator.swift in Sources */,
 				15BB0B8B19E466F000340337 /* RingButton.swift in Sources */,
 				0EDFD54E19E1CC5E00AF87C2 /* trekStatusViewController.swift in Sources */,
+				15BB0B9919E4684500340337 /* UIColorHexExtension.swift in Sources */,
 				15BB0B9419E4671D00340337 /* singletons.swift in Sources */,
 				0EDFD54419E1BE5200AF87C2 /* SPEnumerations.swift in Sources */,
 				0EDFD54219E1BE1300AF87C2 /* YBBasicAnimator.swift in Sources */,
