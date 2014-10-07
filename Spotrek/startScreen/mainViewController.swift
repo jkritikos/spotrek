@@ -22,6 +22,8 @@ class mainViewController: UIViewController, RingButtonActions {
     var startButton: RingButton!
     var dart: UIImageView!
     var takeOffLabel: UILabel!
+    var sideMenuButton: UIButton!
+    var sideMenuButtonCenter: CGPoint!
     
     override func loadView() {
         
@@ -51,6 +53,8 @@ class mainViewController: UIViewController, RingButtonActions {
             
             unlockWorldLabelSize = 24.0
             takeOffLabelSize = 22.0
+            
+            sideMenuButtonCenter = CGPointMake(44, 34)
             
         } else {
             
@@ -108,6 +112,19 @@ class mainViewController: UIViewController, RingButtonActions {
         takeOffLabel.alpha = 0.0
         backgroundImage.addSubview(takeOffLabel)
         
+        //Side menu button
+        imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/menu_lines.png")
+        let sideMenuButtonImage = UIImage(contentsOfFile: imagePath)
+        sideMenuButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        sideMenuButton.frame = CGRectMake(0, 0, sideMenuButtonImage.size.width, sideMenuButtonImage.size.height)
+        sideMenuButton.setImage(sideMenuButtonImage, forState: UIControlState.Normal)
+        sideMenuButton.center = sideMenuButtonCenter
+        sideMenuButton.enabled = true
+        sideMenuButton.exclusiveTouch = true
+        sideMenuButton.addTarget(self, action: "sideMenuButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        sideMenuButton.alpha = 0.0
+        backgroundImage.addSubview(sideMenuButton)
+        
         addGestures()
     }
     
@@ -124,7 +141,7 @@ class mainViewController: UIViewController, RingButtonActions {
                 self.startButton.transform = CGAffineTransformMakeScale(0.4, 0.4)
                 self.dart.transform = CGAffineTransformMakeScale(0.4, 0.4)
                 self.takeOffLabel.transform = CGAffineTransformMakeScale(0.4, 0.4)
-
+                
                 UIView.animateWithDuration(0.5, animations: {
                     
                     self.unlockWorldLabel.alpha = 1.0
@@ -135,9 +152,12 @@ class mainViewController: UIViewController, RingButtonActions {
                     self.startButton.transform = CGAffineTransformIdentity
                     self.dart.transform = CGAffineTransformIdentity
                     self.takeOffLabel.transform = CGAffineTransformIdentity
+                    self.sideMenuButton.alpha = 1.0
                     
                     }, completion: {
                         finished in
+                        
+                        self.sideMenuButton.enabled = true
                 })
         })
     }
@@ -158,7 +178,7 @@ class mainViewController: UIViewController, RingButtonActions {
         unlockWorldLabel.alpha = 0.0
         takeOffLabel.center = CGPointMake(dart.center.x, dart.center.y+60)
         takeOffLabel.alpha = 0.0
-        
+        sideMenuButton.alpha = 0.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -197,10 +217,15 @@ class mainViewController: UIViewController, RingButtonActions {
         
     }
     
+    func sideMenuButtonPressed(sender: AnyObject) {
+        
+    }
     
     //MARK: RingButtonDelegate
 
     func ringButtonSingleTap(sender: AnyObject) {
+        
+        sideMenuButton.enabled = false
         
         UIView.animateWithDuration(0.75, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             
