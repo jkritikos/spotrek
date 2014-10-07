@@ -13,6 +13,7 @@ class mainViewController: UIViewController, RingButtonActions {
     
     var navigationDelegate:YBNavigationControllerDelegate!
     
+    var backgroundImage: UIImageView!
     var startButton: RingButton!
     
     override func loadView() {
@@ -49,6 +50,14 @@ class mainViewController: UIViewController, RingButtonActions {
             
         }
         
+        let imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/image1.jpg")
+        println(imagePath)
+
+        backgroundImage = UIImageView(image: UIImage(contentsOfFile: imagePath))
+        backgroundImage.userInteractionEnabled = true
+        backgroundImage.alpha = 1.0
+        self.view.addSubview(backgroundImage)
+        
         startButton = RingButton(frame: startButtonRect, color: UIColor.blueColor(), highlightColor: UIColor.blackColor())
         startButton.center = startButtonCenter
         startButton.keepsHighlightedState = true
@@ -56,7 +65,7 @@ class mainViewController: UIViewController, RingButtonActions {
         startButton.alpha = 1.0
         startButton.exclusiveTouch = true
         startButton.delegate = self
-        self.view.addSubview(startButton)
+        backgroundImage.addSubview(startButton)
     }
     
     

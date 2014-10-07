@@ -68,11 +68,11 @@ class SharedEnvironment {
     func resourcePath()->String!{
         
         var pathToReturn = NSBundle.mainBundle().resourcePath
-        var suffix="iPhone"
+        var suffix="images/iphone"
         
         if isPad() {
             
-            suffix="iPad"
+            suffix="images/ipad"
             
         }
         

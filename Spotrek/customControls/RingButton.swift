@@ -79,7 +79,13 @@ class RingButton: UIView {
         
         CGContextFillPath(context);
     }
+    
+    override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return allowGestures
+    }
 
+    //MARK: Touches
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         touchIsActive = true
         currentColor = highlightColor
