@@ -89,6 +89,7 @@ class RingButton: UIView {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         touchIsActive = true
         currentColor = highlightColor
+        self.alpha = 0.7
         self.setNeedsDisplay()
     }
     
@@ -97,7 +98,7 @@ class RingButton: UIView {
             currentColor = paintColor
         
             if !keepsHighlightedState {
-             
+                self.alpha = 1.0
                 self.setNeedsDisplay()
             }
             
@@ -108,6 +109,7 @@ class RingButton: UIView {
     override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
         touchIsActive = false
         currentColor = paintColor
+        self.alpha = 1.0
         self.setNeedsDisplay()
     }
     

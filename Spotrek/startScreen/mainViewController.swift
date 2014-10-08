@@ -269,8 +269,6 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
         handleSideMenu()
     }
     
-    
-    
     func handleSideMenu() {
         startButton.userInteractionEnabled = !startButton.userInteractionEnabled
         sideMenuButton.enabled = !sideMenuButton.enabled
