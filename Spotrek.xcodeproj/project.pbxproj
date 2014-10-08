@@ -20,6 +20,8 @@
 		0EDFD54819E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */; };
 		0EDFD54B19E1C7C200AF87C2 /* selectTrekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */; };
 		0EDFD54E19E1CC5E00AF87C2 /* trekStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */; };
+		15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B477D319E5C11A00D8A83D /* HomeSideMenu.swift */; };
+		15B477D619E5CB8900D8A83D /* HomeSideMenuActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B477D519E5CB8900D8A83D /* HomeSideMenuActions.swift */; };
 		15BB0B8819E466E100340337 /* YBLeftToRightAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B8719E466E100340337 /* YBLeftToRightAnimator.swift */; };
 		15BB0B8B19E466F000340337 /* RingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B8A19E466F000340337 /* RingButton.swift */; };
 		15BB0B8E19E466F800340337 /* MathHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B8D19E466F800340337 /* MathHelpers.swift */; };
@@ -57,6 +59,8 @@
 		0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBCrossDisolveAnimator.swift; path = Spotrek/customAnimators/YBCrossDisolveAnimator.swift; sourceTree = "<group>"; };
 		0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = selectTrekViewController.swift; path = Spotrek/selectTrek/selectTrekViewController.swift; sourceTree = "<group>"; };
 		0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = trekStatusViewController.swift; path = Spotrek/trekStatus/trekStatusViewController.swift; sourceTree = "<group>"; };
+		15B477D319E5C11A00D8A83D /* HomeSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeSideMenu.swift; path = Spotrek/startScreen/HomeSideMenu.swift; sourceTree = "<group>"; };
+		15B477D519E5CB8900D8A83D /* HomeSideMenuActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSideMenuActions.swift; sourceTree = "<group>"; };
 		15BB0B8719E466E100340337 /* YBLeftToRightAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBLeftToRightAnimator.swift; path = Spotrek/customAnimators/YBLeftToRightAnimator.swift; sourceTree = "<group>"; };
 		15BB0B8A19E466F000340337 /* RingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingButton.swift; sourceTree = "<group>"; };
 		15BB0B8D19E466F800340337 /* MathHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathHelpers.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				0E1D8C0219DF09DC00BC003C /* mainViewController.swift */,
+				15B477D319E5C11A00D8A83D /* HomeSideMenu.swift */,
 			);
 			name = startScreen;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				15BB0B9019E4670C00340337 /* RingButtonActions.swift */,
+				15B477D519E5CB8900D8A83D /* HomeSideMenuActions.swift */,
 			);
 			name = protocols;
 			path = Spotrek/protocols;
@@ -348,12 +354,14 @@
 				15BB0B8E19E466F800340337 /* MathHelpers.swift in Sources */,
 				03DAC4ED19E51F0800068069 /* Trek.swift in Sources */,
 				0EDFD54619E1BF0900AF87C2 /* YBRightToLeftAnimator.swift in Sources */,
+				15B477D619E5CB8900D8A83D /* HomeSideMenuActions.swift in Sources */,
 				0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */,
 				0EDFD53E19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift in Sources */,
 				15BB0B9119E4670C00340337 /* RingButtonActions.swift in Sources */,
 				0E1D8C0319DF09DC00BC003C /* mainViewController.swift in Sources */,
 				15BB0B9719E4672900340337 /* SpringAnimation.swift in Sources */,
 				0EDFD54B19E1C7C200AF87C2 /* selectTrekViewController.swift in Sources */,
+				15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */,
 				0EDFD54819E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

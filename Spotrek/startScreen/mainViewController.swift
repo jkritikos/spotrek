@@ -8,11 +8,12 @@
 
 import UIKit
 
-class mainViewController: UIViewController, RingButtonActions {
+class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActions {
 
     
     var navigationDelegate:YBNavigationControllerDelegate!
     var panGesture: UIPanGestureRecognizer!
+    var sideMenu: HomeSideMenu!
     
     //UI Elements
     var backgroundImage: UIImageView!
@@ -29,7 +30,6 @@ class mainViewController: UIViewController, RingButtonActions {
         
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
         self.view.backgroundColor=UIColor.whiteColor()
-        
         setupHomeElements()
     }
     
@@ -59,6 +59,14 @@ class mainViewController: UIViewController, RingButtonActions {
         } else {
             
         }
+        
+        //Side menu
+        sideMenu = HomeSideMenu()
+        sideMenu.center = CGPointMake(sideMenu.frame.size.width/2, sideMenu.frame.size.height/2)
+        sideMenu.delegate = self
+        sideMenu.layer.zPosition = -1
+        sideMenu.alpha = 0.0
+        self.view.addSubview(sideMenu)
         
         //Initializing colors
         let walkerColor = UIColor(hex: SharedEnvironment.Instance().trekColors["Walker"]!)
@@ -140,6 +148,7 @@ class mainViewController: UIViewController, RingButtonActions {
             }, completion: {
                 finished in
                 
+                self.sideMenu.alpha = 1.0
                 self.backgroundImage.layer.zPosition = 0
                 self.startButton.setNeedsDisplay()
                 self.startButton.transform = CGAffineTransformMakeScale(0.4, 0.4)
@@ -206,6 +215,41 @@ class mainViewController: UIViewController, RingButtonActions {
             
         } else if gesture.state == UIGestureRecognizerState.Ended {
             
+            if backgroundImage.frame.origin.x > sideMenu.frame.size.width/2 {
+                
+                UIView.animateWithDuration(0.3, animations: {
+                    self.backgroundImage.center = CGPointMake(self.backgroundImage.frame.size.width/2 + self.sideMenu.frame.size.width, self.backgroundImage.center.y)
+                    }, completion: { finished in
+                        self.startButton.userInteractionEnabled = false
+                        self.sideMenu.isPresent = true
+                })
+                
+            } else {
+                
+                UIView.animateWithDuration(0.3, animations: {
+                    self.backgroundImage.center = CGPointMake(self.backgroundImage.frame.size.width/2, self.backgroundImage.center.y)
+                    }, completion: { finished in
+                        self.startButton.userInteractionEnabled = true
+                        self.sideMenu.isPresent = false
+                })
+                
+            }
+            
+        } else if gesture.state == UIGestureRecognizerState.Changed {
+            
+            let translation = gesture.translationInView(self.view)
+            
+            if gesture.velocityInView(self.view).x > 0 {
+                if backgroundImage.frame.origin.x < sideMenu.frame.size.width {
+                    backgroundImage.center = CGPointMake(backgroundImage.center.x + translation.x, backgroundImage.center.y)
+                }
+            } else  if gesture.velocityInView(self.view).x < 0 {
+                if backgroundImage.frame.origin.x > 0 {
+                    backgroundImage.center = CGPointMake(backgroundImage.center.x + translation.x, backgroundImage.center.y)
+                }
+            }
+            
+            gesture.setTranslation(CGPointMake(0, 0), inView: self.view)
         }
     }
     
@@ -222,7 +266,28 @@ class mainViewController: UIViewController, RingButtonActions {
     }
     
     func sideMenuButtonPressed(sender: AnyObject) {
+        handleSideMenu()
+    }
+    
+    
+    
+    func handleSideMenu() {
+        startButton.userInteractionEnabled = !startButton.userInteractionEnabled
+        sideMenuButton.enabled = !sideMenuButton.enabled
         
+        var factor: CGFloat = 1
+        if sideMenu.isPresent {
+            factor = -1
+        }
+        
+        sideMenu.isPresent = !sideMenu.isPresent
+        
+        UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.backgroundImage.center = CGPointMake(self.backgroundImage.center.x + self.sideMenu.frame.size.width*factor, self.backgroundImage.center.y)
+            }, completion: { finished in
+                self.sideMenuButton.enabled = !self.sideMenuButton.enabled
+        })
+
     }
     
     //MARK: RingButtonDelegate
@@ -239,6 +304,8 @@ class mainViewController: UIViewController, RingButtonActions {
             }, completion: {
             
                 finished in
+                
+                self.sideMenu.alpha = 0.0
                 
                 UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                     
@@ -263,5 +330,22 @@ class mainViewController: UIViewController, RingButtonActions {
                 })
         })
     }
+    
+    //MARK: SideMenuButton Delegate
+    func homeSideMenuButtonWasPressed(buttonItem: UIButton) {
+        
+        switch buttonItem.tag {
+        case HomeSideMenuButtonType.None.toRaw(): break
+        case HomeSideMenuButtonType.Profile.toRaw(): break
+        case HomeSideMenuButtonType.Gallery.toRaw(): break
+        case HomeSideMenuButtonType.Settings.toRaw(): break
+        case HomeSideMenuButtonType.Store.toRaw(): break
+        case HomeSideMenuButtonType.Hints.toRaw(): break
+        default:
+            break
+    
+        }
+    }
+ 
    
 }
