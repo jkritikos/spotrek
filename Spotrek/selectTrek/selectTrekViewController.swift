@@ -62,8 +62,11 @@ class selectTrekViewController: UIViewController {
         let backgroundImageView = UIImageView(image: UIImage(named: "images/ipad/trekSelection/image1.jpg"))
         
         //scrollview
-        self.trekScrollView = UIScrollView(frame: CGRectMake(0, 600, self.view.frame.size.width, 140))
+        self.trekScrollView = UIScrollView(frame: CGRectMake(0, 500, self.view.frame.size.width, 220))
         trekScrollView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
+        trekScrollView.scrollEnabled = true
+        
+        populateTrekScrollView()
         
         //pws kanw add elements sto scrollview? subviews? me incrementing CGRectMake?
         //pws kane detect poio element patithike mesa sto scrollview?
@@ -76,9 +79,42 @@ class selectTrekViewController: UIViewController {
         self.view.addSubview(trekScrollView)
     }
     
+    override func viewDidLayoutSubviews(){
+        super.viewDidLayoutSubviews()
+        self.trekScrollView.contentSize = CGSize(width:self.trekScrollView.frame.width * 4, height:self.trekScrollView.frame.height)
+    }
+    
     //populates the scrollview
     func populateTrekScrollView(){
-        let leftOffset = 80
+        let leftOffset:CGFloat = 170
+        var currentLeftValue:CGFloat = 20
+        var trekList = SharedEnvironment.Instance().trekList
+        
+        for trek in trekList {
+            //trek label
+            var trekLabel = UILabel(frame: CGRectMake(currentLeftValue, 160, 114, 40))
+            trekLabel.text = trek.name
+            trekLabel.font = UIFont(name: "GillSans", size: 24.0)
+            trekLabel.textAlignment = NSTextAlignment.Center
+            trekLabel.textColor = UIColor.whiteColor()
+            
+//            //trek button
+            if(trek.isLocked){
+                var trekButton = UIImageView(image: UIImage(named: "images/ipad/trekSelection/locked.png"))
+                trekButton.frame = CGRectMake(currentLeftValue, 20, 108, 108)
+                self.trekScrollView.addSubview(trekButton)
+            } else {
+                var frame = CGRectMake(currentLeftValue, 20, 116, 116)
+                var trekButton = RingButton(frame: frame, color: UIColor.blueColor(), highlightColor: UIColor.blueColor())
+                self.trekScrollView.addSubview(trekButton)
+            }
+            
+            
+            self.trekScrollView.addSubview(trekLabel)
+            
+            currentLeftValue += leftOffset
+        }
+        
         
     }
 

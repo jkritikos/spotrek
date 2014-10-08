@@ -15,9 +15,10 @@ class Trek {
     var percentComplete = 0
     var isLocked = true
     
-    init(name: String, percentComplete: Int){
+    init(name: String, percentComplete: Int, isLocked:Bool){
         self.name = name
         self.percentComplete = percentComplete
+        self.isLocked = isLocked
         
         if(percentComplete == 100){
             self.isCompleted = true

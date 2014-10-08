@@ -42,9 +42,9 @@ class mainViewController: UIViewController, RingButtonActions {
         if SharedEnvironment.Instance().isPad() {
         
             startButtonRect = CGRectMake(0, 0, 288, 288)
-            startButtonCenter = CGPointMake(CGRectGetMidY(self.view.frame), 560)
+            startButtonCenter = CGPointMake(CGRectGetMidX(self.view.frame), 560)
 
-            spotrekLogoCenter = CGPointMake(CGRectGetMidY(self.view.frame), 144)
+            spotrekLogoCenter = CGPointMake(CGRectGetMidX(self.view.frame), 144)
             
             unlockWorldLabelCenter = CGPointMake(734, 234)
             unlockWorldLabelRect = CGRectMake(0, 0, 240, 26)

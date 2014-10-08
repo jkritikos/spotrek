@@ -24,7 +24,32 @@ class SharedEnvironment {
     var trekNames = ["ALPHA","BETA","GAMMA","DELTA","EPSILON","ZETA","ETA","THETA","IOTA","KAPPA","LAMBDA","MU","NU","XI","OMICRON","PI","RHO","SIGMA",
         "TAU","UPSILON","PHI","CHI","PSI","OMEGA"]
     
+    var trekAlpha = Trek(name: "ALPHA", percentComplete:0, isLocked:false)
+    var trekBeta = Trek(name: "BETA", percentComplete:0, isLocked:true)
+    var trekGamma = Trek(name: "GAMMA", percentComplete:0, isLocked:true)
+    var trekDelta = Trek(name: "DELTA", percentComplete:0, isLocked:true)
+    var trekEpsilon = Trek(name: "EPSILON", percentComplete:0, isLocked:true)
+    var trekZeta = Trek(name: "ZETA", percentComplete:0, isLocked:true)
+    var trekEta = Trek(name: "ETA", percentComplete:0, isLocked:true)
+    var trekTheta = Trek(name: "THETA", percentComplete:0, isLocked:true)
+    var trekIota = Trek(name: "IOTA", percentComplete:0, isLocked:true)
+    var trekKappa = Trek(name: "KAPPA", percentComplete:0, isLocked:true)
+    var trekLamda = Trek(name: "LAMBDA", percentComplete:0, isLocked:true)
+    var trekMu = Trek(name: "MU", percentComplete:0, isLocked:true)
+    var trekNu = Trek(name: "NU", percentComplete:0, isLocked:true)
+    var trekXi = Trek(name: "XI", percentComplete:0, isLocked:true)
+    var trekOmicron = Trek(name: "OMICRON", percentComplete:0, isLocked:true)
+    var trekPi = Trek(name: "PI", percentComplete:0, isLocked:true)
+    var trekRho = Trek(name: "RHO", percentComplete:0, isLocked:true)
+    var trekSigma = Trek(name: "SIGMA", percentComplete:0, isLocked:true)
+    var trekTau = Trek(name: "TAU", percentComplete:0, isLocked:true)
+    var trekUpsilon = Trek(name: "UPSILON", percentComplete:0, isLocked:true)
+    var trekPhi = Trek(name: "PHI", percentComplete:0, isLocked:true)
+    var trekChi = Trek(name: "CHI", percentComplete:0, isLocked:true)
+    var trekPsi = Trek(name: "PSI", percentComplete:0, isLocked:true)
+    var trekOmega = Trek(name: "OMEGA", percentComplete:0, isLocked:true)
     
+    var trekList: [Trek] = []
     
     class func Instance() -> SharedEnvironment! {
         
@@ -43,7 +68,7 @@ class SharedEnvironment {
     }
     
     required init() {
-        
+        self.trekList += [trekAlpha,trekBeta,trekGamma,trekDelta,trekEpsilon,trekZeta,trekEta,trekTheta,trekIota,trekKappa,trekLamda,trekMu,trekNu,trekXi,trekOmicron,trekPi,trekRho,trekSigma,trekTau,trekUpsilon,trekPhi,trekXi,trekPsi,trekOmega]
         
     }
     
