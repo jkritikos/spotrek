@@ -16,6 +16,8 @@ class selectTrekViewController: UIViewController {
     var savedTransitionType: YBTransitionType!
     var savedDismissalDuration : NSTimeInterval!
     
+    //UI components
+    var trekScrollView: UIScrollView!
     
     override func loadView() {
         
@@ -37,7 +39,8 @@ class selectTrekViewController: UIViewController {
 
         
         
-        // Do any additional setup after loading the view.
+        // build the view
+        buildTrekSelectionView()
     }
 
     
@@ -46,6 +49,38 @@ class selectTrekViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func buildTrekSelectionView(){
+        //top label
+        let topLabel = UILabel(frame: CGRectMake(0, 0, self.view.frame.size.width, 70))
+        topLabel.text = "START UNLOCKING THE WORLD"
+        topLabel.font = UIFont(name: "GillSans", size: 22.0)
+        topLabel.textAlignment = NSTextAlignment.Center
+        topLabel.textColor = UIColor.whiteColor()
+        topLabel.backgroundColor = UIColor.blackColor()
+        
+        //bg image
+        let backgroundImageView = UIImageView(image: UIImage(named: "images/ipad/trekSelection/image1.jpg"))
+        
+        //scrollview
+        self.trekScrollView = UIScrollView(frame: CGRectMake(0, 600, self.view.frame.size.width, 140))
+        trekScrollView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
+        
+        //pws kanw add elements sto scrollview? subviews? me incrementing CGRectMake?
+        //pws kane detect poio element patithike mesa sto scrollview?
+        //pws apofeugoume ta karfwta strings? .plist?
+        //gesture recognizer UITapGestureRecognizer, HitTest
+        
+        //present
+        self.view.addSubview(backgroundImageView)
+        self.view.addSubview(topLabel)
+        self.view.addSubview(trekScrollView)
+    }
+    
+    //populates the scrollview
+    func populateTrekScrollView(){
+        let leftOffset = 80
+        
+    }
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
