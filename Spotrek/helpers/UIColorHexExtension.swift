@@ -20,7 +20,14 @@ extension UIColor {
     
     convenience init(hex:String) {
         
-        let hexNumber = (hex as NSString).integerValue
-        self.init(red:(hexNumber >> 16) & 0xff, green:(hexNumber >> 8) & 0xff, blue:hexNumber & 0xff)
+        var hexNumber: UInt32 = 0
+        
+        let scanner = NSScanner(string: hex)
+        scanner.scanLocation = 1
+        scanner.scanHexInt(&hexNumber)
+        
+        let hexNumberInt = Int(hexNumber)
+        
+        self.init(red:(hexNumberInt >> 16) & 0xff, green:(hexNumberInt >> 8) & 0xff, blue:hexNumberInt & 0xff)
     }
 }

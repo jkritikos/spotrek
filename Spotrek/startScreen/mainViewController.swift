@@ -60,6 +60,9 @@ class mainViewController: UIViewController, RingButtonActions {
             
         }
         
+        //Initializing colors
+        let walkerColor = UIColor(hex: SharedEnvironment.Instance().trekColors["Walker"]!)
+        
         //Initializing background image
         var imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/image1.jpg")
         backgroundImage = UIImageView(image: UIImage(contentsOfFile: imagePath))
@@ -77,7 +80,7 @@ class mainViewController: UIViewController, RingButtonActions {
         //Spotrek unlock world label
         unlockWorldLabel = UILabel(frame: unlockWorldLabelRect)
         unlockWorldLabel.textAlignment = NSTextAlignment.Center
-        unlockWorldLabel.textColor = UIColor.blueColor()
+        unlockWorldLabel.textColor = walkerColor
         unlockWorldLabel.font = UIFont(name: "GillSans", size: unlockWorldLabelSize)
         unlockWorldLabel.text = "UNLOCK THE WORLD"
         unlockWorldLabel.center = CGPointMake(-unlockWorldLabelRect.size.width/2, unlockWorldLabelCenter.y)
@@ -87,9 +90,7 @@ class mainViewController: UIViewController, RingButtonActions {
         //Initializing startButton
         //Button background
         
-        let ringButtonColor = UIColor(hex: SharedEnvironment.Instance().trekColors["Walker"]!)
-        
-        startButton = RingButton(frame: startButtonRect, color: ringButtonColor, highlightColor: UIColor.blackColor())
+        startButton = RingButton(frame: startButtonRect, color: walkerColor, highlightColor: UIColor.blackColor())
         startButton.center = startButtonCenter
         startButton.keepsHighlightedState = true
         startButton.allowGestures = false
