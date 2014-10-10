@@ -179,6 +179,7 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
       
         super.viewDidLoad()
         self.view.multipleTouchEnabled = true
+        self.view.backgroundColor = UIColor.blackColor()
         self.title = "Home"
 
     }
