@@ -102,7 +102,7 @@ class RingButton: UIView {
                 self.setNeedsDisplay()
             }
             
-            delegate.ringButtonSingleTap(self)
+                delegate.ringButtonSingleTap(self)
         }
     }
     

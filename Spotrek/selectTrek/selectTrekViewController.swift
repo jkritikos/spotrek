@@ -132,10 +132,9 @@ class selectTrekViewController: UIViewController {
         }else{
         
         
-            navigationDelegate = YBNavigationControllerDelegate()
-            navigationDelegate.typeOfTransition = YBTransitionType.RightToLeft
-            navigationDelegate.presentationDuration = 4
-            navigationDelegate.dismissalDuration = 0.9
+            navigationDelegate.typeOfTransition = YBTransitionType.CrossDisolve
+            navigationDelegate.presentationDuration = 0.5
+            navigationDelegate.dismissalDuration = 0.5
             navigationController?.delegate  = navigationDelegate
             let trekStatus = trekStatusViewController(nibName: nil,bundle: nil)
             trekStatus.modalPresentationStyle = UIModalPresentationStyle.Custom

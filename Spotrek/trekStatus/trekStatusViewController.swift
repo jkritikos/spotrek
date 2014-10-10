@@ -8,20 +8,25 @@
 
 import UIKit
 
-class trekStatusViewController: UIViewController {
+class trekStatusViewController: UIViewController  {
+    
+    private var navigationDelegate:YBNavigationControllerDelegate!
+    private var savedTransitionType: YBTransitionType!
+    private var savedDismissalDuration : NSTimeInterval!
     
     
-    var navigationDelegate:YBNavigationControllerDelegate!
+    private var currentTrek:Trek!
+    private var lblStatus :UILabel!
+    private var btnPlay:UIButton!
     
-    var savedTransitionType: YBTransitionType!
-    var savedDismissalDuration : NSTimeInterval!
     
+    private var leftView:UIView!
+    private var rightView:UIView!
     
     override func loadView() {
         
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
-        self.view.backgroundColor=UIColor.greenColor()
-        
+        self.view.backgroundColor=UIColor.blackColor()
         
     }
     
@@ -36,6 +41,13 @@ class trekStatusViewController: UIViewController {
         savedTransitionType = navigationDelegate.typeOfTransition
         savedDismissalDuration = navigationDelegate.dismissalDuration
         // Do any additional setup after loading the view.
+        
+        initTrekButton()
+        
+        initStatusLabel()
+        
+        initSideViews()
+    
     }
     
     
@@ -45,9 +57,75 @@ class trekStatusViewController: UIViewController {
     }
     
     
+    func initTrekButton(){
+    
+       
+        currentTrek = Trek(trekNumber:0)
+        currentTrek.isLocked = false
+        currentTrek.isCompleted = false
+        
+      
+        let btnTrek = TrekButton(frame: CGRectMake(0, 0, 110, 110), trek: currentTrek)
+        btnTrek.allowGestures=false
+        btnTrek.userInteractionEnabled=false
+        btnTrek.center = CGPointMake(self.view.frame.size.width/2, 90)
+        
+        self.view.addSubview(btnTrek)
+    
+    }
+    
+    
+    func initStatusLabel(){
+    
+    
+    }
+    
+    
+    func initSideViews(){
+    
+    
+        leftView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width/2 ,self.view.frame.size.height))
+        leftView.backgroundColor = currentTrek.color
+        self.view.addSubview(leftView)
+        
+        
+        rightView = UIView(frame: CGRectMake(self.view.frame.size.width/2,0, self.view.frame.size.width/2 ,self.view.frame.size.height))
+        rightView.backgroundColor = currentTrek.color
+        self.view.addSubview(rightView)
+        
+    
+    
+    }
+
+    
+    override func viewDidAppear(animated: Bool) {
+    
+        
+        openCurtains()
+        
+    }
+
+    
+    func openCurtains(){
+    
+        var offsetX:CGFloat!
+        offsetX = 136.0
+        
+        UIView.animateWithDuration( 0.3) { () -> Void in
+            
+            self.leftView.center = CGPointMake(self.leftView.center.x - offsetX, self.leftView.center.y)
+            self.rightView.center = CGPointMake(self.rightView.center.x + offsetX, self.rightView.center.y)
+        }
+    
+    }
+    
+    func closeCurtains(){
+    
+    
+    
+    }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
         
         if (event.touchesForView(self.view)?.count > 1 ) {
 
@@ -63,4 +141,5 @@ class trekStatusViewController: UIViewController {
 
     
 
+       
 }
