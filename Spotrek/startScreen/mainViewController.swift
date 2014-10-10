@@ -30,7 +30,7 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
         
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
         self.view.backgroundColor=UIColor.whiteColor()
-        setupHomeElements()
+        
     }
     
     func setupHomeElements() {
@@ -143,6 +143,8 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
     
     override func viewDidAppear(animated: Bool) {
         
+        setupHomeElements()
+        
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.backgroundImage.alpha = 1.0
             }, completion: {
@@ -155,10 +157,13 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
                 self.dart.transform = CGAffineTransformMakeScale(0.4, 0.4)
                 self.takeOffLabel.transform = CGAffineTransformMakeScale(0.4, 0.4)
                 
+                spring(0.75, {
+                    self.unlockWorldLabel.center = self.unlockWorldLabelCenter
+                })
+                                
                 UIView.animateWithDuration(0.5, animations: {
                     
                     self.unlockWorldLabel.alpha = 1.0
-                    self.unlockWorldLabel.center = self.unlockWorldLabelCenter
                     self.startButton.alpha = 1.0
                     self.dart.alpha = 1.0
                     self.takeOffLabel.alpha = 1.0
@@ -283,6 +288,12 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
         
         UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.backgroundImage.center = CGPointMake(self.backgroundImage.center.x + self.sideMenu.frame.size.width*factor, self.backgroundImage.center.y)
+            self.spotrekLogo.center = CGPointMake(self.spotrekLogo.center.x - (self.sideMenu.frame.size.width/2)*factor, self.spotrekLogo.center.y)
+            self.unlockWorldLabel.center = CGPointMake(self.unlockWorldLabel.center.x - (self.sideMenu.frame.size.width/2)*factor, self.unlockWorldLabel.center.y)
+            self.startButton.center = CGPointMake(self.startButton.center.x - (self.sideMenu.frame.size.width/2)*factor, self.startButton.center.y)
+            self.dart.center = CGPointMake(self.dart.center.x - (self.sideMenu.frame.size.width/2)*factor, self.dart.center.y)
+            self.takeOffLabel.center = CGPointMake(self.takeOffLabel.center.x - (self.sideMenu.frame.size.width/2)*factor, self.takeOffLabel.center.y)
+            
             }, completion: { finished in
                 self.sideMenuButton.enabled = !self.sideMenuButton.enabled
         })
