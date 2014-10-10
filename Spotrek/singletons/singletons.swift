@@ -11,6 +11,9 @@ import UIKit
 
 class SharedEnvironment {
     
+    var currentTrek:Trek!
+    
+    
     var trekColors =    ["Walker":"39bbea",
                         "Sailor": "fe9364",
                         "Pilot":"9cc863",
