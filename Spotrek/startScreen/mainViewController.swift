@@ -8,8 +8,10 @@
 
 import UIKit
 
-class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActions {
+class mainViewController: UIViewController, UINamedViewController, RingButtonActions, HomeSideMenuActions {
 
+    var name = "mainViewController"
+    let singleton = SharedEnvironment.Instance()
     
     var navigationDelegate:YBNavigationControllerDelegate!
     var panGesture: UIPanGestureRecognizer!
@@ -39,22 +41,31 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
         var startButtonCenter, spotrekLogoCenter: CGPoint!
         var unlockWorldLabelSize, takeOffLabelSize: CGFloat!
         
-        if SharedEnvironment.Instance().isPad() {
-        
-            startButtonRect = CGRectMake(0, 0, 288, 288)
-            startButtonCenter = CGPointMake(CGRectGetMidX(self.view.frame), 560)
+        if singleton.isPad() {
+            
+            var rectCoordinates = singleton.frameForImage(self.name, imageName: "startButton")
+            startButtonRect = CGRectMake(rectCoordinates.x, rectCoordinates.y, rectCoordinates.width, rectCoordinates.height)
 
-            spotrekLogoCenter = CGPointMake(CGRectGetMidX(self.view.frame), 144)
+            var centerCoordinates = singleton.centerForImage(self.name, imageName: "startButton")
+            startButtonCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
+
+            centerCoordinates = singleton.centerForImage(self.name, imageName: "spotrekLogo")
+            spotrekLogoCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
             
-            unlockWorldLabelCenter = CGPointMake(734, 234)
-            unlockWorldLabelRect = CGRectMake(0, 0, 240, 26)
+            centerCoordinates = singleton.centerForImage(self.name, imageName: "unlockWorldLabel")
+            unlockWorldLabelCenter = CGPointMake(centerCoordinates.x, centerCoordinates.y)
             
-            takeOffLabelRect = CGRectMake(0, 0, 108, 26)
+            rectCoordinates = singleton.frameForImage(self.name, imageName: "unlockWorldLabel")
+            unlockWorldLabelRect = CGRectMake(rectCoordinates.x, rectCoordinates.y, rectCoordinates.width, rectCoordinates.height)
             
-            unlockWorldLabelSize = 24.0
-            takeOffLabelSize = 22.0
+            rectCoordinates = singleton.frameForImage(self.name, imageName: "takeOffLabel")
+            takeOffLabelRect = CGRectMake(rectCoordinates.x, rectCoordinates.y, rectCoordinates.width, rectCoordinates.height)
             
-            sideMenuButtonCenter = CGPointMake(44, 34)
+            unlockWorldLabelSize = singleton.sizePositionPlistElement(self.name, elementName: "unlockWorldLabelSize") as CGFloat
+            takeOffLabelSize = singleton.sizePositionPlistElement(self.name, elementName: "takeOffLabelSize") as CGFloat
+            
+            centerCoordinates = singleton.centerForImage(self.name, imageName: "sideMenuButton")
+            sideMenuButtonCenter = CGPointMake(centerCoordinates.x, centerCoordinates.y)
             
         } else {
             
@@ -69,10 +80,10 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
         self.view.addSubview(sideMenu)
         
         //Initializing colors
-        let walkerColor = UIColor(hex: SharedEnvironment.Instance().trekColors["Walker"]!)
+        let walkerColor = UIColor(hex: singleton.trekColors["Walker"]!)
         
         //Initializing background image
-        var imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/image1.jpg")
+        var imagePath = singleton.resourcePath().stringByAppendingPathComponent("home/image1.jpg")
         backgroundImage = UIImageView(image: UIImage(contentsOfFile: imagePath))
         backgroundImage.userInteractionEnabled = true
         backgroundImage.alpha = 0.2
@@ -80,7 +91,7 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
         
         //Initializing spotrek logo
         //Spotrek image
-        imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/spotrek_logo.png")
+        imagePath = singleton.resourcePath().stringByAppendingPathComponent("home/spotrek_logo.png")
         spotrekLogo = UIImageView(image: UIImage(contentsOfFile: imagePath))
         spotrekLogo.center = spotrekLogoCenter
         backgroundImage.addSubview(spotrekLogo)
@@ -108,7 +119,7 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
         backgroundImage.addSubview(startButton)
         
         //Button image
-        imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/saita.png")
+        imagePath = singleton.resourcePath().stringByAppendingPathComponent("home/saita.png")
         dart = UIImageView(image: UIImage(contentsOfFile: imagePath))
         dart.center = startButton.center
         dart.alpha = 0.0
@@ -125,7 +136,7 @@ class mainViewController: UIViewController, RingButtonActions, HomeSideMenuActio
         backgroundImage.addSubview(takeOffLabel)
         
         //Side menu button
-        imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("home/menu_lines.png")
+        imagePath = singleton.resourcePath().stringByAppendingPathComponent("home/menu_lines.png")
         let sideMenuButtonImage = UIImage(contentsOfFile: imagePath)
         sideMenuButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         sideMenuButton.frame = CGRectMake(0, 0, sideMenuButtonImage.size.width, sideMenuButtonImage.size.height)

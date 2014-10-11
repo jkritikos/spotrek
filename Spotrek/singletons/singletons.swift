@@ -54,6 +54,17 @@ class SharedEnvironment {
     
     var trekList: [Trek] = []
     
+    var imageCoordinatesDictionary: [String: [String: AnyObject]] {
+        if let path = NSBundle.mainBundle().pathForResource("SizePositionCoordinates", ofType: "plist") {
+            
+            if let plistDictionary = NSDictionary(contentsOfFile: path) as? [String: [String: AnyObject]] {
+                return plistDictionary
+            }
+        }
+            
+        return Dictionary(minimumCapacity: 0)
+    }
+    
     class func Instance() -> SharedEnvironment! {
         
         struct Static {
@@ -76,8 +87,6 @@ class SharedEnvironment {
         
     }
     
-    
-
     func isPad()->Bool{
         
         
@@ -92,8 +101,6 @@ class SharedEnvironment {
         
     }
     
-    
-
     func resourcePath()->String!{
         
         var pathToReturn = NSBundle.mainBundle().resourcePath
@@ -109,6 +116,49 @@ class SharedEnvironment {
         
         return pathToReturn
         
+    }
+    
+    //MARK: Size and position coordinates plist helper methods
+    func sizePositionPlistElement(senderName: String, elementName: String) -> AnyObject {
+        
+        if let selectedView = imageCoordinatesDictionary[senderName] {
+            
+            if let element: AnyObject = selectedView[elementName] {
+                
+                return element
+            }
+        }
+
+        return ""
+    }
+    
+    func centerForImage(senderName: String, imageName: String) -> (x: CGFloat, y: CGFloat) {
+        
+        var coordinates: (CGFloat, CGFloat) = (0, 0)
+        
+        if let selectedView = imageCoordinatesDictionary[senderName] {
+            
+            if let selectedImageInView: AnyObject = selectedView[imageName + "Center"] {
+
+                coordinates = (selectedImageInView["x"]! as CGFloat, selectedImageInView["y"]! as CGFloat)
+            }
+        }
+        
+        return coordinates
+    }
+    
+    func frameForImage(senderName: String, imageName: String) -> (x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
+        
+        var coordinates: (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        
+        if let selectedView = imageCoordinatesDictionary[senderName] {
+
+            if let selectedImageInView: AnyObject = selectedView[imageName + "Rect"] {
+                coordinates = (selectedImageInView["x"]! as CGFloat, selectedImageInView["y"]! as CGFloat, selectedImageInView["width"]! as CGFloat, selectedImageInView["height"]! as CGFloat)
+            }
+        }
+        
+        return coordinates
     }
 }
 
