@@ -15,15 +15,15 @@ class SharedEnvironment {
     
     
     var trekColors =    ["Walker":"39bbea",
-                        "Sailor": "fe9364",
-                        "Pilot":"9cc863",
-                        "Traveler":"e188bb",
-                        "Voyager":"23c0a4",
-                        "Explorer":"a792e3",
-                        "Captain":"e55c66",
-                        "Spotreker":"5793d2"]
+        "Sailor": "fe9364",
+        "Pilot":"9cc863",
+        "Traveler":"e188bb",
+        "Voyager":"23c0a4",
+        "Explorer":"a792e3",
+        "Captain":"e55c66",
+        "Spotreker":"5793d2"]
     
-
+    
     var trekNames = ["ALPHA","BETA","GAMMA","DELTA","EPSILON","ZETA","ETA","THETA","IOTA","KAPPA","LAMBDA","MU","NU","XI","OMICRON","PI","RHO","SIGMA",
         "TAU","UPSILON","PHI","CHI","PSI","OMEGA"]
     
@@ -55,8 +55,17 @@ class SharedEnvironment {
     var trekList: [Trek] = []
     
     var imageCoordinatesDictionary: [String: [String: AnyObject]] {
-        if let path = NSBundle.mainBundle().pathForResource("SizePositionCoordinates", ofType: "plist") {
+        
+        var pathOfPlist: String!
             
+        if self.isPad() {
+            pathOfPlist = "SizePositionCoordinatesiPad"
+        } else {
+                
+        }
+            
+        if let path = NSBundle.mainBundle().pathForResource(pathOfPlist, ofType: "plist") {
+                
             if let plistDictionary = NSDictionary(contentsOfFile: path) as? [String: [String: AnyObject]] {
                 return plistDictionary
             }
@@ -82,7 +91,7 @@ class SharedEnvironment {
     }
     
     required init() {
-      
+        
         self.trekList += [trekAlpha,trekBeta,trekGamma,trekDelta,trekEpsilon,trekZeta,trekEta,trekTheta,trekIota,trekKappa,trekLamda,trekMu,trekNu,trekXi,trekOmicron,trekPi,trekRho,trekSigma,trekTau,trekUpsilon,trekPhi,trekXi,trekPsi,trekOmega]
         
     }
@@ -128,7 +137,7 @@ class SharedEnvironment {
                 return element
             }
         }
-
+        
         return ""
     }
     
@@ -139,7 +148,7 @@ class SharedEnvironment {
         if let selectedView = imageCoordinatesDictionary[senderName] {
             
             if let selectedImageInView: AnyObject = selectedView[imageName + "Center"] {
-
+                
                 coordinates = (selectedImageInView["x"]! as CGFloat, selectedImageInView["y"]! as CGFloat)
             }
         }
@@ -152,7 +161,7 @@ class SharedEnvironment {
         var coordinates: (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
         
         if let selectedView = imageCoordinatesDictionary[senderName] {
-
+            
             if let selectedImageInView: AnyObject = selectedView[imageName + "Rect"] {
                 coordinates = (selectedImageInView["x"]! as CGFloat, selectedImageInView["y"]! as CGFloat, selectedImageInView["width"]! as CGFloat, selectedImageInView["height"]! as CGFloat)
             }
