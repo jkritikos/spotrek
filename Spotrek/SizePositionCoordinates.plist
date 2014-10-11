@@ -4,6 +4,8 @@
 <dict>
 	<key>mainViewController</key>
 	<dict>
+		<key>dartCenterYOffset</key>
+		<integer>60</integer>
 		<key>takeOffLabelSize</key>
 		<integer>22</integer>
 		<key>unlockWorldLabelSize</key>

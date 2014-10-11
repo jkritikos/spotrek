@@ -206,7 +206,10 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
         backgroundImage.addSubview(dart)
         unlockWorldLabel.center = CGPointMake(-unlockWorldLabel.frame.size.width/2, unlockWorldLabelCenter.y)
         unlockWorldLabel.alpha = 0.0
-        takeOffLabel.center = CGPointMake(dart.center.x, dart.center.y+60)
+        
+        let dartCenterYOffset = singleton.sizePositionPlistElement(self.name, elementName: "dartCenterYOffset") as CGFloat
+        
+        takeOffLabel.center = CGPointMake(dart.center.x, dart.center.y+dartCenterYOffset)
         takeOffLabel.alpha = 0.0
         sideMenuButton.alpha = 0.0
     }
