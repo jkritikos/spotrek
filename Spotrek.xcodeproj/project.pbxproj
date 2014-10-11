@@ -17,6 +17,7 @@
 		0E7411AA19E997EB008D8B0A /* MTB_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A719E997EB008D8B0A /* MTB_1.wav */; };
 		0E7411AB19E997EB008D8B0A /* MTB_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A819E997EB008D8B0A /* MTB_2.wav */; };
 		0E7411AC19E997EB008D8B0A /* MTB_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A919E997EB008D8B0A /* MTB_3.wav */; };
+		0E7411AE19E9991F008D8B0A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7411AD19E9991F008D8B0A /* AVFoundation.framework */; };
 		0ED6BAAE19E6C971001CABB6 /* TrekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6BAAD19E6C971001CABB6 /* TrekButton.swift */; };
 		0EDFD53E19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */; };
 		0EDFD54219E1BE1300AF87C2 /* YBBasicAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */; };
@@ -63,6 +64,7 @@
 		0E7411A719E997EB008D8B0A /* MTB_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_1.wav; path = sounds/MTB_1.wav; sourceTree = "<group>"; };
 		0E7411A819E997EB008D8B0A /* MTB_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_2.wav; path = sounds/MTB_2.wav; sourceTree = "<group>"; };
 		0E7411A919E997EB008D8B0A /* MTB_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_3.wav; path = sounds/MTB_3.wav; sourceTree = "<group>"; };
+		0E7411AD19E9991F008D8B0A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0ED6BAAD19E6C971001CABB6 /* TrekButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrekButton.swift; sourceTree = "<group>"; };
 		0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBNavigationControllerDelegate.swift; path = Spotrek/customAnimators/YBNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBBasicAnimator.swift; path = Spotrek/customAnimators/YBBasicAnimator.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E7411AE19E9991F008D8B0A /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +124,7 @@
 		0E1D8BD319DF092A00BC003C = {
 			isa = PBXGroup;
 			children = (
+				0E7411AD19E9991F008D8B0A /* AVFoundation.framework */,
 				03DAC4EB19E51D3D00068069 /* models */,
 				15BB0B9219E4671D00340337 /* singletons */,
 				15BB0B8F19E4670C00340337 /* protocols */,

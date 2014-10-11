@@ -187,6 +187,7 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
                         finished in
                         
                         self.sideMenuButton.enabled = true
+                        SharedAudioPlayer.Instance().resumeMainLoop()
                 })
         })
     }
