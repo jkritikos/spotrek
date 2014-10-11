@@ -60,7 +60,7 @@ class trekStatusViewController: UIViewController  {
     func initTrekButton(){
     
        
-        currentTrek = Trek(trekNumber:5)
+        currentTrek = Trek(trekNumber:0)
         currentTrek.isLocked = false
         currentTrek.isCompleted = false
         
@@ -110,6 +110,13 @@ class trekStatusViewController: UIViewController  {
     
         var offsetX:CGFloat!
         offsetX = 136.0
+        
+       /*
+        spring(0.3, {
+            self.leftView.center = CGPointMake(self.leftView.center.x - offsetX, self.leftView.center.y)
+            self.rightView.center = CGPointMake(self.rightView.center.x + offsetX, self.rightView.center.y)
+        })
+        */
         
         UIView.animateWithDuration( 0.3) { () -> Void in
             

@@ -153,9 +153,10 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
     
     
     override func viewDidAppear(animated: Bool) {
-        
+  
+        SharedAudioPlayer.Instance().resumeMainLoop()
+
         setupHomeElements()
-        
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.backgroundImage.alpha = 1.0
             }, completion: {
@@ -187,7 +188,6 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
                         finished in
                         
                         self.sideMenuButton.enabled = true
-                        SharedAudioPlayer.Instance().resumeMainLoop()
                 })
         })
     }
