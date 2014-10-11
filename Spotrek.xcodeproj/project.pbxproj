@@ -14,6 +14,9 @@
 		0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE819DF092A00BC003C /* Images.xcassets */; };
 		0E1D8BF819DF092A00BC003C /* SpotrekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */; };
 		0E1D8C0319DF09DC00BC003C /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8C0219DF09DC00BC003C /* mainViewController.swift */; };
+		0E7411AA19E997EB008D8B0A /* MTB_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A719E997EB008D8B0A /* MTB_1.wav */; };
+		0E7411AB19E997EB008D8B0A /* MTB_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A819E997EB008D8B0A /* MTB_2.wav */; };
+		0E7411AC19E997EB008D8B0A /* MTB_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A919E997EB008D8B0A /* MTB_3.wav */; };
 		0ED6BAAE19E6C971001CABB6 /* TrekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6BAAD19E6C971001CABB6 /* TrekButton.swift */; };
 		0EDFD53E19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */; };
 		0EDFD54219E1BE1300AF87C2 /* YBBasicAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */; };
@@ -57,6 +60,9 @@
 		0E1D8BF619DF092A00BC003C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotrekTests.swift; sourceTree = "<group>"; };
 		0E1D8C0219DF09DC00BC003C /* mainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = mainViewController.swift; path = Spotrek/startScreen/mainViewController.swift; sourceTree = "<group>"; };
+		0E7411A719E997EB008D8B0A /* MTB_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_1.wav; path = sounds/MTB_1.wav; sourceTree = "<group>"; };
+		0E7411A819E997EB008D8B0A /* MTB_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_2.wav; path = sounds/MTB_2.wav; sourceTree = "<group>"; };
+		0E7411A919E997EB008D8B0A /* MTB_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_3.wav; path = sounds/MTB_3.wav; sourceTree = "<group>"; };
 		0ED6BAAD19E6C971001CABB6 /* TrekButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrekButton.swift; sourceTree = "<group>"; };
 		0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBNavigationControllerDelegate.swift; path = Spotrek/customAnimators/YBNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBBasicAnimator.swift; path = Spotrek/customAnimators/YBBasicAnimator.swift; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 		0E1D8BDF19DF092A00BC003C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0E7411A619E997A4008D8B0A /* sounds */,
 				0E1170D119E7D33800A094FC /* fonts */,
 				034DBA0819E40EBF00C905DA /* images */,
 				0E1D8BE019DF092A00BC003C /* Info.plist */,
@@ -185,6 +192,16 @@
 				15B477D319E5C11A00D8A83D /* HomeSideMenu.swift */,
 			);
 			name = startScreen;
+			sourceTree = "<group>";
+		};
+		0E7411A619E997A4008D8B0A /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				0E7411A719E997EB008D8B0A /* MTB_1.wav */,
+				0E7411A819E997EB008D8B0A /* MTB_2.wav */,
+				0E7411A919E997EB008D8B0A /* MTB_3.wav */,
+			);
+			name = sounds;
 			sourceTree = "<group>";
 		};
 		0EDFD53C19E1BB5A00AF87C2 /* customAnimators */ = {
@@ -346,9 +363,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E1170D319E7D34B00A094FC /* GILLSANS.TTF in Resources */,
+				0E7411AB19E997EB008D8B0A /* MTB_2.wav in Resources */,
 				034DBA0919E40EBF00C905DA /* images in Resources */,
 				159404C019E8324C00B4A3CA /* SizePositionCoordinatesiPad.plist in Resources */,
 				0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */,
+				0E7411AA19E997EB008D8B0A /* MTB_1.wav in Resources */,
+				0E7411AC19E997EB008D8B0A /* MTB_3.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
