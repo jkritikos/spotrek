@@ -33,59 +33,40 @@ class Trek {
         }
     }
     
-    init(trekNumber:Int){
-    
+    init(trekNumber:Int, percentComplete: Int, isLocked:Bool){
         var hexColor:String!
         self.trekNumber = trekNumber
         self.name = SharedEnvironment.Instance().trekNames[trekNumber]
-
+        self.isLocked = isLocked
+        self.percentComplete = percentComplete
+        
+        if(percentComplete == 100){
+            
+            self.isCompleted = true
+        }
         
         switch trekNumber {
         
             case 0...2:
-                
-                    hexColor = SharedEnvironment.Instance().trekColors["Walker"]
-                
+                hexColor = SharedEnvironment.Instance().trekColors["Walker"]
             case 3...5:
-                
-                    hexColor = SharedEnvironment.Instance().trekColors["Sailor"]
-
-                
+                hexColor = SharedEnvironment.Instance().trekColors["Sailor"]
             case 6...8:
-                
-                    hexColor = SharedEnvironment.Instance().trekColors["Pilot"]
-
-                
+                hexColor = SharedEnvironment.Instance().trekColors["Pilot"]
             case 9...11:
-                
-                    hexColor = SharedEnvironment.Instance().trekColors["Traveler"]
-
-                
+                hexColor = SharedEnvironment.Instance().trekColors["Traveler"]
             case 12...14:
-                
-                    hexColor = SharedEnvironment.Instance().trekColors["Voyager"]
-
-                
+                hexColor = SharedEnvironment.Instance().trekColors["Voyager"]
             case 15...17:
-                
-                    hexColor = SharedEnvironment.Instance().trekColors["Explorer"]
-
-                
+                hexColor = SharedEnvironment.Instance().trekColors["Explorer"]
             case 18...20:
-                
-                    hexColor = SharedEnvironment.Instance().trekColors["Captain"]
-
-                
+                hexColor = SharedEnvironment.Instance().trekColors["Captain"]
             case 21...23:
-                
-                    hexColor = SharedEnvironment.Instance().trekColors["Spotreker"]
-
+                hexColor = SharedEnvironment.Instance().trekColors["Spotreker"]
             default:
-                    
-                    self.color = UIColor.clearColor()
-                    self.highlightColor = UIColor.clearColor()
+                self.color = UIColor.clearColor()
+                self.highlightColor = UIColor.clearColor()
                 
-            
         }
         
         

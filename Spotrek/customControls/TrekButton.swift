@@ -82,22 +82,22 @@ class TrekButton: RingButton {
             completionLabel.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
             completionLabel.textAlignment = NSTextAlignment.Center
             completionLabel.textColor = UIColor.whiteColor()
-            completionLabel.font = UIFont(name: "GillSans", size: 20.0)
             
             self .addSubview(completionLabel)
             
             var str:String!
             
             if trek.percentComplete == 0 {
-            
+                
                 str = "TREK"
+                completionLabel.font = UIFont(name: "GillSans", size: 20.0)
             
             }
             
             else{
-            
-                str = NSString(format: "%i %%", trek.percentComplete )
-            
+                
+                str = NSString(format: "%i%%", trek.percentComplete )
+                completionLabel.font = UIFont(name: "GillSans-Bold", size: 20.0)
             }
             
             completionLabel.text = str

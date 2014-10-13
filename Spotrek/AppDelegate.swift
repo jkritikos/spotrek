@@ -35,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //make window as key window and set it visible as well
         self.window!.makeKeyAndVisible()
         
+        var singleton = SharedEnvironment.Instance()
+        singleton.updateState()
+        
         return true
     }
 

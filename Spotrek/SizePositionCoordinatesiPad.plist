@@ -75,6 +75,25 @@
 	<key>selectTrekViewController</key>
 	<dict/>
 	<key>trekStatusViewController</key>
-	<dict/>
+	<dict>
+		<key>btnTrekRect</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+			<key>width</key>
+			<integer>110</integer>
+			<key>height</key>
+			<integer>110</integer>
+		</dict>
+		<key>btnTrekCenter</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>90</integer>
+		</dict>
+	</dict>
 </dict>
 </plist>
