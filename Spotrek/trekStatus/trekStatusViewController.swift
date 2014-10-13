@@ -60,7 +60,7 @@ class trekStatusViewController: UIViewController  {
     func initTrekButton(){
     
        
-        currentTrek = Trek(trekNumber:5)
+        currentTrek = Trek(trekNumber:5, percentComplete:0, isLocked:true)
         currentTrek.isLocked = false
         currentTrek.isCompleted = false
         

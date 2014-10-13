@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		034DBA0919E40EBF00C905DA /* images in Resources */ = {isa = PBXBuildFile; fileRef = 034DBA0819E40EBF00C905DA /* images */; };
 		03DAC4ED19E51F0800068069 /* Trek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC4EC19E51F0800068069 /* Trek.swift */; };
+		03DDD15B19EBB52D00133FBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15A19EBB52D00133FBC /* User.swift */; };
 		0E1170D319E7D34B00A094FC /* GILLSANS.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0E1170D219E7D34B00A094FC /* GILLSANS.TTF */; };
 		0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE119DF092A00BC003C /* AppDelegate.swift */; };
 		0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE819DF092A00BC003C /* Images.xcassets */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		034DBA0819E40EBF00C905DA /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		03DAC4EC19E51F0800068069 /* Trek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trek.swift; path = Spotrek/models/Trek.swift; sourceTree = "<group>"; };
+		03DDD15A19EBB52D00133FBC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spotrek/models/User.swift; sourceTree = "<group>"; };
 		0E1170D219E7D34B00A094FC /* GILLSANS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = GILLSANS.TTF; path = fonts/GILLSANS.TTF; sourceTree = "<group>"; };
 		0E1D8BDC19DF092A00BC003C /* Spotrek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotrek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1D8BE019DF092A00BC003C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				03DAC4EC19E51F0800068069 /* Trek.swift */,
+				03DDD15A19EBB52D00133FBC /* User.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				0EDFD54B19E1C7C200AF87C2 /* selectTrekViewController.swift in Sources */,
 				15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */,
 				0EDFD54819E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift in Sources */,
+				03DDD15B19EBB52D00133FBC /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
