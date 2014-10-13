@@ -63,14 +63,9 @@ class trekStatusViewController: UIViewController  {
     
     func initTrekButton(){
     
-       
-<<<<<<< HEAD
-        currentTrek = Trek(trekNumber:0)
-=======
+        
         currentTrek = Trek(trekNumber:5, percentComplete:0, isLocked:true)
->>>>>>> FETCH_HEAD
-        currentTrek.isLocked = false
-        currentTrek.isCompleted = false
+
         var btnTrek:TrekButton!
         
         if singleton.isPad() {

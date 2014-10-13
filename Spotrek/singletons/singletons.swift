@@ -71,6 +71,7 @@ class SharedEnvironment {
     }
     
     func updateState(){
+      
         var trekAlpha = Trek(trekNumber:0, percentComplete:0, isLocked:false)
         var trekBeta = Trek(trekNumber:1, percentComplete:20, isLocked:false)
         var trekGamma = Trek(trekNumber:2, percentComplete:0, isLocked:true)
