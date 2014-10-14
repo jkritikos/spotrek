@@ -44,6 +44,7 @@ class TrekButton: RingButton {
         super.init(frame: frame, color: color1, highlightColor: color2)
         self.trek = trek
         
+        
         initNameLabel()
         initCompletionLabel()
         initImages()
@@ -71,6 +72,7 @@ class TrekButton: RingButton {
     func initCompletionLabel(){
     
         if trek.isLocked || trek.isCompleted {
+           
             
            
             return
@@ -117,6 +119,8 @@ class TrekButton: RingButton {
                 let bgImage = UIImage(contentsOfFile: imagePath)
                 let bgImageView = UIImageView(image: bgImage)
                 self.addSubview(bgImageView)
+
+                self.userInteractionEnabled = false
 
             return
         }

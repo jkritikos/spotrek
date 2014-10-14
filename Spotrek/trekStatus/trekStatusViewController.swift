@@ -8,9 +8,9 @@
 
 import UIKit
 
-class trekStatusViewController: UIViewController  {
+class trekStatusViewController: UIViewController,UINamedViewController {
     
-    private let name = "trekStatusViewController"
+    var name = "trekStatusViewController"
     private let singleton = SharedEnvironment.Instance()
 
     private var navigationDelegate:YBNavigationControllerDelegate!
