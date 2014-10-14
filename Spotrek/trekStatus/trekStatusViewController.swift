@@ -59,10 +59,11 @@ class trekStatusViewController: UIViewController  {
     
     func initTrekButton(){
     
-       
-        currentTrek = Trek(trekNumber:5, percentComplete:0, isLocked:true)
-        currentTrek.isLocked = false
-        currentTrek.isCompleted = false
+
+        currentTrek = SharedEnvironment.Instance().currentTrek
+//        currentTrek = Trek(trekNumber:5, percentComplete:0, isLocked:true)
+//        currentTrek.isLocked = false
+//        currentTrek.isCompleted = false
         
       
         let btnTrek = TrekButton(frame: CGRectMake(0, 0, 110, 110), trek: currentTrek)

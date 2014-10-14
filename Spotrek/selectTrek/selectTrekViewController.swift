@@ -8,7 +8,7 @@
 
 import UIKit
 
-class selectTrekViewController: UIViewController {
+class selectTrekViewController: UIViewController, RingButtonActions {
     
     
     var navigationDelegate:YBNavigationControllerDelegate!
@@ -47,6 +47,20 @@ class selectTrekViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func ringButtonSingleTap(sender: AnyObject){
+        let button = sender as TrekButton
+        SharedEnvironment.Instance().currentTrek = button.trek
+        
+        //open trek selection screen
+        navigationDelegate.typeOfTransition = YBTransitionType.CrossDisolve
+        navigationDelegate.presentationDuration = 0.5
+        navigationDelegate.dismissalDuration = 0.5
+        navigationController?.delegate  = navigationDelegate
+        let trekStatus = trekStatusViewController(nibName: nil,bundle: nil)
+        trekStatus.modalPresentationStyle = UIModalPresentationStyle.Custom
+        navigationController?.pushViewController(trekStatus, animated: true)
     }
     
     func buildTrekSelectionView(){
@@ -92,28 +106,9 @@ class selectTrekViewController: UIViewController {
         
         for trek in trekList {
             var trekButton = TrekButton(frame: CGRectMake(currentLeftValue, 20, 108, 108), trek:trek)
+            trekButton.delegate = self
+            
             self.trekScrollView.addSubview(trekButton)
-//            //trek label
-//            var trekLabel = UILabel(frame: CGRectMake(currentLeftValue, 150, 114, 40))
-//            trekLabel.text = trek.name
-//            trekLabel.font = UIFont(name: "GillSans", size: 24.0)
-//            trekLabel.textAlignment = NSTextAlignment.Center
-//            trekLabel.textColor = UIColor.whiteColor()
-//            
-////            //trek button
-//            if(trek.isLocked){
-//                var trekButton = UIImageView(image: UIImage(named: "images/ipad/trekSelection/locked.png"))
-//                trekButton.frame = CGRectMake(currentLeftValue, 20, 108, 108)
-//                self.trekScrollView.addSubview(trekButton)
-//            } else {
-//                var frame = CGRectMake(currentLeftValue, 20, 108, 108)
-//                var trekButton = RingButton(frame: frame, color: UIColor.blueColor(), highlightColor: UIColor.blueColor())
-//                self.trekScrollView.addSubview(trekButton)
-//            }
-//            
-//            
-//            self.trekScrollView.addSubview(trekLabel)
-//            
             currentLeftValue += leftOffset
         }
         
@@ -134,13 +129,7 @@ class selectTrekViewController: UIViewController {
         }else{
         
         
-            navigationDelegate.typeOfTransition = YBTransitionType.CrossDisolve
-            navigationDelegate.presentationDuration = 0.5
-            navigationDelegate.dismissalDuration = 0.5
-            navigationController?.delegate  = navigationDelegate
-            let trekStatus = trekStatusViewController(nibName: nil,bundle: nil)
-            trekStatus.modalPresentationStyle = UIModalPresentationStyle.Custom
-            navigationController?.pushViewController(trekStatus, animated: true)
+            
         }
     }
    
