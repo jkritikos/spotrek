@@ -142,13 +142,6 @@ class trekStatusViewController: UIViewController  {
         var offsetX:CGFloat!
         offsetX = 136.0
         
-       /*
-        spring(0.3, {
-            self.leftView.center = CGPointMake(self.leftView.center.x - offsetX, self.leftView.center.y)
-            self.rightView.center = CGPointMake(self.rightView.center.x + offsetX, self.rightView.center.y)
-        })
-        */
-        
         UIView.animateWithDuration( 0.3) { () -> Void in
             
             self.leftView.center = CGPointMake(self.leftView.center.x - offsetX, self.leftView.center.y)
@@ -157,9 +150,31 @@ class trekStatusViewController: UIViewController  {
     
     }
     
-    func closeCurtains(){
-    
-    
+    func closeCurtains(popOnCompletion:Bool){
+        
+        var offsetX:CGFloat!
+        offsetX = 136.0
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            
+            self.leftView.center = CGPointMake(self.leftView.center.x + offsetX, self.leftView.center.y)
+            self.rightView.center = CGPointMake(self.rightView.center.x - offsetX, self.rightView.center.y)
+            
+            }, completion: {(Bool) -> Void in
+            
+                    if popOnCompletion {
+                    
+                        //restore saved values
+                        self.navigationDelegate.dismissalDuration = self.savedDismissalDuration
+                        self.navigationDelegate.typeOfTransition = self.savedTransitionType
+                        self.navigationController?.popViewControllerAnimated(true)
+                    
+                    }
+        })
+        
+        
+        
+        
+      
     
     }
     
@@ -167,11 +182,7 @@ class trekStatusViewController: UIViewController  {
         
         if (event.touchesForView(self.view)?.count > 1 ) {
 
-            //restore saved values
-            navigationDelegate.dismissalDuration = savedDismissalDuration
-            navigationDelegate.typeOfTransition = savedTransitionType
-            navigationController?.popViewControllerAnimated(true)
-            
+           self.closeCurtains(true)
         }
     
     

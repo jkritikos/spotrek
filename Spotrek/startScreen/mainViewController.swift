@@ -10,6 +10,7 @@ import UIKit
 
 class mainViewController: UIViewController, UINamedViewController, RingButtonActions, HomeSideMenuActions {
 
+    
     var name = "mainViewController"
     let singleton = SharedEnvironment.Instance()
     
@@ -28,8 +29,11 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
     var sideMenuButton: UIButton!
     var sideMenuButtonCenter: CGPoint!
     
+    
+    
+    
     override func loadView() {
-        
+    
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
         self.view.backgroundColor=UIColor.whiteColor()
         
@@ -190,6 +194,10 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
                         self.sideMenuButton.enabled = true
                 })
         })
+        
+        
+     
+    
     }
     
     override func viewDidLoad() {
