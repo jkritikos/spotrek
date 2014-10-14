@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import AVFoundation
+
 
 class SharedEnvironment {
     
@@ -68,6 +70,7 @@ class SharedEnvironment {
     }
     
     func updateState(){
+      
         var trekAlpha = Trek(trekNumber:0, percentComplete:0, isLocked:false)
         var trekBeta = Trek(trekNumber:1, percentComplete:20, isLocked:false)
         var trekGamma = Trek(trekNumber:2, percentComplete:0, isLocked:true)
@@ -170,4 +173,86 @@ class SharedEnvironment {
         return coordinates
     }
 }
+
+//MARK: SharedAudioPlayer Singleton
+
+class SharedAudioPlayer {
+    
+    private var mainLoopAudioPlayer:AVAudioPlayer!
+    private let mainLoopFileName:String! = "MTB_1"
+    private let mainLoopFileType:String! = "wav"
+    
+    class func Instance() -> SharedAudioPlayer! {
+        
+        struct Static {
+            
+            static var instance: SharedAudioPlayer? = nil
+            static var onceToken: dispatch_once_t = 0
+        }
+        
+        dispatch_once(&Static.onceToken) {
+            
+            Static.instance = self()
+        }
+        
+        return Static.instance!
+    }
+    
+    required init() {
+        
+        
+        self.initMainLoop()
+        
+    }
+    
+    
+    private func initMainLoop(){
+        
+        //initialize mainLoopAudioPlayer
+        var soundFilePath:String! = NSBundle.mainBundle().pathForResource(self.mainLoopFileName, ofType: self.mainLoopFileType, inDirectory:nil)
+        var soundFileURL:NSURL! = NSURL(fileURLWithPath: soundFilePath)
+        self.mainLoopAudioPlayer = AVAudioPlayer(contentsOfURL: soundFileURL, error: nil)
+        self.mainLoopAudioPlayer.numberOfLoops = -1 //infinite
+        
+    }
+    
+    func stopMainLoop() {
+        
+        self.mainLoopAudioPlayer.stop() //after this is called player must be re inititialized
+        
+    }
+    
+    func pauseMainLoop() {
+        
+        self.mainLoopAudioPlayer.pause()
+        
+    }
+    
+    
+    
+    func resumeMainLoop(){
+        
+        self.mainLoopAudioPlayer.play()
+    }
+    
+    
+    func restartMainLoop(){
+        
+        self.initMainLoop()
+        self.resumeMainLoop()
+        
+    }
+    
+    
+    func mainLoopIsPlaying()->Bool{
+        
+        return self.mainLoopAudioPlayer.playing
+    }
+    
+    
+}
+
+
+
+
 

@@ -10,6 +10,7 @@ import UIKit
 
 class mainViewController: UIViewController, UINamedViewController, RingButtonActions, HomeSideMenuActions {
 
+    
     var name = "mainViewController"
     let singleton = SharedEnvironment.Instance()
     
@@ -28,8 +29,11 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
     var sideMenuButton: UIButton!
     var sideMenuButtonCenter: CGPoint!
     
+    
+    
+    
     override func loadView() {
-        
+    
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
         self.view.backgroundColor=UIColor.whiteColor()
         
@@ -153,9 +157,10 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
     
     
     override func viewDidAppear(animated: Bool) {
-        
+  
+        SharedAudioPlayer.Instance().resumeMainLoop()
+
         setupHomeElements()
-        
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.backgroundImage.alpha = 1.0
             }, completion: {
@@ -189,6 +194,10 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
                         self.sideMenuButton.enabled = true
                 })
         })
+        
+        
+     
+    
     }
     
     override func viewDidLoad() {
