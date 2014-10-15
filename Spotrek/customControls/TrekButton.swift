@@ -126,7 +126,11 @@ class TrekButton: RingButton {
         }
         
         if self.trek.isCompleted {
-        
+            let imagePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("trekSelection/tick.png")
+            let tickImage = UIImage(contentsOfFile: imagePath)
+            let tickImageView = UIImageView(image:tickImage)
+            tickImageView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+            self.addSubview(tickImageView)
             //TODO: add completed image as background image
         }
         

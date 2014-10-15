@@ -73,7 +73,7 @@ class SharedEnvironment {
       
         var trekAlpha = Trek(trekNumber:0, percentComplete:0, isLocked:false)
         var trekBeta = Trek(trekNumber:1, percentComplete:20, isLocked:false)
-        var trekGamma = Trek(trekNumber:2, percentComplete:0, isLocked:true)
+        var trekGamma = Trek(trekNumber:2, percentComplete:100, isLocked:false)
         var trekDelta = Trek(trekNumber:3, percentComplete:0, isLocked:true)
         var trekEpsilon = Trek(trekNumber:4, percentComplete:0, isLocked:true)
         var trekZeta = Trek(trekNumber:5, percentComplete:0, isLocked:true)
