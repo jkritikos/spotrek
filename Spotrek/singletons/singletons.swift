@@ -12,8 +12,10 @@ import AVFoundation
 
 
 class SharedEnvironment {
-    
+    //the currently selected trek
     var currentTrek:Trek!
+    //our user
+    var currentUser:User!
     
     var trekColors =    ["Walker":"39bbea",
         "Sailor": "fe9364",

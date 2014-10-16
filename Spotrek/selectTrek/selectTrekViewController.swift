@@ -82,11 +82,6 @@ class selectTrekViewController: UIViewController, RingButtonActions {
         
         populateTrekScrollView()
         
-        //pws kanw add elements sto scrollview? subviews? me incrementing CGRectMake?
-        //pws kane detect poio element patithike mesa sto scrollview?
-        //pws apofeugoume ta karfwta strings? .plist?
-        //gesture recognizer UITapGestureRecognizer, HitTest
-        
         //present
         self.view.addSubview(backgroundImageView)
         self.view.addSubview(topLabel)
