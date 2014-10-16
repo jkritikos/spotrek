@@ -367,15 +367,29 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
     //MARK: SideMenuButton Delegate
     func homeSideMenuButtonWasPressed(buttonItem: UIButton) {
         
+        //generic view transition setup
+        self.navigationDelegate = YBNavigationControllerDelegate()
+        self.navigationDelegate.typeOfTransition = YBTransitionType.CrossDisolve
+        self.navigationDelegate.presentationDuration = 0.5
+        self.navigationDelegate.dismissalDuration = 0.5
+        self.navigationController?.delegate  = self.navigationDelegate
+        
         switch buttonItem.tag {
-        case HomeSideMenuButtonType.None.toRaw(): break
-        case HomeSideMenuButtonType.Profile.toRaw(): break
-        case HomeSideMenuButtonType.Gallery.toRaw(): break
-        case HomeSideMenuButtonType.Settings.toRaw(): break
-        case HomeSideMenuButtonType.Store.toRaw(): break
-        case HomeSideMenuButtonType.Hints.toRaw(): break
-        default:
-            break
+            case HomeSideMenuButtonType.None.toRaw(): break
+            
+            //Profile summary
+            case HomeSideMenuButtonType.Profile.toRaw():
+                let profileSummaryView = ProfileSummaryViewController(nibName: nil,bundle: nil)
+                profileSummaryView.modalPresentationStyle = UIModalPresentationStyle.Custom
+                self.navigationController?.pushViewController(profileSummaryView, animated: true)
+                break
+            
+            case HomeSideMenuButtonType.Gallery.toRaw(): break
+            case HomeSideMenuButtonType.Settings.toRaw(): break
+            case HomeSideMenuButtonType.Store.toRaw(): break
+            case HomeSideMenuButtonType.Hints.toRaw(): break
+            default:
+                break
     
         }
     }
