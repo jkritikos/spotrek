@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		034DBA0919E40EBF00C905DA /* images in Resources */ = {isa = PBXBuildFile; fileRef = 034DBA0819E40EBF00C905DA /* images */; };
+		03AC61ED19F05D400079A51D /* ProfileSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC61EC19F05D400079A51D /* ProfileSummaryTableViewCell.swift */; };
 		03DAC4ED19E51F0800068069 /* Trek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC4EC19E51F0800068069 /* Trek.swift */; };
 		03DDD15B19EBB52D00133FBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15A19EBB52D00133FBC /* User.swift */; };
 		03DDD15D19EE6E9A00133FBC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15C19EE6E9A00133FBC /* Question.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		034DBA0819E40EBF00C905DA /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		03AC61EC19F05D400079A51D /* ProfileSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSummaryTableViewCell.swift; path = Spotrek/customCells/ProfileSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		03DAC4EC19E51F0800068069 /* Trek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trek.swift; path = Spotrek/models/Trek.swift; sourceTree = "<group>"; };
 		03DDD15A19EBB52D00133FBC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spotrek/models/User.swift; sourceTree = "<group>"; };
 		03DDD15C19EE6E9A00133FBC /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Spotrek/models/Question.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03AC61EB19EFCF2E0079A51D /* customCells */ = {
+			isa = PBXGroup;
+			children = (
+				03AC61EC19F05D400079A51D /* ProfileSummaryTableViewCell.swift */,
+			);
+			name = customCells;
+			sourceTree = "<group>";
+		};
 		03DAC4EB19E51D3D00068069 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		0E1D8BD319DF092A00BC003C = {
 			isa = PBXGroup;
 			children = (
+				03AC61EB19EFCF2E0079A51D /* customCells */,
 				03DDD15E19EFB8A700133FBC /* profileSummary */,
 				0E7411AD19E9991F008D8B0A /* AVFoundation.framework */,
 				03DAC4EB19E51D3D00068069 /* models */,
@@ -422,6 +433,7 @@
 				159404C419E937B200B4A3CA /* UINamedViewController.swift in Sources */,
 				0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */,
 				0EDFD53E19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift in Sources */,
+				03AC61ED19F05D400079A51D /* ProfileSummaryTableViewCell.swift in Sources */,
 				15BB0B9119E4670C00340337 /* RingButtonActions.swift in Sources */,
 				0E1D8C0319DF09DC00BC003C /* mainViewController.swift in Sources */,
 				15BB0B9719E4672900340337 /* SpringAnimation.swift in Sources */,

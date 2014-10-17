@@ -9,12 +9,15 @@
 import Foundation
 import UIKit
 
-class ProfileSummaryViewController: UIViewController {
+class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    //navigation components
     var navigationDelegate:YBNavigationControllerDelegate!
     var savedTransitionType: YBTransitionType!
     var savedDismissalDuration : NSTimeInterval!
+    
+    //UI components
+    var optionsTableView: UITableView!
     
     override func loadView() {
         
@@ -32,6 +35,9 @@ class ProfileSummaryViewController: UIViewController {
         savedTransitionType = navigationDelegate.typeOfTransition
         savedDismissalDuration = navigationDelegate.dismissalDuration
         
+        self.optionsTableView.dataSource = self
+        self.optionsTableView.delegate = self
+        
         // build the view
         
     }
@@ -43,7 +49,6 @@ class ProfileSummaryViewController: UIViewController {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
-        
         if (event.touchesForView(self.view)?.count > 1 ) {
             
             //restore saved values
@@ -52,10 +57,24 @@ class ProfileSummaryViewController: UIViewController {
             navigationController?.popViewControllerAnimated(true)
             
             
-        }else{
+        } else{
             
             
             
         }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: ProfileSummaryTableViewCell = self.optionsTableView.dequeueReusableCellWithIdentifier("profileCell") as ProfileSummaryTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
 }
