@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Spotrek/selectTrek/selectTrekViewController.swift"
+            filePath = "Spotrek/selectTrek/TrekSelectViewController.swift"
             timestampString = "434913511.149722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
             endingLineNumber = "11"
-            landmarkName = "selectTrekViewController"
+            landmarkName = "TrekSelectViewController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>

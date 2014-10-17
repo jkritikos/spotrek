@@ -9,24 +9,24 @@
 import Foundation
 import UIKit
 
-class YBNavigationControllerDelegate:NSObject,UINavigationControllerDelegate{
+class NavigationControllerDelegate:NSObject,UINavigationControllerDelegate{
     
-    var animator:YBBasicAnimator!
+    var animator:BasicAnimator!
     
-    let left2RightAnimator:YBLeftToRightAnimator!
-    let right2LeftAnimator:YBRightToLeftAnimator!
-    let crossDisolveAnimator:YBCrossDisolveAnimator!
+    let left2RightAnimator:LeftToRightAnimator!
+    let right2LeftAnimator:RightToLeftAnimator!
+    let crossDisolveAnimator:CrossDisolveAnimator!
     
-    var typeOfTransition:YBTransitionType
+    var typeOfTransition:TransitionType
     var presentationDuration:NSTimeInterval!
     var dismissalDuration:NSTimeInterval!
     
     override init() {
    
-        left2RightAnimator = YBLeftToRightAnimator()
-        right2LeftAnimator = YBRightToLeftAnimator()
-        crossDisolveAnimator =  YBCrossDisolveAnimator()
-        typeOfTransition = YBTransitionType.RightToLeft
+        left2RightAnimator = LeftToRightAnimator()
+        right2LeftAnimator = RightToLeftAnimator()
+        crossDisolveAnimator =  CrossDisolveAnimator()
+        typeOfTransition = TransitionType.RightToLeft
         animator = right2LeftAnimator
         presentationDuration=0.3
         dismissalDuration=0.3

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class trekStatusViewController: UIViewController,UINamedViewController {
+class TrekStatusViewController: UIViewController,UINamedController {
     
     var name = "trekStatusViewController"
     private let singleton = SharedEnvironment.Instance()
 
-    private var navigationDelegate:YBNavigationControllerDelegate!
-    private var savedTransitionType: YBTransitionType!
+    private var navigationDelegate:NavigationControllerDelegate!
+    private var savedTransitionType: TransitionType!
     private var savedDismissalDuration : NSTimeInterval!
     
     
@@ -41,7 +41,7 @@ class trekStatusViewController: UIViewController,UINamedViewController {
         self.view.multipleTouchEnabled = true
         
         //Keep transitionType and duration in order to use them during dismissal
-        navigationDelegate = navigationController?.delegate as YBNavigationControllerDelegate
+        navigationDelegate = navigationController?.delegate as NavigationControllerDelegate
         savedTransitionType = navigationDelegate.typeOfTransition
         savedDismissalDuration = navigationDelegate.dismissalDuration
         // Do any additional setup after loading the view.

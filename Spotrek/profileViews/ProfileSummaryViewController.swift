@@ -12,8 +12,8 @@ import UIKit
 class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //navigation components
-    var navigationDelegate:YBNavigationControllerDelegate!
-    var savedTransitionType: YBTransitionType!
+    var navigationDelegate:NavigationControllerDelegate!
+    var savedTransitionType: TransitionType!
     var savedDismissalDuration : NSTimeInterval!
     
     //UI components
@@ -31,7 +31,7 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
         self.view.multipleTouchEnabled = true
         
         //Keep transitionType and duration in order to use them during dismissal
-        navigationDelegate = navigationController?.delegate as YBNavigationControllerDelegate
+        navigationDelegate = navigationController?.delegate as NavigationControllerDelegate
         savedTransitionType = navigationDelegate.typeOfTransition
         savedDismissalDuration = navigationDelegate.dismissalDuration
         

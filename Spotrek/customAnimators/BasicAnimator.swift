@@ -13,7 +13,7 @@
 import Foundation
 import UIKit
 
-class YBBasicAnimator:NSObject, UIViewControllerAnimatedTransitioning {
+class BasicAnimator:NSObject, UIViewControllerAnimatedTransitioning {
     
     var presentationDuration: NSTimeInterval!
     var dismissalDuration: NSTimeInterval!

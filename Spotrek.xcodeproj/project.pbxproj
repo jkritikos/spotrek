@@ -9,32 +9,32 @@
 /* Begin PBXBuildFile section */
 		034DBA0919E40EBF00C905DA /* images in Resources */ = {isa = PBXBuildFile; fileRef = 034DBA0819E40EBF00C905DA /* images */; };
 		03AC61ED19F05D400079A51D /* ProfileSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC61EC19F05D400079A51D /* ProfileSummaryTableViewCell.swift */; };
+		03AC61F019F157EB0079A51D /* ProfileSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC61EF19F157EB0079A51D /* ProfileSummaryViewController.swift */; };
+		03AC61F219F15A830079A51D /* TrekSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC61F119F15A830079A51D /* TrekSelectViewController.swift */; };
 		03DAC4ED19E51F0800068069 /* Trek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC4EC19E51F0800068069 /* Trek.swift */; };
 		03DDD15B19EBB52D00133FBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15A19EBB52D00133FBC /* User.swift */; };
 		03DDD15D19EE6E9A00133FBC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15C19EE6E9A00133FBC /* Question.swift */; };
-		03DDD16019EFB8CA00133FBC /* profileSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15F19EFB8CA00133FBC /* profileSummaryViewController.swift */; };
 		0E1170D319E7D34B00A094FC /* GILLSANS.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0E1170D219E7D34B00A094FC /* GILLSANS.TTF */; };
 		0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE119DF092A00BC003C /* AppDelegate.swift */; };
 		0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE819DF092A00BC003C /* Images.xcassets */; };
 		0E1D8BF819DF092A00BC003C /* SpotrekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */; };
-		0E1D8C0319DF09DC00BC003C /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8C0219DF09DC00BC003C /* mainViewController.swift */; };
+		0E1D8C0319DF09DC00BC003C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8C0219DF09DC00BC003C /* MainViewController.swift */; };
 		0E7411AA19E997EB008D8B0A /* MTB_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A719E997EB008D8B0A /* MTB_1.wav */; };
 		0E7411AB19E997EB008D8B0A /* MTB_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A819E997EB008D8B0A /* MTB_2.wav */; };
 		0E7411AC19E997EB008D8B0A /* MTB_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A919E997EB008D8B0A /* MTB_3.wav */; };
 		0E7411AE19E9991F008D8B0A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7411AD19E9991F008D8B0A /* AVFoundation.framework */; };
 		0ED6BAAE19E6C971001CABB6 /* TrekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6BAAD19E6C971001CABB6 /* TrekButton.swift */; };
-		0EDFD53E19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */; };
-		0EDFD54219E1BE1300AF87C2 /* YBBasicAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */; };
-		0EDFD54419E1BE5200AF87C2 /* SPEnumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54319E1BE5200AF87C2 /* SPEnumerations.swift */; };
-		0EDFD54619E1BF0900AF87C2 /* YBRightToLeftAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54519E1BF0900AF87C2 /* YBRightToLeftAnimator.swift */; };
-		0EDFD54819E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */; };
-		0EDFD54B19E1C7C200AF87C2 /* selectTrekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */; };
-		0EDFD54E19E1CC5E00AF87C2 /* trekStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */; };
+		0EDFD53E19E1BCCC00AF87C2 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD53D19E1BCCC00AF87C2 /* NavigationControllerDelegate.swift */; };
+		0EDFD54219E1BE1300AF87C2 /* BasicAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54119E1BE1300AF87C2 /* BasicAnimator.swift */; };
+		0EDFD54419E1BE5200AF87C2 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54319E1BE5200AF87C2 /* Enumerations.swift */; };
+		0EDFD54619E1BF0900AF87C2 /* RightToLeftAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54519E1BF0900AF87C2 /* RightToLeftAnimator.swift */; };
+		0EDFD54819E1BF7800AF87C2 /* CrossDisolveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54719E1BF7800AF87C2 /* CrossDisolveAnimator.swift */; };
+		0EDFD54E19E1CC5E00AF87C2 /* TrekStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54D19E1CC5E00AF87C2 /* TrekStatusViewController.swift */; };
 		159404C019E8324C00B4A3CA /* SizePositionCoordinatesiPad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159404BF19E8324C00B4A3CA /* SizePositionCoordinatesiPad.plist */; };
-		159404C419E937B200B4A3CA /* UINamedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159404C319E937B200B4A3CA /* UINamedViewController.swift */; };
+		159404C419E937B200B4A3CA /* UINamedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159404C319E937B200B4A3CA /* UINamedController.swift */; };
 		15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B477D319E5C11A00D8A83D /* HomeSideMenu.swift */; };
 		15B477D619E5CB8900D8A83D /* HomeSideMenuActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B477D519E5CB8900D8A83D /* HomeSideMenuActions.swift */; };
-		15BB0B8819E466E100340337 /* YBLeftToRightAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B8719E466E100340337 /* YBLeftToRightAnimator.swift */; };
+		15BB0B8819E466E100340337 /* LeftToRightAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B8719E466E100340337 /* LeftToRightAnimator.swift */; };
 		15BB0B8B19E466F000340337 /* RingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B8A19E466F000340337 /* RingButton.swift */; };
 		15BB0B8E19E466F800340337 /* MathHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B8D19E466F800340337 /* MathHelpers.swift */; };
 		15BB0B9119E4670C00340337 /* RingButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B9019E4670C00340337 /* RingButtonActions.swift */; };
@@ -56,10 +56,11 @@
 /* Begin PBXFileReference section */
 		034DBA0819E40EBF00C905DA /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		03AC61EC19F05D400079A51D /* ProfileSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSummaryTableViewCell.swift; path = Spotrek/customCells/ProfileSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		03AC61EF19F157EB0079A51D /* ProfileSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSummaryViewController.swift; path = Spotrek/profileViews/ProfileSummaryViewController.swift; sourceTree = "<group>"; };
+		03AC61F119F15A830079A51D /* TrekSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrekSelectViewController.swift; path = Spotrek/trekSelect/TrekSelectViewController.swift; sourceTree = "<group>"; };
 		03DAC4EC19E51F0800068069 /* Trek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trek.swift; path = Spotrek/models/Trek.swift; sourceTree = "<group>"; };
 		03DDD15A19EBB52D00133FBC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spotrek/models/User.swift; sourceTree = "<group>"; };
 		03DDD15C19EE6E9A00133FBC /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Spotrek/models/Question.swift; sourceTree = "<group>"; };
-		03DDD15F19EFB8CA00133FBC /* profileSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profileSummaryViewController.swift; path = Spotrek/profileSummary/profileSummaryViewController.swift; sourceTree = "<group>"; };
 		0E1170D219E7D34B00A094FC /* GILLSANS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = GILLSANS.TTF; path = fonts/GILLSANS.TTF; sourceTree = "<group>"; };
 		0E1D8BDC19DF092A00BC003C /* Spotrek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotrek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1D8BE019DF092A00BC003C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,24 +69,23 @@
 		0E1D8BF119DF092A00BC003C /* SpotrekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotrekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1D8BF619DF092A00BC003C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotrekTests.swift; sourceTree = "<group>"; };
-		0E1D8C0219DF09DC00BC003C /* mainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = mainViewController.swift; path = Spotrek/startScreen/mainViewController.swift; sourceTree = "<group>"; };
+		0E1D8C0219DF09DC00BC003C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Spotrek/startScreen/MainViewController.swift; sourceTree = "<group>"; };
 		0E7411A719E997EB008D8B0A /* MTB_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_1.wav; path = sounds/MTB_1.wav; sourceTree = "<group>"; };
 		0E7411A819E997EB008D8B0A /* MTB_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_2.wav; path = sounds/MTB_2.wav; sourceTree = "<group>"; };
 		0E7411A919E997EB008D8B0A /* MTB_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_3.wav; path = sounds/MTB_3.wav; sourceTree = "<group>"; };
 		0E7411AD19E9991F008D8B0A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0ED6BAAD19E6C971001CABB6 /* TrekButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrekButton.swift; sourceTree = "<group>"; };
-		0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBNavigationControllerDelegate.swift; path = Spotrek/customAnimators/YBNavigationControllerDelegate.swift; sourceTree = "<group>"; };
-		0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBBasicAnimator.swift; path = Spotrek/customAnimators/YBBasicAnimator.swift; sourceTree = "<group>"; };
-		0EDFD54319E1BE5200AF87C2 /* SPEnumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPEnumerations.swift; path = Spotrek/customAnimators/SPEnumerations.swift; sourceTree = "<group>"; };
-		0EDFD54519E1BF0900AF87C2 /* YBRightToLeftAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBRightToLeftAnimator.swift; path = Spotrek/customAnimators/YBRightToLeftAnimator.swift; sourceTree = "<group>"; };
-		0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBCrossDisolveAnimator.swift; path = Spotrek/customAnimators/YBCrossDisolveAnimator.swift; sourceTree = "<group>"; };
-		0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = selectTrekViewController.swift; path = Spotrek/selectTrek/selectTrekViewController.swift; sourceTree = "<group>"; };
-		0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = trekStatusViewController.swift; path = Spotrek/trekStatus/trekStatusViewController.swift; sourceTree = "<group>"; };
+		0EDFD53D19E1BCCC00AF87C2 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationControllerDelegate.swift; path = Spotrek/customAnimators/NavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		0EDFD54119E1BE1300AF87C2 /* BasicAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicAnimator.swift; path = Spotrek/customAnimators/BasicAnimator.swift; sourceTree = "<group>"; };
+		0EDFD54319E1BE5200AF87C2 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enumerations.swift; path = Spotrek/customAnimators/Enumerations.swift; sourceTree = "<group>"; };
+		0EDFD54519E1BF0900AF87C2 /* RightToLeftAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightToLeftAnimator.swift; path = Spotrek/customAnimators/RightToLeftAnimator.swift; sourceTree = "<group>"; };
+		0EDFD54719E1BF7800AF87C2 /* CrossDisolveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossDisolveAnimator.swift; path = Spotrek/customAnimators/CrossDisolveAnimator.swift; sourceTree = "<group>"; };
+		0EDFD54D19E1CC5E00AF87C2 /* TrekStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrekStatusViewController.swift; path = Spotrek/trekStatus/TrekStatusViewController.swift; sourceTree = "<group>"; };
 		159404BF19E8324C00B4A3CA /* SizePositionCoordinatesiPad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SizePositionCoordinatesiPad.plist; sourceTree = "<group>"; };
-		159404C319E937B200B4A3CA /* UINamedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINamedViewController.swift; sourceTree = "<group>"; };
+		159404C319E937B200B4A3CA /* UINamedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINamedController.swift; sourceTree = "<group>"; };
 		15B477D319E5C11A00D8A83D /* HomeSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeSideMenu.swift; path = Spotrek/startScreen/HomeSideMenu.swift; sourceTree = "<group>"; };
 		15B477D519E5CB8900D8A83D /* HomeSideMenuActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSideMenuActions.swift; sourceTree = "<group>"; };
-		15BB0B8719E466E100340337 /* YBLeftToRightAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YBLeftToRightAnimator.swift; path = Spotrek/customAnimators/YBLeftToRightAnimator.swift; sourceTree = "<group>"; };
+		15BB0B8719E466E100340337 /* LeftToRightAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftToRightAnimator.swift; path = Spotrek/customAnimators/LeftToRightAnimator.swift; sourceTree = "<group>"; };
 		15BB0B8A19E466F000340337 /* RingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingButton.swift; sourceTree = "<group>"; };
 		15BB0B8D19E466F800340337 /* MathHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathHelpers.swift; sourceTree = "<group>"; };
 		15BB0B9019E4670C00340337 /* RingButtonActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingButtonActions.swift; sourceTree = "<group>"; };
@@ -121,6 +121,14 @@
 			name = customCells;
 			sourceTree = "<group>";
 		};
+		03AC61EE19F156C90079A51D /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E7411AD19E9991F008D8B0A /* AVFoundation.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
 		03DAC4EB19E51D3D00068069 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,12 +139,12 @@
 			name = models;
 			sourceTree = "<group>";
 		};
-		03DDD15E19EFB8A700133FBC /* profileSummary */ = {
+		03DDD15E19EFB8A700133FBC /* profileViews */ = {
 			isa = PBXGroup;
 			children = (
-				03DDD15F19EFB8CA00133FBC /* profileSummaryViewController.swift */,
+				03AC61EF19F157EB0079A51D /* ProfileSummaryViewController.swift */,
 			);
-			name = profileSummary;
+			name = profileViews;
 			sourceTree = "<group>";
 		};
 		0E1170D119E7D33800A094FC /* fonts */ = {
@@ -151,8 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				03AC61EB19EFCF2E0079A51D /* customCells */,
-				03DDD15E19EFB8A700133FBC /* profileSummary */,
-				0E7411AD19E9991F008D8B0A /* AVFoundation.framework */,
+				03DDD15E19EFB8A700133FBC /* profileViews */,
 				03DAC4EB19E51D3D00068069 /* models */,
 				15BB0B9219E4671D00340337 /* singletons */,
 				15BB0B8F19E4670C00340337 /* protocols */,
@@ -161,7 +168,7 @@
 				15BB0B8919E466F000340337 /* customControls */,
 				0EDFD53C19E1BB5A00AF87C2 /* customAnimators */,
 				0E1D8C0119DF09A100BC003C /* startScreen */,
-				0EDFD54919E1C79600AF87C2 /* selectTrek */,
+				0EDFD54919E1C79600AF87C2 /* trekSelect */,
 				0EDFD54C19E1CC3900AF87C2 /* trekStatus */,
 				0E1D8BDE19DF092A00BC003C /* Spotrek */,
 				0E1D8BF419DF092A00BC003C /* SpotrekTests */,
@@ -191,6 +198,7 @@
 		0E1D8BDF19DF092A00BC003C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03AC61EE19F156C90079A51D /* frameworks */,
 				0E7411A619E997A4008D8B0A /* sounds */,
 				0E1170D119E7D33800A094FC /* fonts */,
 				034DBA0819E40EBF00C905DA /* images */,
@@ -220,7 +228,7 @@
 		0E1D8C0119DF09A100BC003C /* startScreen */ = {
 			isa = PBXGroup;
 			children = (
-				0E1D8C0219DF09DC00BC003C /* mainViewController.swift */,
+				0E1D8C0219DF09DC00BC003C /* MainViewController.swift */,
 				15B477D319E5C11A00D8A83D /* HomeSideMenu.swift */,
 			);
 			name = startScreen;
@@ -239,28 +247,28 @@
 		0EDFD53C19E1BB5A00AF87C2 /* customAnimators */ = {
 			isa = PBXGroup;
 			children = (
-				0EDFD54319E1BE5200AF87C2 /* SPEnumerations.swift */,
-				0EDFD54119E1BE1300AF87C2 /* YBBasicAnimator.swift */,
-				0EDFD54519E1BF0900AF87C2 /* YBRightToLeftAnimator.swift */,
-				15BB0B8719E466E100340337 /* YBLeftToRightAnimator.swift */,
-				0EDFD54719E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift */,
-				0EDFD53D19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift */,
+				0EDFD54319E1BE5200AF87C2 /* Enumerations.swift */,
+				0EDFD54119E1BE1300AF87C2 /* BasicAnimator.swift */,
+				0EDFD54519E1BF0900AF87C2 /* RightToLeftAnimator.swift */,
+				15BB0B8719E466E100340337 /* LeftToRightAnimator.swift */,
+				0EDFD54719E1BF7800AF87C2 /* CrossDisolveAnimator.swift */,
+				0EDFD53D19E1BCCC00AF87C2 /* NavigationControllerDelegate.swift */,
 			);
 			name = customAnimators;
 			sourceTree = "<group>";
 		};
-		0EDFD54919E1C79600AF87C2 /* selectTrek */ = {
+		0EDFD54919E1C79600AF87C2 /* trekSelect */ = {
 			isa = PBXGroup;
 			children = (
-				0EDFD54A19E1C7C200AF87C2 /* selectTrekViewController.swift */,
+				03AC61F119F15A830079A51D /* TrekSelectViewController.swift */,
 			);
-			name = selectTrek;
+			name = trekSelect;
 			sourceTree = "<group>";
 		};
 		0EDFD54C19E1CC3900AF87C2 /* trekStatus */ = {
 			isa = PBXGroup;
 			children = (
-				0EDFD54D19E1CC5E00AF87C2 /* trekStatusViewController.swift */,
+				0EDFD54D19E1CC5E00AF87C2 /* TrekStatusViewController.swift */,
 			);
 			name = trekStatus;
 			sourceTree = "<group>";
@@ -290,7 +298,7 @@
 			children = (
 				15BB0B9019E4670C00340337 /* RingButtonActions.swift */,
 				15B477D519E5CB8900D8A83D /* HomeSideMenuActions.swift */,
-				159404C319E937B200B4A3CA /* UINamedViewController.swift */,
+				159404C319E937B200B4A3CA /* UINamedController.swift */,
 			);
 			name = protocols;
 			path = Spotrek/protocols;
@@ -418,31 +426,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15BB0B8819E466E100340337 /* YBLeftToRightAnimator.swift in Sources */,
+				15BB0B8819E466E100340337 /* LeftToRightAnimator.swift in Sources */,
 				0ED6BAAE19E6C971001CABB6 /* TrekButton.swift in Sources */,
 				15BB0B8B19E466F000340337 /* RingButton.swift in Sources */,
-				0EDFD54E19E1CC5E00AF87C2 /* trekStatusViewController.swift in Sources */,
+				0EDFD54E19E1CC5E00AF87C2 /* TrekStatusViewController.swift in Sources */,
 				15BB0B9919E4684500340337 /* UIColorHexExtension.swift in Sources */,
+				03AC61F219F15A830079A51D /* TrekSelectViewController.swift in Sources */,
 				15BB0B9419E4671D00340337 /* singletons.swift in Sources */,
-				0EDFD54419E1BE5200AF87C2 /* SPEnumerations.swift in Sources */,
-				0EDFD54219E1BE1300AF87C2 /* YBBasicAnimator.swift in Sources */,
+				0EDFD54419E1BE5200AF87C2 /* Enumerations.swift in Sources */,
+				0EDFD54219E1BE1300AF87C2 /* BasicAnimator.swift in Sources */,
 				15BB0B8E19E466F800340337 /* MathHelpers.swift in Sources */,
 				03DAC4ED19E51F0800068069 /* Trek.swift in Sources */,
-				0EDFD54619E1BF0900AF87C2 /* YBRightToLeftAnimator.swift in Sources */,
+				0EDFD54619E1BF0900AF87C2 /* RightToLeftAnimator.swift in Sources */,
 				15B477D619E5CB8900D8A83D /* HomeSideMenuActions.swift in Sources */,
-				159404C419E937B200B4A3CA /* UINamedViewController.swift in Sources */,
+				159404C419E937B200B4A3CA /* UINamedController.swift in Sources */,
 				0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */,
-				0EDFD53E19E1BCCC00AF87C2 /* YBNavigationControllerDelegate.swift in Sources */,
+				0EDFD53E19E1BCCC00AF87C2 /* NavigationControllerDelegate.swift in Sources */,
 				03AC61ED19F05D400079A51D /* ProfileSummaryTableViewCell.swift in Sources */,
 				15BB0B9119E4670C00340337 /* RingButtonActions.swift in Sources */,
-				0E1D8C0319DF09DC00BC003C /* mainViewController.swift in Sources */,
+				0E1D8C0319DF09DC00BC003C /* MainViewController.swift in Sources */,
 				15BB0B9719E4672900340337 /* SpringAnimation.swift in Sources */,
 				03DDD15D19EE6E9A00133FBC /* Question.swift in Sources */,
-				0EDFD54B19E1C7C200AF87C2 /* selectTrekViewController.swift in Sources */,
 				15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */,
-				0EDFD54819E1BF7800AF87C2 /* YBCrossDisolveAnimator.swift in Sources */,
+				03AC61F019F157EB0079A51D /* ProfileSummaryViewController.swift in Sources */,
+				0EDFD54819E1BF7800AF87C2 /* CrossDisolveAnimator.swift in Sources */,
 				03DDD15B19EBB52D00133FBC /* User.swift in Sources */,
-				03DDD16019EFB8CA00133FBC /* profileSummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

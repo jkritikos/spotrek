@@ -133,7 +133,7 @@ class SharedEnvironment {
     }
     
     //MARK: Size and position coordinates plist helper methods
-    func sizePositionPlistElement(senderName: String, elementName: String) -> AnyObject {
+    func plistElement(senderName: String, elementName: String) -> AnyObject {
         
         if let selectedView = imageCoordinatesDictionary[senderName] {
             

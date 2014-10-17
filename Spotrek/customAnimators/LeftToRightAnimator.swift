@@ -1,5 +1,5 @@
 //
-//  YBLeftToRightAnimator.swift
+//   LeftToRightAnimator.swift
 //  Spotrek
 //
 //  Created by Markos Hatzitaskos on 280/10/14.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class YBLeftToRightAnimator: YBBasicAnimator {
+class LeftToRightAnimator:  BasicAnimator {
     
     
     

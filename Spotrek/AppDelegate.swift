@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         //initialize the Viewcontroller that will be the main screen
-        let mainScreen = mainViewController(nibName: nil, bundle: nil);
+        let mainScreen = MainViewController(nibName: nil, bundle: nil);
         
         //initialize a navigation controller using previously instantiated viewController
         let rootVc = UINavigationController(rootViewController: mainScreen)

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class mainViewController: UIViewController, UINamedViewController, RingButtonActions, HomeSideMenuActions {
+class MainViewController: UIViewController, UINamedController, RingButtonActions, HomeSideMenuActions {
 
     
     var name = "mainViewController"
     let singleton = SharedEnvironment.Instance()
     
-    var navigationDelegate:YBNavigationControllerDelegate!
+    var navigationDelegate:NavigationControllerDelegate!
     var panGesture: UIPanGestureRecognizer!
     var sideMenu: HomeSideMenu!
     
@@ -65,8 +65,8 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
             rectCoordinates = singleton.frameForImage(self.name, imageName: "takeOffLabel")
             takeOffLabelRect = CGRectMake(rectCoordinates.x, rectCoordinates.y, rectCoordinates.width, rectCoordinates.height)
             
-            unlockWorldLabelSize = singleton.sizePositionPlistElement(self.name, elementName: "unlockWorldLabelSize") as CGFloat
-            takeOffLabelSize = singleton.sizePositionPlistElement(self.name, elementName: "takeOffLabelSize") as CGFloat
+            unlockWorldLabelSize = singleton.plistElement(self.name, elementName: "unlockWorldLabelSize") as CGFloat
+            takeOffLabelSize = singleton.plistElement(self.name, elementName: "takeOffLabelSize") as CGFloat
             
             centerCoordinates = singleton.centerForImage(self.name, imageName: "sideMenuButton")
             sideMenuButtonCenter = CGPointMake(centerCoordinates.x, centerCoordinates.y)
@@ -216,7 +216,7 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
         unlockWorldLabel.center = CGPointMake(-unlockWorldLabel.frame.size.width/2, unlockWorldLabelCenter.y)
         unlockWorldLabel.alpha = 0.0
         
-        let dartCenterYOffset = singleton.sizePositionPlistElement(self.name, elementName: "dartCenterYOffset") as CGFloat
+        let dartCenterYOffset = singleton.plistElement(self.name, elementName: "dartCenterYOffset") as CGFloat
         
         takeOffLabel.center = CGPointMake(dart.center.x, dart.center.y+dartCenterYOffset)
         takeOffLabel.alpha = 0.0
@@ -351,12 +351,12 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
                         
                         self.dart.removeFromSuperview()
                         
-                        self.navigationDelegate = YBNavigationControllerDelegate()
-                        self.navigationDelegate.typeOfTransition = YBTransitionType.LeftToRight
+                        self.navigationDelegate = NavigationControllerDelegate()
+                        self.navigationDelegate.typeOfTransition = TransitionType.LeftToRight
                         self.navigationDelegate.presentationDuration = 0.3
                         self.navigationDelegate.dismissalDuration = 0.3
                         self.navigationController?.delegate  = self.navigationDelegate
-                        let selectTrekView = selectTrekViewController(nibName: nil,bundle: nil)
+                        let selectTrekView = TrekSelectViewController(nibName: nil,bundle: nil)
                         selectTrekView.modalPresentationStyle = UIModalPresentationStyle.Custom
                         self.navigationController?.pushViewController(selectTrekView, animated: true)
                         
@@ -368,8 +368,8 @@ class mainViewController: UIViewController, UINamedViewController, RingButtonAct
     func homeSideMenuButtonWasPressed(buttonItem: UIButton) {
         
         //generic view transition setup
-        self.navigationDelegate = YBNavigationControllerDelegate()
-        self.navigationDelegate.typeOfTransition = YBTransitionType.CrossDisolve
+        self.navigationDelegate = NavigationControllerDelegate()
+        self.navigationDelegate.typeOfTransition = TransitionType.CrossDisolve
         self.navigationDelegate.presentationDuration = 0.5
         self.navigationDelegate.dismissalDuration = 0.5
         self.navigationController?.delegate  = self.navigationDelegate

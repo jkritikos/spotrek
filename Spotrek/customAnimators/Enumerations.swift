@@ -15,7 +15,7 @@ import UIKit
 
 
 
-enum YBTransitionType {
+enum TransitionType {
 
     case RightToLeft,
          LeftToRight,

@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-protocol UINamedViewController {
+protocol UINamedController {
     var name: String { get set }
 }

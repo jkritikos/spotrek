@@ -8,12 +8,12 @@
 
 import UIKit
 
-class selectTrekViewController: UIViewController, RingButtonActions {
+class TrekSelectViewController: UIViewController, RingButtonActions {
     
     
-    var navigationDelegate:YBNavigationControllerDelegate!
+    var navigationDelegate:NavigationControllerDelegate!
     
-    var savedTransitionType: YBTransitionType!
+    var savedTransitionType: TransitionType!
     var savedDismissalDuration : NSTimeInterval!
     
     //UI components
@@ -33,7 +33,7 @@ class selectTrekViewController: UIViewController, RingButtonActions {
         self.view.multipleTouchEnabled = true
         
         //Keep transitionType and duration in order to use them during dismissal
-        navigationDelegate = navigationController?.delegate as YBNavigationControllerDelegate
+        navigationDelegate = navigationController?.delegate as NavigationControllerDelegate
         savedTransitionType = navigationDelegate.typeOfTransition
         savedDismissalDuration = navigationDelegate.dismissalDuration
 
@@ -54,11 +54,11 @@ class selectTrekViewController: UIViewController, RingButtonActions {
         SharedEnvironment.Instance().currentTrek = button.trek
         
         //open trek selection screen
-        navigationDelegate.typeOfTransition = YBTransitionType.CrossDisolve
+        navigationDelegate.typeOfTransition = TransitionType.CrossDisolve
         navigationDelegate.presentationDuration = 0.5
         navigationDelegate.dismissalDuration = 0.5
         navigationController?.delegate  = navigationDelegate
-        let trekStatus = trekStatusViewController(nibName: nil,bundle: nil)
+        let trekStatus = TrekStatusViewController(nibName: nil,bundle: nil)
         trekStatus.modalPresentationStyle = UIModalPresentationStyle.Custom
         navigationController?.pushViewController(trekStatus, animated: true)
     }
