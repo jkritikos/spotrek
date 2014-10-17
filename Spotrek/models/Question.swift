@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Question {
     
@@ -42,6 +43,13 @@ class Question {
         self.correctAnswer = correctAnswer
         self.bonusQuestion = bonusQuestion
         self.bonusAnswer = bonusAnswer
+    }
+    
+    func getQuestionImage() -> UIImage {
+        //if current trek == 1
+            //retrieve from bundle
+        
+        return UIImage()
     }
     
 }

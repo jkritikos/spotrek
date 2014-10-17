@@ -11,9 +11,20 @@ import UIKit
 class ProfileSummaryTableViewCell: UITableViewCell {
 
     //UI components
-    var optionLabel:String!
+    var optionLabel:UILabel!
     
-    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        
+        super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
+        
+        optionLabel = UILabel(frame: CGRectMake(0,0,30,30))
+        optionLabel.text = "test"
+        self.addSubview(optionLabel)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

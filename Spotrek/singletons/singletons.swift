@@ -16,6 +16,8 @@ class SharedEnvironment {
     var currentTrek:Trek!
     //our user
     var currentUser:User!
+    //available questions
+    var currentQuestionList: [Question]?
     
     var trekColors =    ["Walker":"39bbea",
         "Sailor": "fe9364",

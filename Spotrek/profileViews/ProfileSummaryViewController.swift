@@ -18,6 +18,7 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
     
     //UI components
     var optionsTableView: UITableView!
+    let profileCellIdentifier = "profileSummaryCell"
     
     override func loadView() {
         
@@ -29,6 +30,8 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.multipleTouchEnabled = true
+        
+        self.optionsTableView.registerClass(ProfileSummaryTableViewCell.self, forCellReuseIdentifier: profileCellIdentifier)
         
         //Keep transitionType and duration in order to use them during dismissal
         navigationDelegate = navigationController?.delegate as NavigationControllerDelegate
@@ -69,7 +72,9 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: ProfileSummaryTableViewCell = self.optionsTableView.dequeueReusableCellWithIdentifier("profileCell") as ProfileSummaryTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(profileCellIdentifier, forIndexPath:indexPath) as ProfileSummaryTableViewCell
+        //cell.textLabel.text = "Baking Soda"
+        //cell.detailTextLabel.text = "1/2 cup"
         
         return cell
     }
