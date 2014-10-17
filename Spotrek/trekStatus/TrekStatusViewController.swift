@@ -19,7 +19,6 @@ class TrekStatusViewController: UIViewController,UINamedController {
     
     
     private var currentTrek:Trek!
-    private var lblStatus :UILabel!
     private var btnPlay:UIButton!
     
     
@@ -66,9 +65,7 @@ class TrekStatusViewController: UIViewController,UINamedController {
 
         currentTrek = SharedEnvironment.Instance().currentTrek
 
-
         var btnTrek:TrekButton!
-
         
         if singleton.isPad() {
             
@@ -95,6 +92,44 @@ class TrekStatusViewController: UIViewController,UINamedController {
    
     func initStatusLabel(){
 
+        var lblStatus :UILabel!
+        
+        var rectCoordinates = singleton.frameForImage(self.name, imageName: "lblStatus")
+        lblStatus = UILabel(frame: CGRectMake(rectCoordinates.x, rectCoordinates.y, rectCoordinates.width, rectCoordinates.height))
+        lblStatus.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame))
+        var fontSize1:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "fontSize1").floatValue)
+        var fontSize2:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "fontSize2").floatValue)
+        var fontSize3:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "fontSize3").floatValue)
+
+        
+
+        lblStatus.numberOfLines=3
+        var placesToUnlock:Int! = (100 - currentTrek.percentComplete)
+        var statusLine1:NSMutableAttributedString! = NSMutableAttributedString(string: String(placesToUnlock))
+        
+        var lblStatusFont1:UIFont! = UIFont(name: "HelveticaNeue-Bold", size:fontSize1)
+        var range1:NSRange! = NSMakeRange(0, statusLine1.length)
+        statusLine1.addAttribute(NSFontAttributeName, value: lblStatusFont1, range: range1)
+        
+        var statusLine2:NSMutableAttributedString! = NSMutableAttributedString(string:"\nPLACES")
+        var lblStatusFont2:UIFont! = UIFont(name: "HelveticaNeue", size: fontSize2)
+        var range2:NSRange! = NSMakeRange(0, statusLine2.length)
+        statusLine2.addAttribute(NSFontAttributeName, value: lblStatusFont2, range: range2)
+    
+        var statusLine3:NSMutableAttributedString! = NSMutableAttributedString(string:"\nTO UNLOCK")
+        var lblStatusFont3:UIFont! = UIFont(name: "HelveticaNeue", size: fontSize3)
+        var range3:NSRange! = NSMakeRange(0, statusLine3.length)
+        statusLine3.addAttribute(NSFontAttributeName, value: lblStatusFont3, range: range3)
+        
+        
+        lblStatus.textAlignment=NSTextAlignment.Center
+        lblStatus.textColor=UIColor.whiteColor()
+        
+        statusLine2.appendAttributedString(statusLine3)
+        statusLine1.appendAttributedString(statusLine2)
+        lblStatus.attributedText = statusLine1
+
+        self.view.addSubview(lblStatus)
         
         
     
@@ -110,6 +145,28 @@ class TrekStatusViewController: UIViewController,UINamedController {
 
     func initPlayButton(){
     
+    
+        var btnPlay:UIButton!
+        var rectCoordinates = singleton.frameForImage(self.name, imageName: "btnPlay")
+        btnPlay = UIButton(frame: CGRectMake(0, 0, rectCoordinates.width, rectCoordinates.height))
+        btnPlay.titleLabel?.numberOfLines=2
+        btnPlay.titleLabel?.textAlignment=NSTextAlignment.Center
+
+
+        var fontSize:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "btnPlayFontSize").floatValue)
+        btnPlay.titleLabel?.font = UIFont(name: "GillSans", size: fontSize)
+        btnPlay.setTitle("PLAY\nNOW", forState: UIControlState.Normal)
+        btnPlay.setTitleColor(currentTrek.color, forState: UIControlState.Normal)
+        btnPlay.setTitleColor(currentTrek.highlightColor, forState: UIControlState.Highlighted)
+        
+        UIControlState.Normal
+        var centerCoordinates = singleton.centerForImage(self.name, imageName: "btnPlay")
+        btnPlay.center = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
+        
+        btnPlay.addTarget(self, action:"btnPlay:" , forControlEvents: UIControlEvents.TouchUpInside)
+    
+    
+        self.view.addSubview(btnPlay)
     
     
     }
@@ -141,9 +198,8 @@ class TrekStatusViewController: UIViewController,UINamedController {
     
     func openCurtains(){
     
-        var offsetX:CGFloat!
-        offsetX = 136.0
-        
+        var offsetX:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "curtainOffset").floatValue)
+       
         UIView.animateWithDuration( 0.3) { () -> Void in
             
             self.leftView.center = CGPointMake(self.leftView.center.x - offsetX, self.leftView.center.y)
@@ -154,8 +210,8 @@ class TrekStatusViewController: UIViewController,UINamedController {
     
     func closeCurtains(popOnCompletion:Bool){
         
-        var offsetX:CGFloat!
-        offsetX = 136.0
+        var offsetX:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "curtainOffset").floatValue)
+      
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             
             self.leftView.center = CGPointMake(self.leftView.center.x + offsetX, self.leftView.center.y)
@@ -191,6 +247,16 @@ class TrekStatusViewController: UIViewController,UINamedController {
     }
 
     
+    //TODO: Add code here to open main game screen
+    func btnPlay(sender:UIButton){
+        
+        var alert:UIAlertView!
+        
+        alert = UIAlertView(title: "Oops!", message: "Not implemented yet?\n W H Y ????", delegate: nil, cancelButtonTitle: "I will Fix it ASAP")
+        alert.show()
+        
+    }
+  
 
        
 }

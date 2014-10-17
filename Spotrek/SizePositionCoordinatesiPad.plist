@@ -76,6 +76,8 @@
 	<dict/>
 	<key>trekStatusViewController</key>
 	<dict>
+		<key>curtainOffset</key>
+		<integer>136</integer>
 		<key>btnTrekRect</key>
 		<dict>
 			<key>x</key>
@@ -94,6 +96,43 @@
 			<key>y</key>
 			<integer>90</integer>
 		</dict>
+		<key>lblStatusRect</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+			<key>width</key>
+			<integer>270</integer>
+			<key>height</key>
+			<integer>256</integer>
+		</dict>
+		<key>btnPlayRect</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+			<key>width</key>
+			<integer>270</integer>
+			<key>height</key>
+			<integer>250</integer>
+		</dict>
+		<key>btnPlayCenter</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>646</integer>
+		</dict>
+		<key>btnPlayFontSize</key>
+		<integer>60</integer>
+		<key>fontSize1</key>
+		<integer>70</integer>
+		<key>fontSize2</key>
+		<integer>40</integer>
+		<key>fontSize3</key>
+		<integer>25</integer>
 	</dict>
 </dict>
 </plist>
