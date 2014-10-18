@@ -17,12 +17,14 @@ class DottedLine: UIView {
     {
     
         var context:CGContextRef = UIGraphicsGetCurrentContext();
-        CGContextSetLineWidth(context, self.frame.size.height/2);
+        var lineWidth:CGFloat! = self.frame.size.height/2
+        CGContextSetLineWidth(context, lineWidth );
         CGContextSetStrokeColorWithColor(context, dotColor.CGColor );
-        var dashArray:[CGFloat] = [1.0,3.0] //paint one dot and then leave three empty
+        var dashArray:[CGFloat] = [1.0,lineWidth*2]
         CGContextSetLineDash(context, 0, dashArray, 2); //use context, start from the begining,use the pattern described in dashArray, number of elements in dashArray
         CGContextMoveToPoint(context,0, self.frame.size.height/2);
         CGContextAddLineToPoint(context, self.frame.size.width, self.frame.size.height/2)
+        CGContextSetLineCap(context, kCGLineCapRound)
         CGContextStrokePath(context);
         
     }
