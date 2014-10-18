@@ -33,6 +33,9 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     private var btnStats:UIButton!
     private var btnStore:UIButton!
     
+
+    private var imageBasePath:String!
+
     private var infoImagePath:String!
     private var infoImagePathSelected:String!
     
@@ -42,8 +45,8 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     private var statsImagePath:String!
     private var statsImagePathSelected:String!
     
-    private var storeImagePath:UIButton!
-    private var storeImagePathSelected:UIButton!
+    private var storeImagePath:String!
+    private var storeImagePathSelected:String!
     
     
     private var infoTableView:UITableView!
@@ -78,6 +81,8 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         initLine2()
         initPlayButton()
         initSideViews()
+        initPaths()
+        initButtons()
     
     }
     
@@ -200,6 +205,99 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     }
     
+    
+    
+    func initPaths(){
+    
+    
+        imageBasePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("trekStatus/buttons")
+        infoImagePath = imageBasePath.stringByAppendingPathComponent("infoA.png")
+        infoImagePathSelected = imageBasePath.stringByAppendingPathComponent("infoB.png")
+        
+        actionsImagePath = imageBasePath.stringByAppendingPathComponent("actionsA.png")
+        actionsImagePathSelected  = imageBasePath.stringByAppendingPathComponent("actionsB.png")
+        
+        statsImagePath = imageBasePath.stringByAppendingPathComponent("statsA.png")
+        statsImagePathSelected = imageBasePath.stringByAppendingPathComponent("statsB.png")
+        
+        storeImagePath = imageBasePath.stringByAppendingPathComponent("storeA.png")
+        storeImagePathSelected = imageBasePath.stringByAppendingPathComponent("storeB.png")
+        
+    
+    }
+    
+    
+    func initButtons(){
+        
+    
+        
+    
+     
+        var offsetX:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "curtainOffset").floatValue)
+        var sideButtonOffsetY:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "sideButtonOffsetY").floatValue)
+        
+        
+        var buttonImage:UIImage!
+        var buttonSelectedImage:UIImage!
+        
+        buttonImage = UIImage(contentsOfFile: infoImagePath)
+        buttonSelectedImage = UIImage(contentsOfFile: infoImagePathSelected)
+        btnInfo = UIButton(frame: CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height))
+        btnInfo.setImage(buttonImage, forState: UIControlState.Normal)
+        btnInfo.setImage(buttonSelectedImage, forState: UIControlState.Selected)
+        btnInfo.selected = false
+        btnInfo.center = CGPointMake(leftView.frame.size.width/2 + offsetX/2 , sideButtonOffsetY)
+        btnInfo.alpha = 0
+        btnInfo.addTarget(self, action: "sideButtonWasTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.leftView.addSubview(btnInfo)
+        
+        
+        buttonImage = UIImage(contentsOfFile: statsImagePath)
+        buttonSelectedImage = UIImage(contentsOfFile: statsImagePathSelected)
+        btnStats = UIButton(frame: CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height))
+        btnStats.setImage(buttonImage, forState: UIControlState.Normal)
+        btnStats.setImage(buttonSelectedImage, forState: UIControlState.Selected)
+        btnStats.selected = false
+        btnStats.center = CGPointMake(leftView.frame.size.width/2 + offsetX/2 , self.view.frame.size.height - sideButtonOffsetY)
+        btnStats.alpha = 0
+        btnStats.addTarget(self, action: "sideButtonWasTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+
+        self.leftView.addSubview(btnStats)
+
+        
+        
+        
+        
+        buttonImage = UIImage(contentsOfFile: actionsImagePath)
+        buttonSelectedImage = UIImage(contentsOfFile: actionsImagePathSelected)
+        btnActions = UIButton(frame: CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height))
+        btnActions.setImage(buttonImage, forState: UIControlState.Normal)
+        btnActions.setImage(buttonSelectedImage, forState: UIControlState.Selected)
+        btnActions.selected = false
+        btnActions.center = CGPointMake(rightView.frame.size.width/2 - offsetX/2, sideButtonOffsetY)
+        btnActions.alpha = 0
+        btnActions.addTarget(self, action: "sideButtonWasTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+
+        self.rightView.addSubview(btnActions)
+
+        
+        buttonImage = UIImage(contentsOfFile: storeImagePath)
+        buttonSelectedImage = UIImage(contentsOfFile: storeImagePathSelected)
+        btnStore = UIButton(frame: CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height))
+        btnStore.setImage(buttonImage, forState: UIControlState.Normal)
+        btnStore.setImage(buttonSelectedImage, forState: UIControlState.Selected)
+        btnStore.selected = false
+        btnStore.center = CGPointMake(rightView.frame.size.width/2 - offsetX/2, self.view.frame.size.height -  sideButtonOffsetY)
+        btnStore.alpha = 0
+        btnStore.addTarget(self, action: "sideButtonWasTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+
+        self.rightView.addSubview(btnStore)
+        
+        
+    
+    }
+    
     func initSideViews(){
     
     
@@ -232,6 +330,10 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
             
             self.leftView.center = CGPointMake(self.leftView.center.x - offsetX, self.leftView.center.y)
             self.rightView.center = CGPointMake(self.rightView.center.x + offsetX, self.rightView.center.y)
+            self.btnInfo.alpha = 1.0
+            self.btnActions.alpha = 1.0
+            self.btnStats.alpha = 1.0
+            self.btnStore.alpha = 1.0
         }
     
     }
@@ -244,7 +346,11 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
             
             self.leftView.center = CGPointMake(self.leftView.center.x + offsetX, self.leftView.center.y)
             self.rightView.center = CGPointMake(self.rightView.center.x - offsetX, self.rightView.center.y)
-            
+            self.btnInfo.alpha = 0.0
+            self.btnActions.alpha = 0.0
+            self.btnStats.alpha = 0.0
+            self.btnStore.alpha = 0.0
+
             }, completion: {(Bool) -> Void in
             
                     if popOnCompletion {
@@ -273,6 +379,27 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     
     }
+    
+    
+    func sideButtonWasTapped(sender:UIButton){
+    
+    
+        if selectedButton == sender {
+        
+            sender.selected = false
+            selectedButton = nil
+        
+        } else {
+       
+            selectedButton?.selected = false
+            selectedButton = sender
+            sender.selected = true
+        }
+    
+    
+    }
+    
+    
 
     //TODO: Add code here to open main game screen
     func btnPlay(sender:UIButton){
