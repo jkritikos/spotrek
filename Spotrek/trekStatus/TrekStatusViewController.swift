@@ -179,7 +179,6 @@ class TrekStatusViewController: UIViewController,UINamedController {
         leftView.backgroundColor = currentTrek.color
         self.view.addSubview(leftView)
         
-        
         rightView = UIView(frame: CGRectMake(self.view.frame.size.width/2,0, self.view.frame.size.width/2 ,self.view.frame.size.height))
         rightView.backgroundColor = currentTrek.color
         self.view.addSubview(rightView)
@@ -247,12 +246,10 @@ class TrekStatusViewController: UIViewController,UINamedController {
     
     }
 
-    
     //TODO: Add code here to open main game screen
     func btnPlay(sender:UIButton){
         
         var alert:UIAlertView!
-        
         alert = UIAlertView(title: "Oops!", message: "Not implemented yet?\n W H Y ????", delegate: nil, cancelButtonTitle: "I will Fix it ASAP")
         alert.show()
         
