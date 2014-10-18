@@ -1,5 +1,5 @@
 //
-//  trekStatusViewController.swift
+//  TrekStatusViewController.swift
 //  Spotrek
 //
 //  Created by Yannis Belessiotis on 10/5/14.
@@ -84,8 +84,11 @@ class TrekStatusViewController: UIViewController,UINamedController {
     
     func initLine1(){
     
-        
-    
+        var height:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "dottedLineHeight").floatValue)
+        var centerY:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "dottedLineCenterY1").floatValue)
+        var line1:DottedLine! = DottedLine(frame: CGRectMake(0, 0, self.view.frame.size.width,height), strokeColor: UIColor.lightGrayColor())
+        line1.center = CGPointMake(self.view.frame.size.width/2,centerY)
+        self.view.addSubview(line1)
     
     }
     
@@ -97,9 +100,9 @@ class TrekStatusViewController: UIViewController,UINamedController {
         var rectCoordinates = singleton.frameForImage(self.name, imageName: "lblStatus")
         lblStatus = UILabel(frame: CGRectMake(rectCoordinates.x, rectCoordinates.y, rectCoordinates.width, rectCoordinates.height))
         lblStatus.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame))
-        var fontSize1:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "fontSize1").floatValue)
-        var fontSize2:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "fontSize2").floatValue)
-        var fontSize3:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "fontSize3").floatValue)
+        var fontSize1:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "lblStatusFontSize1").floatValue)
+        var fontSize2:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "lblStatusFontSize2").floatValue)
+        var fontSize3:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "lblStatusFontSize3").floatValue)
 
         
 
@@ -138,7 +141,11 @@ class TrekStatusViewController: UIViewController,UINamedController {
     
     func initLine2(){
         
-        
+        var height:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "dottedLineHeight").floatValue)
+        var centerY:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "dottedLineCenterY2").floatValue)
+        var line2:DottedLine! = DottedLine(frame: CGRectMake(0, 0, self.view.frame.size.width,height), strokeColor: UIColor.lightGrayColor())
+        line2.center = CGPointMake(self.view.frame.size.width/2,centerY)
+        self.view.addSubview(line2)
         
     }
 
@@ -151,21 +158,15 @@ class TrekStatusViewController: UIViewController,UINamedController {
         btnPlay = UIButton(frame: CGRectMake(0, 0, rectCoordinates.width, rectCoordinates.height))
         btnPlay.titleLabel?.numberOfLines=2
         btnPlay.titleLabel?.textAlignment=NSTextAlignment.Center
-
-
         var fontSize:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "btnPlayFontSize").floatValue)
         btnPlay.titleLabel?.font = UIFont(name: "GillSans", size: fontSize)
         btnPlay.setTitle("PLAY\nNOW", forState: UIControlState.Normal)
         btnPlay.setTitleColor(currentTrek.color, forState: UIControlState.Normal)
         btnPlay.setTitleColor(currentTrek.highlightColor, forState: UIControlState.Highlighted)
-        
         UIControlState.Normal
         var centerCoordinates = singleton.centerForImage(self.name, imageName: "btnPlay")
         btnPlay.center = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
-        
         btnPlay.addTarget(self, action:"btnPlay:" , forControlEvents: UIControlEvents.TouchUpInside)
-    
-    
         self.view.addSubview(btnPlay)
     
     

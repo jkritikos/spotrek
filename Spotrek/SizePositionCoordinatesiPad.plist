@@ -107,6 +107,12 @@
 			<key>height</key>
 			<integer>256</integer>
 		</dict>
+		<key>lblStatusFontSize1</key>
+		<integer>70</integer>
+		<key>lblStatusFontSize2</key>
+		<integer>40</integer>
+		<key>lblStatusFontSize3</key>
+		<integer>25</integer>
 		<key>btnPlayRect</key>
 		<dict>
 			<key>x</key>
@@ -127,12 +133,12 @@
 		</dict>
 		<key>btnPlayFontSize</key>
 		<integer>60</integer>
-		<key>fontSize1</key>
-		<integer>70</integer>
-		<key>fontSize2</key>
-		<integer>40</integer>
-		<key>fontSize3</key>
-		<integer>25</integer>
+		<key>dottedLineHeight</key>
+		<integer>4</integer>
+		<key>dottedLineCenterY1</key>
+		<integer>254</integer>
+		<key>dottedLineCenterY2</key>
+		<integer>510</integer>
 	</dict>
 </dict>
 </plist>

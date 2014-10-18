@@ -178,8 +178,8 @@ class SharedEnvironment {
     }
 }
 
-//MARK: SharedAudioPlayer Singleton
 
+//MARK: SharedAudioPlayer Singleton
 class SharedAudioPlayer {
     
     private var mainLoopAudioPlayer:AVAudioPlayer!
