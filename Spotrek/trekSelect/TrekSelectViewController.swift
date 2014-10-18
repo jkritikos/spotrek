@@ -1,5 +1,5 @@
 //
-//  selectTrekViewController.swift
+//  TrekSelectViewController.swift
 //  Spotrek
 //
 //  Created by Yannis Belessiotis on 10/5/14.

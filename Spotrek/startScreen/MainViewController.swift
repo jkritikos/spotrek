@@ -1,5 +1,5 @@
 //
-//  mainViewController.swift
+//  MainViewController.swift
 //  Spotrek
 //
 //  Created by Yannis Belessiotis on 10/3/14.

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrekStatusViewController: UIViewController,UINamedController {
+class TrekStatusViewController: UIViewController,UINamedController, UITableViewDataSource,UITableViewDelegate{
     
     var name = "trekStatusViewController"
     private let singleton = SharedEnvironment.Instance()
@@ -24,6 +24,34 @@ class TrekStatusViewController: UIViewController,UINamedController {
     
     private var leftView:UIView!
     private var rightView:UIView!
+  
+
+    private var selectedButton:UIButton?
+    
+    private var btnInfo:UIButton!
+    private var btnActions:UIButton!
+    private var btnStats:UIButton!
+    private var btnStore:UIButton!
+    
+    private var infoImagePath:String!
+    private var infoImagePathSelected:String!
+    
+    private var actionsImagePath:String!
+    private var actionsImagePathSelected:String!
+    
+    private var statsImagePath:String!
+    private var statsImagePathSelected:String!
+    
+    private var storeImagePath:UIButton!
+    private var storeImagePathSelected:UIButton!
+    
+    
+    private var infoTableView:UITableView!
+    private var actionsTableView:UITableView!
+    private var statsTableView:UITableView!
+    private var storeTableView:UITableView!
+    
+    
     
     override func loadView() {
         
@@ -254,7 +282,40 @@ class TrekStatusViewController: UIViewController,UINamedController {
         alert.show()
         
     }
-  
+    
+    
+    //MARK: TableView DataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    
+        return 0
+    }
+    
+    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell:UITableViewCell!
+        
+        
+            return cell
+    }
+    
+    
+    //MARK: TableViewDelegatge
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? // custom view for header. will be adjusted to default or specified header height
+    {
+    
+        return nil
+
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+    
+    
+    
+    }
+    
 
        
 }
