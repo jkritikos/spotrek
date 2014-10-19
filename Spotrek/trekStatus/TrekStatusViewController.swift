@@ -344,6 +344,9 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         self.leftRect = CGRectMake(leftX,y, width ,height)
         self.rightRect = CGRectMake(rightX, y, width ,height)
 
+
+        //TODO: make row height parametric
+        var rowHeight:CGFloat!=70.0
         
         infoContainerView = UIView(frame: CGRectMake(leftX, y, width, 0))
         infoContainerView.backgroundColor = UIColor.clearColor()
@@ -354,7 +357,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         infoTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         infoTableView.backgroundColor = UIColor.clearColor()
         infoTableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        infoTableView.rowHeight = 70
+        infoTableView.rowHeight = rowHeight
         infoTableView.reloadData()
         
       
@@ -369,7 +372,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         statsTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         statsTableView.backgroundColor = UIColor.clearColor()
         statsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        statsTableView.rowHeight = 70
+        statsTableView.rowHeight = rowHeight
         statsTableView.reloadData()
         leftView.addSubview(statsContainerView)
         
@@ -382,7 +385,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         actionsTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         actionsTableView.backgroundColor = UIColor.clearColor()
         actionsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        actionsTableView.rowHeight = 70
+        actionsTableView.rowHeight = rowHeight
         actionsTableView.reloadData()
         
         rightView.addSubview(actionsContainerView)
@@ -396,7 +399,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         storeTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         storeTableView.backgroundColor = UIColor.clearColor()
         storeTableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        storeTableView.rowHeight = 70
+        storeTableView.rowHeight = rowHeight
         storeTableView.reloadData()
         rightView.addSubview(storeContainerView)
         
@@ -634,6 +637,24 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         return 0
     }
     
+     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        //TODO: make header height parametric
+        if tableView == statsTableView? || tableView == storeTableView? {
+        
+           
+            return 80
+
+        }
+
+        else {
+        
+        
+            return 0
+        }
+        
+    }
+    
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
     // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
     
@@ -679,7 +700,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? // custom view for header. will be adjusted to default or specified header height
     {
     
-        return UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 80))
+        return UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 1))
 
     }
     
