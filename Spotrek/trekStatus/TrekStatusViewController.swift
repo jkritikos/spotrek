@@ -21,38 +21,51 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     private var currentTrek:Trek!
     private var btnPlay:UIButton!
     
-    
     private var leftView:UIView!
     private var rightView:UIView!
   
-
+   //Side Buttons
     private var selectedButton:UIButton?
-    
     private var btnInfo:UIButton!
     private var btnActions:UIButton!
     private var btnStats:UIButton!
     private var btnStore:UIButton!
     
-
+    //side buttons image paths
     private var imageBasePath:String!
-
     private var infoImagePath:String!
     private var infoImagePathSelected:String!
-    
     private var actionsImagePath:String!
     private var actionsImagePathSelected:String!
-    
     private var statsImagePath:String!
     private var statsImagePathSelected:String!
-    
     private var storeImagePath:String!
     private var storeImagePathSelected:String!
+
     
     
+    
+    
+    //side buttons expansions
+    private var leftRect:CGRect!
+    private var rightRect:CGRect!
+    
+    private var infoContainerView:UIView!
     private var infoTableView:UITableView!
+    private var infoDataArray:[String]!
+    
+    private var actionsContainerView:UIView!
     private var actionsTableView:UITableView!
+    private var actionsDataArray:[String]!
+    
+    private var statsContainerView:UIView!
     private var statsTableView:UITableView!
+    private var statsDataArray:[String]!
+    
+    private var storeContainerView:UIView!
     private var storeTableView:UITableView!
+    private var storeDataArray:[String]!
+    
     
     
     
@@ -83,6 +96,8 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         initSideViews()
         initPaths()
         initButtons()
+        initDataArrays()
+        initContainerViews()
     
     }
     
@@ -210,7 +225,8 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     func initPaths(){
     
     
-        imageBasePath = SharedEnvironment.Instance().resourcePath().stringByAppendingPathComponent("trekStatus/buttons")
+        imageBasePath = singleton.resourcePath().stringByAppendingPathComponent("trekStatus/buttons")
+       
         infoImagePath = imageBasePath.stringByAppendingPathComponent("infoA.png")
         infoImagePathSelected = imageBasePath.stringByAppendingPathComponent("infoB.png")
         
@@ -229,16 +245,11 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     func initButtons(){
         
-    
-        
-    
-     
-        var offsetX:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "curtainOffset").floatValue)
-        var sideButtonOffsetY:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "sideButtonOffsetY").floatValue)
-        
-        
         var buttonImage:UIImage!
         var buttonSelectedImage:UIImage!
+       
+        var offsetX:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "curtainOffset").floatValue)
+        var sideButtonOffsetY:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "sideButtonOffsetY").floatValue)
         
         buttonImage = UIImage(contentsOfFile: infoImagePath)
         buttonSelectedImage = UIImage(contentsOfFile: infoImagePathSelected)
@@ -265,9 +276,6 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
 
         self.leftView.addSubview(btnStats)
 
-        
-        
-        
         
         buttonImage = UIImage(contentsOfFile: actionsImagePath)
         buttonSelectedImage = UIImage(contentsOfFile: actionsImagePathSelected)
@@ -298,6 +306,15 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     }
     
+    func initDataArrays(){
+    
+        infoDataArray = ["infoLine1","infoLine2","infoLine3","infoLine4"]
+        statsDataArray = ["statsLine1","statsLine2","statsLine3","statsLine4"]
+        actionsDataArray = ["actionsLine1","actionsLine2","actionsLine3","actionsLine4"]
+        storeDataArray = ["storeLine1","storeLine2","storeLine3","storeLine4"]
+    }
+    
+    
     func initSideViews(){
     
     
@@ -312,6 +329,78 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     
     }
+
+    
+     func initContainerViews(){
+    
+        var offsetX:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "curtainOffset").floatValue)
+        var sideButtonOffsetY:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "sideButtonOffsetY").floatValue)
+        var leftX = offsetX
+        var rightX:CGFloat! = 0.0
+        var y = sideButtonOffsetY + btnInfo.frame.size.height/2
+        var width = leftView.frame.size.width - offsetX
+        var height = leftView.frame.size.height - 2*y
+
+        self.leftRect = CGRectMake(leftX,y, width ,height)
+        self.rightRect = CGRectMake(rightX, y, width ,height)
+
+        
+        infoContainerView = UIView(frame: CGRectMake(leftX, y, width, 0))
+        infoContainerView.backgroundColor = UIColor.clearColor()
+        infoTableView = UITableView(frame:CGRectMake(0, 0, width, 0),style:UITableViewStyle.Plain)
+        infoContainerView.addSubview(infoTableView)
+        infoTableView.delegate = self
+        infoTableView.dataSource = self
+        infoTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        infoTableView.backgroundColor = UIColor.clearColor()
+        infoTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        infoTableView.rowHeight = 70
+        infoTableView.reloadData()
+        
+      
+        leftView.addSubview(infoContainerView)
+        
+        statsContainerView =  UIView(frame: CGRectMake(leftX, y+height, width, 0))
+        statsContainerView.backgroundColor = UIColor.clearColor()
+        statsTableView = UITableView(frame:CGRectMake(0, 0, width, 0),style:UITableViewStyle.Plain)
+        statsContainerView.addSubview(statsTableView)
+        statsTableView.delegate = self
+        statsTableView.dataSource = self
+        statsTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        statsTableView.backgroundColor = UIColor.clearColor()
+        statsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        statsTableView.rowHeight = 70
+        statsTableView.reloadData()
+        leftView.addSubview(statsContainerView)
+        
+        actionsContainerView = UIView(frame:CGRectMake(rightX, y, width, 0))
+        actionsContainerView.backgroundColor = UIColor.clearColor()
+        actionsTableView = UITableView(frame:CGRectMake(0, 0, width, 0),style:UITableViewStyle.Plain)
+        actionsContainerView.addSubview(actionsTableView)
+        actionsTableView.delegate = self
+        actionsTableView.dataSource = self
+        actionsTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        actionsTableView.backgroundColor = UIColor.clearColor()
+        actionsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        actionsTableView.rowHeight = 70
+        actionsTableView.reloadData()
+        
+        rightView.addSubview(actionsContainerView)
+        
+        storeContainerView =  UIView(frame: CGRectMake(rightX, y+height, width, 0))
+        storeContainerView.backgroundColor = UIColor.clearColor()
+        storeTableView = UITableView(frame:CGRectMake(0, 0, width, 0),style:UITableViewStyle.Plain)
+        storeContainerView.addSubview(storeTableView)
+        storeTableView.delegate = self
+        storeTableView.dataSource = self
+        storeTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        storeTableView.backgroundColor = UIColor.clearColor()
+        storeTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        storeTableView.rowHeight = 70
+        storeTableView.reloadData()
+        rightView.addSubview(storeContainerView)
+        
+     }
 
     
     override func viewDidAppear(animated: Bool) {
@@ -380,10 +469,16 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     }
     
-    
+    //MARK: Expand Shrink SideButton's Selection
     func sideButtonWasTapped(sender:UIButton){
     
-    
+        if selectedButton != nil {
+            
+            self.shrinkSelection()
+        
+        }
+        
+        
         if selectedButton == sender {
         
             sender.selected = false
@@ -395,10 +490,107 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
             selectedButton = sender
             sender.selected = true
         }
-    
-    
+        
+        
+        if selectedButton != nil {
+            
+            self.expandSelection()
+        }
     }
     
+    
+
+    func shrinkSelection(){
+    
+
+        var viewToShrink:UIView!
+        var targetFrame:CGRect!
+        var tableToShrink:UITableView!
+
+
+        if selectedButton == btnInfo {
+        
+            viewToShrink = infoContainerView
+            tableToShrink = infoTableView
+            targetFrame = CGRectMake(leftRect.origin.x, leftRect.origin.y, leftRect.size.width, 0)
+        
+        } else if selectedButton == btnStats {
+
+            viewToShrink = statsContainerView
+            tableToShrink = statsTableView
+            targetFrame = CGRectMake(leftRect.origin.x, leftRect.origin.y + leftRect.size.height, leftRect.size.width, 0)
+
+            
+        
+        } else if selectedButton == btnActions {
+            viewToShrink = actionsContainerView
+            tableToShrink = actionsTableView
+            targetFrame = CGRectMake(rightRect.origin.x, rightRect.origin.y, rightRect.size.width, 0)
+
+        }else if selectedButton == btnStore {
+        
+            viewToShrink = storeContainerView
+            tableToShrink = storeTableView
+            targetFrame = CGRectMake(rightRect.origin.x, rightRect.origin.y + rightRect.size.height, rightRect.size.width, 0)
+
+        }
+        
+    
+        spring(1.5, { () -> Void in
+
+            viewToShrink.frame = targetFrame
+            tableToShrink.frame = CGRectMake(0, 0, targetFrame.size.width, targetFrame.size.height)
+            
+        })
+
+        
+    }
+    
+    
+    func expandSelection(){
+
+
+        var viewToExpand:UIView!
+        var targetFrame:CGRect!
+        var tableToExpand:UITableView!
+        
+        if selectedButton == btnInfo {
+            
+            viewToExpand = infoContainerView
+            tableToExpand = infoTableView
+            targetFrame = leftRect
+            
+        } else if selectedButton == btnStats {
+            
+            viewToExpand = statsContainerView
+            tableToExpand = statsTableView
+            targetFrame = leftRect
+            
+            
+            
+        } else if selectedButton == btnActions {
+            viewToExpand = actionsContainerView
+            tableToExpand = actionsTableView
+            targetFrame = rightRect
+            
+            
+        }else if selectedButton == btnStore {
+            
+            viewToExpand = storeContainerView
+            tableToExpand = storeTableView
+            targetFrame = rightRect
+            
+        }
+        
+        
+        spring(1.5, { () -> Void in
+            
+            viewToExpand.frame = targetFrame
+            tableToExpand.frame = CGRectMake(0, 0, targetFrame.size.width, targetFrame.size.height)
+        })
+        
+    
+    }
     
 
     //TODO: Add code here to open main game screen
@@ -413,7 +605,32 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     //MARK: TableView DataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-    
+     
+        if tableView == infoTableView {
+        
+            return infoDataArray.count
+        
+        
+        } else if tableView == statsTableView {
+        
+            return statsDataArray.count
+
+        
+        } else if tableView == actionsTableView {
+        
+        
+            return actionsDataArray.count
+
+        
+        } else if tableView == storeTableView {
+        
+            return storeDataArray.count
+
+        
+        }
+        
+        
+        
         return 0
     }
     
@@ -422,10 +639,39 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        
         var cell:UITableViewCell!
+        var cellIdentifier:String!="Cell"
+        var currrentArray:[NSString]!
         
+        cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.backgroundColor = UIColor.clearColor()
+        cell.textLabel?.backgroundColor = UIColor.clearColor()
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.textAlignment = NSTextAlignment.Center
+    
+
+        if tableView == infoTableView {
         
-            return cell
+            currrentArray = infoDataArray
+
+        } else if tableView == statsTableView {
+            
+            currrentArray = statsDataArray
+        
+        } else if tableView == actionsTableView {
+            
+            currrentArray =  actionsDataArray
+        
+        } else if tableView == storeTableView {
+            
+            currrentArray = storeDataArray
+        }
+        
+        cell?.textLabel?.text = currrentArray[indexPath.row]
+
+        return cell!
     }
     
     
@@ -433,7 +679,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? // custom view for header. will be adjusted to default or specified header height
     {
     
-        return nil
+        return UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 80))
 
     }
     
