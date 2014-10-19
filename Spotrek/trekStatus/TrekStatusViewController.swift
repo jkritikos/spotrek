@@ -308,7 +308,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     func initDataArrays(){
     
-        infoDataArray = ["infoLine1","infoLine2","infoLine3","infoLine4"]
+        infoDataArray = ["THE MORE PLACES YOU UNLOCK,\nTHE MORE MILES YOU GET","THE MORE MILES YOU HAVE,\n THE MORE HINTS YOU CAN GET","SHARING PLACES\nGIVES YOU MORE MILES","YOU CAN LEARN MORE\nABOUT A PLACE ONCE\nYOU UNLOCK IT","USE YOUR HINTS WISELY\nALONG THIS TREK"]
         statsDataArray = ["statsLine1","statsLine2","statsLine3","statsLine4"]
         actionsDataArray = ["actionsLine1","actionsLine2","actionsLine3","actionsLine4"]
         storeDataArray = ["storeLine1","storeLine2","storeLine3","storeLine4"]
@@ -354,7 +354,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         infoContainerView.addSubview(infoTableView)
         infoTableView.delegate = self
         infoTableView.dataSource = self
-        infoTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        infoTableView.registerClass(UITableViewCell.classForCoder() , forCellReuseIdentifier: "Cell")
         infoTableView.backgroundColor = UIColor.clearColor()
         infoTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         infoTableView.rowHeight = rowHeight
@@ -671,6 +671,8 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         cell.textLabel?.backgroundColor = UIColor.clearColor()
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.textAlignment = NSTextAlignment.Center
+        cell.textLabel?.numberOfLines = 3
+        cell.textLabel?.font = UIFont(name: "GillSans", size: 18.0)
     
 
         if tableView == infoTableView {
