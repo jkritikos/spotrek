@@ -12,7 +12,8 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     var name = "trekStatusViewController"
     private let singleton = SharedEnvironment.Instance()
-
+    private var curtainsAreOpen:Bool! = false
+    
     private var navigationDelegate:NavigationControllerDelegate!
     private var savedTransitionType: TransitionType!
     private var savedDismissalDuration : NSTimeInterval!
@@ -411,8 +412,12 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     override func viewDidAppear(animated: Bool) {
     
+        if !self.curtainsAreOpen {
         
-        openCurtains()
+            openCurtains()
+            self.curtainsAreOpen = true
+        
+        }
         
     }
 

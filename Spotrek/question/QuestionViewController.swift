@@ -46,7 +46,7 @@ class QuestionViewController: UIViewController, UINamedController {
         //Initializing background image
         var imagePath = singleton.resourcePath().stringByAppendingPathComponent("trek1Images/1.jpg")
         backgroundImage = UIImageView(image: UIImage(contentsOfFile: imagePath))
-        backgroundImage.userInteractionEnabled = true
+       // backgroundImage.userInteractionEnabled = true
         backgroundImage.alpha = 0.2
         self.view.addSubview(backgroundImage)
     }
@@ -59,7 +59,7 @@ class QuestionViewController: UIViewController, UINamedController {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
         
-        if (event.touchesForView(self.view)?.count > 1 ) {
+        if (event.touchesForView(self.view)?.count > 1    ) {
             
             //restore saved values
             navigationDelegate.dismissalDuration = savedDismissalDuration
