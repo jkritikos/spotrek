@@ -135,7 +135,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
         var height:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "dottedLineHeight").floatValue)
         var centerY:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "dottedLineCenterY1").floatValue)
-        var line1:DottedLine! = DottedLine(frame: CGRectMake(0, 0, self.view.frame.size.width,height), strokeColor: UIColor.lightGrayColor(), direction: Direction.Horizontal)
+        var line1:DottedLine! = DottedLine(frame: CGRectMake(0, 0, self.view.frame.size.width,height),strokeColor: UIColor.lightGrayColor(),direction: Direction.Horizontal)
         line1.center = CGPointMake(self.view.frame.size.width/2,centerY)
         self.view.addSubview(line1)
     
@@ -192,7 +192,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         
         var height:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "dottedLineHeight").floatValue)
         var centerY:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "dottedLineCenterY2").floatValue)
-        var line2:DottedLine! = DottedLine(frame: CGRectMake(0, 0, self.view.frame.size.width,height), strokeColor: UIColor.lightGrayColor(), direction: Direction.Horizontal)
+        var line2:DottedLine! = DottedLine(frame: CGRectMake(0, 0, self.view.frame.size.width,height), strokeColor: UIColor.lightGrayColor(),direction: Direction.Horizontal)
         line2.center = CGPointMake(self.view.frame.size.width/2,centerY)
         self.view.addSubview(line2)
         
@@ -418,7 +418,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
             self.curtainsAreOpen = true
         
         }
-        
+
     }
 
     

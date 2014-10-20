@@ -18,20 +18,32 @@ class DottedLine: UIView {
     {
     
         var context:CGContextRef = UIGraphicsGetCurrentContext();
-        var lineWidth:CGFloat! = self.frame.size.height/2
-        CGContextSetLineWidth(context, lineWidth );
+     
+        var lineWidth:CGFloat!
         CGContextSetStrokeColorWithColor(context, dotColor.CGColor );
-        var dashArray:[CGFloat] = [1.0,lineWidth*2]
-        CGContextSetLineDash(context, 0, dashArray, 2); //use context, start from the begining,use the pattern described in dashArray, number of elements in dashArray
+        
+        var dashArray:[CGFloat]!
         
         if direction == Direction.Horizontal {
+ 
+            lineWidth  = self.frame.size.height/2
+            CGContextSetLineWidth(context, lineWidth );
+            dashArray = [1.0,lineWidth*2]
+            CGContextSetLineDash(context, 0, dashArray, 2); //use context, start from the begining,use the pattern described in dashArray, number of elements in dashArray
             CGContextMoveToPoint(context,0, self.frame.size.height/2);
             CGContextAddLineToPoint(context, self.frame.size.width, self.frame.size.height/2)
-        } else {
+        
+        } else if direction ==  Direction.Vertical {
+        
+            lineWidth  = self.frame.size.width/2
+            CGContextSetLineWidth(context, lineWidth );
+            dashArray = [1.0,lineWidth*2]
+            CGContextSetLineDash(context, 0, dashArray, 2); //use context, start from the begining,use the pattern described in dashArray, number of elements in dashArray
             CGContextMoveToPoint(context,self.frame.size.width/2, 0);
             CGContextAddLineToPoint(context, self.frame.size.width/2, self.frame.size.height)
-        }
         
+        }
+     
         CGContextSetLineCap(context, kCGLineCapRound)
         CGContextStrokePath(context);
         
