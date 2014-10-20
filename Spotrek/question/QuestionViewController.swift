@@ -54,19 +54,19 @@ class QuestionViewController: UIViewController, UINamedController {
     
     func initQuestionButtons() {
         
-        let questionButton1 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek)
+        let questionButton1 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumberLabelText: "A")
         questionButton1.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton1.frame.width/2, 420)
         self.view.addSubview(questionButton1)
         
-        let questionButton2 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek)
+        let questionButton2 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumberLabelText: "B")
         questionButton2.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton2.frame.width/2, 505)
         self.view.addSubview(questionButton2)
         
-        let questionButton3 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek)
+        let questionButton3 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumberLabelText: "C")
         questionButton3.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton3.frame.width/2, 590)
         self.view.addSubview(questionButton3)
         
-        let questionButton4 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek)
+        let questionButton4 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumberLabelText: "D")
         questionButton4.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton4.frame.width/2, 675)
         self.view.addSubview(questionButton4)
 

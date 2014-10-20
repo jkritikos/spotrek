@@ -11,11 +11,14 @@ import UIKit
 class QuestionButton: UIView {
 
     let trek: Trek!
-    
-    init(frame: CGRect, trek: Trek) {
+    var questionNumberLabel: UILabel!
+    var questionNumberLabelText: String!
+
+    init(frame: CGRect, trek: Trek, questionNumberLabelText: String) {
         super.init(frame: frame)
         
         self.trek = trek
+        self.questionNumberLabelText = questionNumberLabelText
         
         initBackground()
     }
@@ -26,8 +29,19 @@ class QuestionButton: UIView {
         background.alpha = 0.5
         self.addSubview(background)
         
-        //var dottedLine:DottedLine! = DottedLine(frame: CGRectMake(0, rowHeight-2,mainLabel.frame.size.width,2) , strokeColor: UIColor.whiteColor(), direction: Direction.Horizontal)
-        //self.addSubview(dottedLine)
+        var dottedLine:DottedLine! = DottedLine(frame: CGRectMake(0, 0, 4, 55), strokeColor: UIColor.whiteColor(), direction: Direction.Vertical)
+        dottedLine.center = CGPointMake(70, self.frame.size.height/2)
+        self.addSubview(dottedLine)
+        
+        //Question Number
+        questionNumberLabel = UILabel(frame: CGRectMake(0, 0, 70, 80))
+        questionNumberLabel.textAlignment = NSTextAlignment.Center
+        questionNumberLabel.textColor = trek.color
+        questionNumberLabel.font = UIFont(name: "GillSans-Bold", size: 50)
+        questionNumberLabel.text = questionNumberLabelText
+        questionNumberLabel.alpha = 1.0
+        questionNumberLabel.layer.zPosition = 100
+        self.addSubview(questionNumberLabel)
     }
 
     required init(coder aDecoder: NSCoder) {
