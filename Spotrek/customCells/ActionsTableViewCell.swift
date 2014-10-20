@@ -72,7 +72,7 @@ class ActionsTableViewCell: UITableViewCell,UINamedController {
         mainLabel.font = UIFont(name: "GillSans", size: fontSize)
         self.addSubview(mainLabel)
 
-        var dottedLine:DottedLine! = DottedLine(frame: CGRectMake(mainLabel.frame.origin.x,rowHeight-2,mainLabel.frame.size.width,2) , strokeColor: UIColor.whiteColor())
+        var dottedLine:DottedLine! = DottedLine(frame: CGRectMake(mainLabel.frame.origin.x,rowHeight-2,mainLabel.frame.size.width,2) , strokeColor: UIColor.whiteColor(), direction: Direction.Horizontal)
         self.addSubview(dottedLine)
         
         
