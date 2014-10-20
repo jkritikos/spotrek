@@ -12,6 +12,16 @@ import AVFoundation
 
 
 class SharedEnvironment {
+    
+    var appLandscapeFrame : CGRect {
+        
+        if self.iOS7 {
+            return CGRectMake (0,0,UIScreen.mainScreen().bounds.size.height,UIScreen.mainScreen().bounds.size.width)
+        }
+            
+        return UIScreen.mainScreen().bounds
+    }
+    
     //the currently selected trek
     var currentTrek:Trek!
     //our user

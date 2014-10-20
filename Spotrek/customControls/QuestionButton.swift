@@ -25,6 +25,9 @@ class QuestionButton: UIView {
         background.backgroundColor = UIColor.blackColor()
         background.alpha = 0.5
         self.addSubview(background)
+        
+        //var dottedLine:DottedLine! = DottedLine(frame: CGRectMake(0, rowHeight-2,mainLabel.frame.size.width,2) , strokeColor: UIColor.whiteColor(), direction: Direction.Horizontal)
+        //self.addSubview(dottedLine)
     }
 
     required init(coder aDecoder: NSCoder) {

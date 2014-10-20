@@ -31,7 +31,7 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
     
     override func loadView() {
     
-        self.view = UIView(frame:UIScreen.mainScreen().bounds)
+        self.view = UIView(frame: singleton.appLandscapeFrame)
         self.view.backgroundColor=UIColor.blackColor()
         
     }
@@ -49,19 +49,11 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
 
             var centerCoordinates = singleton.centerForImage(self.name, imageName: "startButton")
 
-            if singleton.iOS7 {
-                startButtonCenter = CGPointMake(CGRectGetMidY(self.view.frame), centerCoordinates.y)
-            } else {
-                startButtonCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
-            }
+            startButtonCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
             
             centerCoordinates = singleton.centerForImage(self.name, imageName: "spotrekLogo")
-            
-            if singleton.iOS7 {
-                spotrekLogoCenter = CGPointMake(CGRectGetMidY(self.view.frame), centerCoordinates.y)
-            } else {
-                spotrekLogoCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
-            }
+
+            spotrekLogoCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
             
             centerCoordinates = singleton.centerForImage(self.name, imageName: "unlockWorldLabel")
             unlockWorldLabelCenter = CGPointMake(centerCoordinates.x, centerCoordinates.y)

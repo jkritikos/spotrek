@@ -10,9 +10,8 @@ import UIKit
 
 class TrekSelectViewController: UIViewController, RingButtonActions {
     
-    
+    let singleton = SharedEnvironment.Instance()
     var navigationDelegate:NavigationControllerDelegate!
-    
     var savedTransitionType: TransitionType!
     var savedDismissalDuration : NSTimeInterval!
     
@@ -21,7 +20,7 @@ class TrekSelectViewController: UIViewController, RingButtonActions {
     
     override func loadView() {
         
-        self.view = UIView(frame:UIScreen.mainScreen().bounds)
+        self.view = UIView(frame: singleton.appLandscapeFrame)
         self.view.backgroundColor=UIColor.lightGrayColor()
         
     }

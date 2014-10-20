@@ -72,7 +72,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     override func loadView() {
         
-        self.view = UIView(frame:UIScreen.mainScreen().bounds)
+        self.view = UIView(frame: singleton.appLandscapeFrame)
         self.view.backgroundColor=UIColor.blackColor()
         
     }
