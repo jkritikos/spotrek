@@ -51,10 +51,20 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
             startButtonRect = CGRectMake(rectCoordinates.x, rectCoordinates.y, rectCoordinates.width, rectCoordinates.height)
 
             var centerCoordinates = singleton.centerForImage(self.name, imageName: "startButton")
-            startButtonCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
 
+            if singleton.iOS7 {
+                startButtonCenter = CGPointMake(CGRectGetMidY(self.view.frame), centerCoordinates.y)
+            } else {
+                startButtonCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
+            }
+            
             centerCoordinates = singleton.centerForImage(self.name, imageName: "spotrekLogo")
-            spotrekLogoCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
+            
+            if singleton.iOS7 {
+                spotrekLogoCenter = CGPointMake(CGRectGetMidY(self.view.frame), centerCoordinates.y)
+            } else {
+                spotrekLogoCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
+            }
             
             centerCoordinates = singleton.centerForImage(self.name, imageName: "unlockWorldLabel")
             unlockWorldLabelCenter = CGPointMake(centerCoordinates.x, centerCoordinates.y)
@@ -159,8 +169,7 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
     override func viewDidAppear(animated: Bool) {
   
         SharedAudioPlayer.Instance().resumeMainLoop()
-
-        setupHomeElements()
+        
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.backgroundImage.alpha = 1.0
             }, completion: {
@@ -206,6 +215,8 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
         self.view.multipleTouchEnabled = true
         self.view.backgroundColor = UIColor.blackColor()
         self.title = "Home"
+        
+        setupHomeElements()
 
     }
     

@@ -54,6 +54,9 @@ class SharedEnvironment {
         return Dictionary(minimumCapacity: 0)
     }
     
+    let iOS7 = floor(NSFoundationVersionNumber) <= floor(NSFoundationVersionNumber_iOS_7_1)
+    let iOS8 = floor(NSFoundationVersionNumber) > floor(NSFoundationVersionNumber_iOS_7_1)
+    
     class func Instance() -> SharedEnvironment! {
         
         struct Static {
@@ -102,7 +105,7 @@ class SharedEnvironment {
         
         self.trekList = [trekAlpha,trekBeta,trekGamma,trekDelta,trekEpsilon,trekZeta,trekEta,trekTheta,trekIota,trekKappa,trekLamda,trekMu,trekNu,trekXi,trekOmicron,trekPi,trekRho,trekSigma,trekTau,trekUpsilon,trekPhi,trekXi,trekPsi,trekOmega]
     }
-
+    
     func isPad()->Bool{
         
         
