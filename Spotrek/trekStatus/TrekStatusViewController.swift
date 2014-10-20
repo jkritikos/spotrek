@@ -41,7 +41,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     private var statsImagePathSelected:String!
     private var storeImagePath:String!
     private var storeImagePathSelected:String!
-
+    
     
     
     
@@ -239,6 +239,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         storeImagePath = imageBasePath.stringByAppendingPathComponent("storeA.png")
         storeImagePathSelected = imageBasePath.stringByAppendingPathComponent("storeB.png")
         
+        
     
     }
     
@@ -309,8 +310,10 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     func initDataArrays(){
     
         infoDataArray = ["THE MORE PLACES YOU UNLOCK,\nTHE MORE MILES YOU GET","THE MORE MILES YOU HAVE,\n THE MORE HINTS YOU CAN GET","SHARING PLACES\nGIVES YOU MORE MILES","YOU CAN LEARN MORE\nABOUT A PLACE ONCE\nYOU UNLOCK IT","USE YOUR HINTS WISELY\nALONG THIS TREK"]
-        statsDataArray = ["statsLine1","statsLine2","statsLine3","statsLine4"]
-        actionsDataArray = ["actionsLine1","actionsLine2","actionsLine3","actionsLine4"]
+        
+        
+        statsDataArray = ["YOU HAVE A TOTAL\nOF .... MILES","YOU HAVE EXPLORED\n ...% OF THIS TREK","YOU ARE CURRENTLY\nA .... "]
+        actionsDataArray = ["REDEEM MILES TO GET\nEXTRA HINTS","INVITE FRIENDS SO THAT\nYOU BOTH WIN","VIEW YOUR GALLERY\nAND EXPLORE THE WORLD"]
         storeDataArray = ["storeLine1","storeLine2","storeLine3","storeLine4"]
     }
     
@@ -335,6 +338,9 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
         var offsetX:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "curtainOffset").floatValue)
         var sideButtonOffsetY:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "sideButtonOffsetY").floatValue)
+        var rowHeight:CGFloat! = CGFloat(singleton.plistElement(self.name, elementName: "commonTableRowHeight").floatValue)
+        
+        
         var leftX = offsetX
         var rightX:CGFloat! = 0.0
         var y = sideButtonOffsetY + btnInfo.frame.size.height/2
@@ -344,10 +350,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         self.leftRect = CGRectMake(leftX,y, width ,height)
         self.rightRect = CGRectMake(rightX, y, width ,height)
 
-
-        //TODO: make row height parametric
-        var rowHeight:CGFloat!=70.0
-        
+    
         infoContainerView = UIView(frame: CGRectMake(leftX, y, width, 0))
         infoContainerView.backgroundColor = UIColor.clearColor()
         infoTableView = UITableView(frame:CGRectMake(0, 0, width, 0),style:UITableViewStyle.Plain)
@@ -382,7 +385,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         actionsContainerView.addSubview(actionsTableView)
         actionsTableView.delegate = self
         actionsTableView.dataSource = self
-        actionsTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        actionsTableView.registerClass(ActionsTableViewCell.classForCoder(), forCellReuseIdentifier: "ActionsCell")
         actionsTableView.backgroundColor = UIColor.clearColor()
         actionsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         actionsTableView.rowHeight = rowHeight
@@ -662,39 +665,63 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         
         
         var cell:UITableViewCell!
+        var cell1:ActionsTableViewCell!
         var cellIdentifier:String!="Cell"
         var currrentArray:[NSString]!
         
-        cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.backgroundColor = UIColor.clearColor()
-        cell.textLabel?.backgroundColor = UIColor.clearColor()
-        cell.textLabel?.textColor = UIColor.whiteColor()
-        cell.textLabel?.textAlignment = NSTextAlignment.Center
-        cell.textLabel?.numberOfLines = 3
-        cell.textLabel?.font = UIFont(name: "GillSans", size: 18.0)
-    
+        
+        if tableView == actionsTableView {
+
+            cellIdentifier = "ActionsCell"
+            cell1 = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as ActionsTableViewCell
+      
+        }else{
+        
+
+            cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.backgroundColor = UIColor.clearColor()
+            cell.textLabel?.backgroundColor = UIColor.clearColor()
+            cell.textLabel?.textColor = UIColor.whiteColor()
+            cell.textLabel?.textAlignment = NSTextAlignment.Center
+            cell.textLabel?.numberOfLines = 3
+            cell.textLabel?.font = UIFont(name: "GillSans", size: 18.0)
+
+            
+        }
+        
 
         if tableView == infoTableView {
         
             currrentArray = infoDataArray
+            cell?.textLabel?.text = currrentArray[indexPath.row]
+            return cell
+
 
         } else if tableView == statsTableView {
             
             currrentArray = statsDataArray
+            cell?.textLabel?.text = currrentArray[indexPath.row]
+            return cell
+
         
         } else if tableView == actionsTableView {
             
             currrentArray =  actionsDataArray
+            cell1.mainLabel.text = currrentArray[indexPath.row]
+            return cell1
+
         
         } else if tableView == storeTableView {
-            
+
             currrentArray = storeDataArray
+            cell?.textLabel?.text = currrentArray[indexPath.row]
+            return cell
+
+        
         }
         
-        cell?.textLabel?.text = currrentArray[indexPath.row]
-
-        return cell!
+        return cell
     }
     
     

@@ -138,9 +138,20 @@
 		<key>dottedLineHeight</key>
 		<integer>4</integer>
 		<key>dottedLineCenterY1</key>
-		<integer>254</integer>
+		<integer>262</integer>
 		<key>dottedLineCenterY2</key>
 		<integer>510</integer>
+		<key>commonTableRowHeight</key>
+		<integer>70</integer>
+	</dict>
+	<key>ActionsTableViewCell</key>
+	<dict>
+		<key>cellHeight</key>
+		<integer>70</integer>
+		<key>labelOffsetX</key>
+		<integer>50</integer>
+		<key>fontSize</key>
+		<real>18</real>
 	</dict>
 </dict>
 </plist>

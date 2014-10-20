@@ -14,6 +14,8 @@
 		03DAC4ED19E51F0800068069 /* Trek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC4EC19E51F0800068069 /* Trek.swift */; };
 		03DDD15B19EBB52D00133FBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15A19EBB52D00133FBC /* User.swift */; };
 		03DDD15D19EE6E9A00133FBC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15C19EE6E9A00133FBC /* Question.swift */; };
+		0E0B0E3D19F51781001A1E41 /* ActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B0E3C19F51781001A1E41 /* ActionsTableViewCell.swift */; };
+		0E0B0E3F19F517A4001A1E41 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B0E3E19F517A4001A1E41 /* StoreTableViewCell.swift */; };
 		0E1170D319E7D34B00A094FC /* GILLSANS.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0E1170D219E7D34B00A094FC /* GILLSANS.TTF */; };
 		0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE119DF092A00BC003C /* AppDelegate.swift */; };
 		0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE819DF092A00BC003C /* Images.xcassets */; };
@@ -62,6 +64,8 @@
 		03DAC4EC19E51F0800068069 /* Trek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trek.swift; path = Spotrek/models/Trek.swift; sourceTree = "<group>"; };
 		03DDD15A19EBB52D00133FBC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spotrek/models/User.swift; sourceTree = "<group>"; };
 		03DDD15C19EE6E9A00133FBC /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Spotrek/models/Question.swift; sourceTree = "<group>"; };
+		0E0B0E3C19F51781001A1E41 /* ActionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsTableViewCell.swift; path = Spotrek/customCells/ActionsTableViewCell.swift; sourceTree = "<group>"; };
+		0E0B0E3E19F517A4001A1E41 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreTableViewCell.swift; path = Spotrek/customCells/StoreTableViewCell.swift; sourceTree = "<group>"; };
 		0E1170D219E7D34B00A094FC /* GILLSANS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = GILLSANS.TTF; path = fonts/GILLSANS.TTF; sourceTree = "<group>"; };
 		0E1D8BDC19DF092A00BC003C /* Spotrek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotrek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1D8BE019DF092A00BC003C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				03AC61EC19F05D400079A51D /* ProfileSummaryTableViewCell.swift */,
+				0E0B0E3C19F51781001A1E41 /* ActionsTableViewCell.swift */,
+				0E0B0E3E19F517A4001A1E41 /* StoreTableViewCell.swift */,
 			);
 			name = customCells;
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 				03AC61ED19F05D400079A51D /* ProfileSummaryTableViewCell.swift in Sources */,
 				15BB0B9119E4670C00340337 /* RingButtonActions.swift in Sources */,
 				0E1D8C0319DF09DC00BC003C /* MainViewController.swift in Sources */,
+				0E0B0E3F19F517A4001A1E41 /* StoreTableViewCell.swift in Sources */,
 				15BB0B9719E4672900340337 /* SpringAnimation.swift in Sources */,
 				03DDD15D19EE6E9A00133FBC /* Question.swift in Sources */,
 				0EE6A25E19F25D6C00FA56BC /* DottedLine.swift in Sources */,
@@ -455,6 +462,7 @@
 				03AC61F019F157EB0079A51D /* ProfileSummaryViewController.swift in Sources */,
 				0EDFD54819E1BF7800AF87C2 /* CrossDisolveAnimator.swift in Sources */,
 				03DDD15B19EBB52D00133FBC /* User.swift in Sources */,
+				0E0B0E3D19F51781001A1E41 /* ActionsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

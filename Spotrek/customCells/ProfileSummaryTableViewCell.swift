@@ -15,7 +15,7 @@ class ProfileSummaryTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         
-        super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
+        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: reuseIdentifier)
         
         optionLabel = UILabel(frame: CGRectMake(0,0,30,30))
         optionLabel.text = "test"
