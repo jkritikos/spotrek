@@ -24,4 +24,10 @@ enum TransitionType {
          BottomToUp
 }
 
+enum Direction {
+    
+    case Horizontal,
+         Vertical
+}
+
 
