@@ -33,6 +33,7 @@
 		0EDFD54819E1BF7800AF87C2 /* CrossDisolveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54719E1BF7800AF87C2 /* CrossDisolveAnimator.swift */; };
 		0EDFD54E19E1CC5E00AF87C2 /* TrekStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFD54D19E1CC5E00AF87C2 /* TrekStatusViewController.swift */; };
 		0EE6A25E19F25D6C00FA56BC /* DottedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6A25D19F25D6C00FA56BC /* DottedLine.swift */; };
+		152651A719F5720400EA44C9 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152651A619F5720400EA44C9 /* QuestionViewController.swift */; };
 		159404C019E8324C00B4A3CA /* SizePositionCoordinatesiPad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159404BF19E8324C00B4A3CA /* SizePositionCoordinatesiPad.plist */; };
 		159404C419E937B200B4A3CA /* UINamedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159404C319E937B200B4A3CA /* UINamedController.swift */; };
 		15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B477D319E5C11A00D8A83D /* HomeSideMenu.swift */; };
@@ -87,6 +88,7 @@
 		0EDFD54719E1BF7800AF87C2 /* CrossDisolveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossDisolveAnimator.swift; path = Spotrek/customAnimators/CrossDisolveAnimator.swift; sourceTree = "<group>"; };
 		0EDFD54D19E1CC5E00AF87C2 /* TrekStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrekStatusViewController.swift; path = Spotrek/trekStatus/TrekStatusViewController.swift; sourceTree = "<group>"; };
 		0EE6A25D19F25D6C00FA56BC /* DottedLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DottedLine.swift; sourceTree = "<group>"; };
+		152651A619F5720400EA44C9 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		159404BF19E8324C00B4A3CA /* SizePositionCoordinatesiPad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SizePositionCoordinatesiPad.plist; sourceTree = "<group>"; };
 		159404C319E937B200B4A3CA /* UINamedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINamedController.swift; sourceTree = "<group>"; };
 		15B477D319E5C11A00D8A83D /* HomeSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeSideMenu.swift; path = Spotrek/startScreen/HomeSideMenu.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				0E1D8C0119DF09A100BC003C /* startScreen */,
 				0EDFD54919E1C79600AF87C2 /* trekSelect */,
 				0EDFD54C19E1CC3900AF87C2 /* trekStatus */,
+				152651A519F571CC00EA44C9 /* question */,
 				0E1D8BDE19DF092A00BC003C /* Spotrek */,
 				0E1D8BF419DF092A00BC003C /* SpotrekTests */,
 				0E1D8BDD19DF092A00BC003C /* Products */,
@@ -279,6 +282,15 @@
 				0EDFD54D19E1CC5E00AF87C2 /* TrekStatusViewController.swift */,
 			);
 			name = trekStatus;
+			sourceTree = "<group>";
+		};
+		152651A519F571CC00EA44C9 /* question */ = {
+			isa = PBXGroup;
+			children = (
+				152651A619F5720400EA44C9 /* QuestionViewController.swift */,
+			);
+			name = question;
+			path = Spotrek/question;
 			sourceTree = "<group>";
 		};
 		15BB0B8919E466F000340337 /* customControls */ = {
@@ -461,6 +473,7 @@
 				15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */,
 				03AC61F019F157EB0079A51D /* ProfileSummaryViewController.swift in Sources */,
 				0EDFD54819E1BF7800AF87C2 /* CrossDisolveAnimator.swift in Sources */,
+				152651A719F5720400EA44C9 /* QuestionViewController.swift in Sources */,
 				03DDD15B19EBB52D00133FBC /* User.swift in Sources */,
 				0E0B0E3D19F51781001A1E41 /* ActionsTableViewCell.swift in Sources */,
 			);

@@ -29,13 +29,10 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
     var sideMenuButton: UIButton!
     var sideMenuButtonCenter: CGPoint!
     
-    
-    
-    
     override func loadView() {
     
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
-        self.view.backgroundColor=UIColor.whiteColor()
+        self.view.backgroundColor=UIColor.blackColor()
         
     }
     

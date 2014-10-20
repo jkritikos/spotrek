@@ -601,11 +601,20 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
 
     //TODO: Add code here to open main game screen
     func btnPlay(sender:UIButton){
-        
+       
+        /*
         var alert:UIAlertView!
         alert = UIAlertView(title: "Oops!", message: "Not implemented yet?\n W H Y ????", delegate: nil, cancelButtonTitle: "I will Fix it ASAP")
         alert.show()
+        */
         
+        navigationDelegate.typeOfTransition = TransitionType.CrossDisolve
+        navigationDelegate.presentationDuration = 0.5
+        navigationDelegate.dismissalDuration = 0.5
+        navigationController?.delegate  = navigationDelegate
+        let question = QuestionViewController(nibName: nil,bundle: nil)
+        question.modalPresentationStyle = UIModalPresentationStyle.Custom
+        navigationController?.pushViewController(question, animated: true)
     }
     
     
