@@ -67,8 +67,8 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
     func initTopBar() {
         topBar = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 70))
         topBar.backgroundColor = UIColor.blackColor()
-        topBar.center = CGPointMake(CGRectGetMidX(self.view.frame), 35)
-        topBar.alpha = 0.2
+        topBar.center = CGPointMake(CGRectGetMidX(self.view.frame), -35)
+        topBar.alpha = 1.0
         self.view.addSubview(topBar)
     }
     
@@ -77,32 +77,52 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
         let questionButton1 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.A, questionLabelText: question.answerA)
         questionButton1.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton1.frame.width/2, 420)
         questionButton1.delegate = self
+        questionButton1.alpha = 0.0
         self.view.addSubview(questionButton1)
         
         let questionButton2 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.B, questionLabelText: question.answerB)
         questionButton2.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton2.frame.width/2, 505)
         questionButton2.delegate = self
+        questionButton2.alpha = 0.0
         self.view.addSubview(questionButton2)
         
         let questionButton3 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.C, questionLabelText: question.answerC)
         questionButton3.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton3.frame.width/2, 590)
         questionButton3.delegate = self
+        questionButton3.alpha = 0.0
         self.view.addSubview(questionButton3)
         
         let questionButton4 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.D, questionLabelText: question.answerD)
         questionButton4.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton4.frame.width/2, 675)
         questionButton4.delegate = self
+        questionButton4.alpha = 0.0
         self.view.addSubview(questionButton4)
-
+        
         questionButtons = [questionButton1, questionButton2, questionButton3, questionButton4]
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.backgroundImage.alpha = 1.0
-            self.topBar.alpha = 1.0
             }, completion: {
                 finished in
+                
+                spring(0.5, {
+                    self.topBar.center = CGPointMake(CGRectGetMidX(self.view.frame), 35)
+                })
+                
+                //for var i = 0; i < self.questionButtons.count; ++i {
+                                        
+                    //let delayTime = NSTimeInterval(0.25*CGFloat(i))
+                    
+                    //delay(delayTime) {
+                
+                for question in self.questionButtons {
+                    question.alpha = 1.0
+                }
+                    //}
+                //}
         })
     }
 
@@ -134,7 +154,7 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
             
             let delayTime = NSTimeInterval(0.25*CGFloat(i))
             
-            UIView.animateWithDuration(0.5, delay: delayTime, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            UIView.animateWithDuration(0.35, delay: delayTime, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                 self.questionButtons[i].center = CGPointMake(CGRectGetMaxX(self.view.frame)+self.questionButtons[i].frame.width/2, self.questionButtons[i].center.y)
                 }, completion: { finished in
                     
