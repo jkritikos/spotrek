@@ -17,9 +17,11 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
     private var savedDismissalDuration : NSTimeInterval!
 
     private var question: Question!
+    private var questionButtons: [QuestionButton]!
     
     //UI Elements
     var backgroundImage: UIImageView!
+    var topBar: UIView!
     
     override func loadView() {
         
@@ -42,6 +44,7 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
         
         selectRandomQuestion()
         initBackground()
+        initTopBar()
         initQuestionButtons()
     }
     
@@ -59,6 +62,14 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
         backgroundImage = UIImageView(image: question.getQuestionImage())
         backgroundImage.alpha = 0.2
         self.view.addSubview(backgroundImage)
+    }
+    
+    func initTopBar() {
+        topBar = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 70))
+        topBar.backgroundColor = UIColor.blackColor()
+        topBar.center = CGPointMake(CGRectGetMidX(self.view.frame), 35)
+        topBar.alpha = 0.2
+        self.view.addSubview(topBar)
     }
     
     func initQuestionButtons() {
@@ -83,11 +94,13 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
         questionButton4.delegate = self
         self.view.addSubview(questionButton4)
 
+        questionButtons = [questionButton1, questionButton2, questionButton3, questionButton4]
     }
     
     override func viewDidAppear(animated: Bool) {
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.backgroundImage.alpha = 1.0
+            self.topBar.alpha = 1.0
             }, completion: {
                 finished in
         })
@@ -107,8 +120,26 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
             delay(0.25) {
                 sender.playCorrectAnswerAnimation()
             }
+            
+            delay(4.0) {
+                self.removeQuestionButtons()
+            }
         }
         
+    }
+    
+    func removeQuestionButtons() {
+        
+        for var i = 0; i < questionButtons.count; ++i {
+            
+            let delayTime = NSTimeInterval(0.25*CGFloat(i))
+            
+            UIView.animateWithDuration(0.5, delay: delayTime, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.questionButtons[i].center = CGPointMake(CGRectGetMaxX(self.view.frame)+self.questionButtons[i].frame.width/2, self.questionButtons[i].center.y)
+                }, completion: { finished in
+                    
+            })
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
