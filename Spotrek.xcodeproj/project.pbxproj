@@ -102,6 +102,7 @@
 		15BB0B9319E4671D00340337 /* singletons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singletons.swift; sourceTree = "<group>"; };
 		15BB0B9619E4672900340337 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 		15BB0B9819E4684500340337 /* UIColorHexExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHexExtension.swift; sourceTree = "<group>"; };
+		15E819D819F6C2DB00DB5B50 /* ARIALBLACK.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = ARIALBLACK.TTF; path = fonts/ARIALBLACK.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +163,7 @@
 		0E1170D119E7D33800A094FC /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				15E819D819F6C2DB00DB5B50 /* ARIALBLACK.TTF */,
 				0E1170D219E7D34B00A094FC /* GILLSANS.TTF */,
 			);
 			name = fonts;
