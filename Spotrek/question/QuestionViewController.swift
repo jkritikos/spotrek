@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionViewController: UIViewController, UINamedController {
+class QuestionViewController: UIViewController, UINamedController, QuestionButtonActions {
 
     var name = "questionViewController"
     private let singleton = SharedEnvironment.Instance()
@@ -63,20 +63,24 @@ class QuestionViewController: UIViewController, UINamedController {
     
     func initQuestionButtons() {
         
-        let questionButton1 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumberLabelText: "A", questionLabelText: question.answerA)
+        let questionButton1 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.A, questionLabelText: question.answerA)
         questionButton1.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton1.frame.width/2, 420)
+        questionButton1.delegate = self
         self.view.addSubview(questionButton1)
         
-        let questionButton2 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumberLabelText: "B", questionLabelText: question.answerB)
+        let questionButton2 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.B, questionLabelText: question.answerB)
         questionButton2.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton2.frame.width/2, 505)
+        questionButton2.delegate = self
         self.view.addSubview(questionButton2)
         
-        let questionButton3 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumberLabelText: "C", questionLabelText: question.answerC)
+        let questionButton3 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.C, questionLabelText: question.answerC)
         questionButton3.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton3.frame.width/2, 590)
+        questionButton3.delegate = self
         self.view.addSubview(questionButton3)
         
-        let questionButton4 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumberLabelText: "D", questionLabelText: question.answerD)
+        let questionButton4 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.D, questionLabelText: question.answerD)
         questionButton4.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton4.frame.width/2, 675)
+        questionButton4.delegate = self
         self.view.addSubview(questionButton4)
 
     }
@@ -92,6 +96,19 @@ class QuestionViewController: UIViewController, UINamedController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func questionButtonSingleTap(sender: QuestionButton) {
+        
+        if sender.questionNumber.toRaw() == question.correctAnswer {
+            let greenColor = UIColor(hex: singleton.trekColors["Pilot"]!)
+            sender.changeBackgroundToColor(greenColor)
+            
+            delay(0.25) {
+                sender.playCorrectAnswerAnimation()
+            }
+        }
+        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

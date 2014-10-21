@@ -10,25 +10,50 @@ import UIKit
 
 class QuestionButton: UIView {
 
+    var delegate: QuestionButtonActions!
+    
     let trek: Trek!
+    var background: UIView!
     var questionNumberLabel: UILabel!
-    var questionNumberLabelText: String!
-    var questionLabel: UILabel!
+    var questionNumber: QuestionNumber!
+    var questionNumberLabelText: String! {
+        
+        switch questionNumber.toRaw() {
+        case 1:
+            return "A"
+        case 2:
+            return "B"
+        case 3:
+            return "C"
+        case 4:
+            return "D"
+        default:
+            break;
+        }
+            
+        return ""
+    }
+    
+    var questionLabel: LTMorphingLabel!
     var questionLabelText: String!
 
 
-    init(frame: CGRect, trek: Trek, questionNumberLabelText: String, questionLabelText: String) {
+    init(frame: CGRect, trek: Trek, questionNumber: QuestionNumber, questionLabelText: String) {
         super.init(frame: frame)
         
         self.trek = trek
-        self.questionNumberLabelText = questionNumberLabelText
+        self.questionNumber = questionNumber
         self.questionLabelText = questionLabelText
         
         initBackground()
     }
     
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func initBackground() {
-        let background = UIView(frame: frame)
+        background = UIView(frame: frame)
         background.backgroundColor = UIColor.blackColor()
         background.alpha = 0.5
         self.addSubview(background)
@@ -48,7 +73,7 @@ class QuestionButton: UIView {
         self.addSubview(questionNumberLabel)
         
         //Question Text
-        questionLabel = UILabel(frame: CGRectMake(90, 0, 320, 80))
+        questionLabel = LTMorphingLabel(frame: CGRectMake(90, 0, 320, 80))
         questionLabel.textAlignment = NSTextAlignment.Left
         questionLabel.textColor = UIColor.whiteColor()
         questionLabel.font = UIFont(name: "GillSans", size: 30)
@@ -58,9 +83,43 @@ class QuestionButton: UIView {
         self.addSubview(questionLabel)
         
     }
+    
+    func playCorrectAnswerAnimation() {
+        
+        let tempText = questionLabel.text
+        questionLabel.text = "Correct"
+        
+        delay(2.0) {
+            self.questionLabel.text = tempText
+        }
+        
+    }
+    
+    func changeBackgroundToColor(color: UIColor) {
+        
+        UIView.animateWithDuration(0.5, animations: {
+            self.background.backgroundColor = color
+            self.background.alpha = 1.0
+            self.questionNumberLabel.textColor = UIColor.whiteColor()
+        })
+        
+    }
+    
+    //MARK: Touches
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        delegate.questionButtonSingleTap(self)
+    }
+    
+    override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
+
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+
     }
     
     /*

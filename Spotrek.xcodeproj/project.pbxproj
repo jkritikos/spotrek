@@ -13,7 +13,6 @@
 		03AC61F219F15A830079A51D /* TrekSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC61F119F15A830079A51D /* TrekSelectViewController.swift */; };
 		03DAC4ED19E51F0800068069 /* Trek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DAC4EC19E51F0800068069 /* Trek.swift */; };
 		03DDD15B19EBB52D00133FBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15A19EBB52D00133FBC /* User.swift */; };
-		03DDD15D19EE6E9A00133FBC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDD15C19EE6E9A00133FBC /* Question.swift */; };
 		0E0B0E3D19F51781001A1E41 /* ActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B0E3C19F51781001A1E41 /* ActionsTableViewCell.swift */; };
 		0E0B0E3F19F517A4001A1E41 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B0E3E19F517A4001A1E41 /* StoreTableViewCell.swift */; };
 		0E1170D319E7D34B00A094FC /* GILLSANS.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0E1170D219E7D34B00A094FC /* GILLSANS.TTF */; };
@@ -46,6 +45,22 @@
 		15BB0B9419E4671D00340337 /* singletons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B9319E4671D00340337 /* singletons.swift */; };
 		15BB0B9719E4672900340337 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B9619E4672900340337 /* SpringAnimation.swift */; };
 		15BB0B9919E4684500340337 /* UIColorHexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BB0B9819E4684500340337 /* UIColorHexExtension.swift */; };
+		15E819DA19F6C99200DB5B50 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819D919F6C99200DB5B50 /* Question.swift */; };
+		15E819DC19F6CA0600DB5B50 /* QuestionButtonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819DB19F6CA0600DB5B50 /* QuestionButtonActions.swift */; };
+		15E819EC19F6D57100DB5B50 /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819DE19F6D57100DB5B50 /* LTEasing.swift */; };
+		15E819ED19F6D57100DB5B50 /* LTMorphingLabel+Anvil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819DF19F6D57100DB5B50 /* LTMorphingLabel+Anvil.swift */; };
+		15E819EE19F6D57100DB5B50 /* LTMorphingLabel+Burn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819E019F6D57100DB5B50 /* LTMorphingLabel+Burn.swift */; };
+		15E819EF19F6D57100DB5B50 /* LTMorphingLabel+Evaporate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819E119F6D57100DB5B50 /* LTMorphingLabel+Evaporate.swift */; };
+		15E819F019F6D57100DB5B50 /* LTMorphingLabel+Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819E219F6D57100DB5B50 /* LTMorphingLabel+Fall.swift */; };
+		15E819F119F6D57100DB5B50 /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819E319F6D57100DB5B50 /* LTMorphingLabel+Pixelate.swift */; };
+		15E819F219F6D57100DB5B50 /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819E419F6D57100DB5B50 /* LTMorphingLabel+Sparkle.swift */; };
+		15E819F319F6D57100DB5B50 /* LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819E519F6D57100DB5B50 /* LTMorphingLabel.swift */; };
+		15E819F419F6D57100DB5B50 /* NSString+LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819E619F6D57100DB5B50 /* NSString+LTMorphingLabel.swift */; };
+		15E819F519F6D57100DB5B50 /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E819E819F6D57100DB5B50 /* Fire.png */; };
+		15E819F619F6D57100DB5B50 /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E819E919F6D57100DB5B50 /* Fragment.png */; };
+		15E819F719F6D57100DB5B50 /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E819EA19F6D57100DB5B50 /* Smoke.png */; };
+		15E819F819F6D57100DB5B50 /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E819EB19F6D57100DB5B50 /* Sparkle.png */; };
+		15E819FA19F6D8FD00DB5B50 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819F919F6D8FD00DB5B50 /* Delay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +80,6 @@
 		03AC61F119F15A830079A51D /* TrekSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrekSelectViewController.swift; path = Spotrek/trekSelect/TrekSelectViewController.swift; sourceTree = "<group>"; };
 		03DAC4EC19E51F0800068069 /* Trek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trek.swift; path = Spotrek/models/Trek.swift; sourceTree = "<group>"; };
 		03DDD15A19EBB52D00133FBC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Spotrek/models/User.swift; sourceTree = "<group>"; };
-		03DDD15C19EE6E9A00133FBC /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Spotrek/models/Question.swift; sourceTree = "<group>"; };
 		0E0B0E3C19F51781001A1E41 /* ActionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsTableViewCell.swift; path = Spotrek/customCells/ActionsTableViewCell.swift; sourceTree = "<group>"; };
 		0E0B0E3E19F517A4001A1E41 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreTableViewCell.swift; path = Spotrek/customCells/StoreTableViewCell.swift; sourceTree = "<group>"; };
 		0E1170D219E7D34B00A094FC /* GILLSANS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = GILLSANS.TTF; path = fonts/GILLSANS.TTF; sourceTree = "<group>"; };
@@ -103,6 +117,22 @@
 		15BB0B9619E4672900340337 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 		15BB0B9819E4684500340337 /* UIColorHexExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHexExtension.swift; sourceTree = "<group>"; };
 		15E819D819F6C2DB00DB5B50 /* ARIALBLACK.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = ARIALBLACK.TTF; path = fonts/ARIALBLACK.TTF; sourceTree = "<group>"; };
+		15E819D919F6C99200DB5B50 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Spotrek/models/Question.swift; sourceTree = "<group>"; };
+		15E819DB19F6CA0600DB5B50 /* QuestionButtonActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionButtonActions.swift; sourceTree = "<group>"; };
+		15E819DE19F6D57100DB5B50 /* LTEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEasing.swift; sourceTree = "<group>"; };
+		15E819DF19F6D57100DB5B50 /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		15E819E019F6D57100DB5B50 /* LTMorphingLabel+Burn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Burn.swift"; sourceTree = "<group>"; };
+		15E819E119F6D57100DB5B50 /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
+		15E819E219F6D57100DB5B50 /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
+		15E819E319F6D57100DB5B50 /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
+		15E819E419F6D57100DB5B50 /* LTMorphingLabel+Sparkle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Sparkle.swift"; sourceTree = "<group>"; };
+		15E819E519F6D57100DB5B50 /* LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingLabel.swift; sourceTree = "<group>"; };
+		15E819E619F6D57100DB5B50 /* NSString+LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+LTMorphingLabel.swift"; sourceTree = "<group>"; };
+		15E819E819F6D57100DB5B50 /* Fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fire.png; sourceTree = "<group>"; };
+		15E819E919F6D57100DB5B50 /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
+		15E819EA19F6D57100DB5B50 /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
+		15E819EB19F6D57100DB5B50 /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
+		15E819F919F6D8FD00DB5B50 /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +177,7 @@
 			children = (
 				03DAC4EC19E51F0800068069 /* Trek.swift */,
 				03DDD15A19EBB52D00133FBC /* User.swift */,
-				03DDD15C19EE6E9A00133FBC /* Question.swift */,
+				15E819D919F6C99200DB5B50 /* Question.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -312,8 +342,10 @@
 		15BB0B8C19E466F800340337 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				15E819DD19F6D57100DB5B50 /* LTMorphingLabel */,
 				15BB0B8D19E466F800340337 /* MathHelpers.swift */,
 				15BB0B9819E4684500340337 /* UIColorHexExtension.swift */,
+				15E819F919F6D8FD00DB5B50 /* Delay.swift */,
 			);
 			name = helpers;
 			path = Spotrek/helpers;
@@ -323,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				15BB0B9019E4670C00340337 /* RingButtonActions.swift */,
+				15E819DB19F6CA0600DB5B50 /* QuestionButtonActions.swift */,
 				15B477D519E5CB8900D8A83D /* HomeSideMenuActions.swift */,
 				159404C319E937B200B4A3CA /* UINamedController.swift */,
 			);
@@ -346,6 +379,34 @@
 			);
 			name = springEffects;
 			path = Spotrek/springEffects;
+			sourceTree = "<group>";
+		};
+		15E819DD19F6D57100DB5B50 /* LTMorphingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				15E819DE19F6D57100DB5B50 /* LTEasing.swift */,
+				15E819DF19F6D57100DB5B50 /* LTMorphingLabel+Anvil.swift */,
+				15E819E019F6D57100DB5B50 /* LTMorphingLabel+Burn.swift */,
+				15E819E119F6D57100DB5B50 /* LTMorphingLabel+Evaporate.swift */,
+				15E819E219F6D57100DB5B50 /* LTMorphingLabel+Fall.swift */,
+				15E819E319F6D57100DB5B50 /* LTMorphingLabel+Pixelate.swift */,
+				15E819E419F6D57100DB5B50 /* LTMorphingLabel+Sparkle.swift */,
+				15E819E519F6D57100DB5B50 /* LTMorphingLabel.swift */,
+				15E819E619F6D57100DB5B50 /* NSString+LTMorphingLabel.swift */,
+				15E819E719F6D57100DB5B50 /* Particles */,
+			);
+			path = LTMorphingLabel;
+			sourceTree = "<group>";
+		};
+		15E819E719F6D57100DB5B50 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				15E819E819F6D57100DB5B50 /* Fire.png */,
+				15E819E919F6D57100DB5B50 /* Fragment.png */,
+				15E819EA19F6D57100DB5B50 /* Smoke.png */,
+				15E819EB19F6D57100DB5B50 /* Sparkle.png */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,12 +490,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E1170D319E7D34B00A094FC /* GILLSANS.TTF in Resources */,
+				15E819F519F6D57100DB5B50 /* Fire.png in Resources */,
 				0E7411AB19E997EB008D8B0A /* MTB_2.wav in Resources */,
 				034DBA0919E40EBF00C905DA /* images in Resources */,
 				159404C019E8324C00B4A3CA /* SizePositionCoordinatesiPad.plist in Resources */,
 				0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */,
 				0E7411AA19E997EB008D8B0A /* MTB_1.wav in Resources */,
+				15E819F619F6D57100DB5B50 /* Fragment.png in Resources */,
 				0E7411AC19E997EB008D8B0A /* MTB_3.wav in Resources */,
+				15E819F719F6D57100DB5B50 /* Smoke.png in Resources */,
+				15E819F819F6D57100DB5B50 /* Sparkle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,33 +517,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E819EC19F6D57100DB5B50 /* LTEasing.swift in Sources */,
 				15BB0B8819E466E100340337 /* LeftToRightAnimator.swift in Sources */,
 				0ED6BAAE19E6C971001CABB6 /* TrekButton.swift in Sources */,
 				15BB0B8B19E466F000340337 /* RingButton.swift in Sources */,
 				0EDFD54E19E1CC5E00AF87C2 /* TrekStatusViewController.swift in Sources */,
 				15BB0B9919E4684500340337 /* UIColorHexExtension.swift in Sources */,
 				03AC61F219F15A830079A51D /* TrekSelectViewController.swift in Sources */,
+				15E819F019F6D57100DB5B50 /* LTMorphingLabel+Fall.swift in Sources */,
 				15BB0B9419E4671D00340337 /* singletons.swift in Sources */,
 				0EDFD54419E1BE5200AF87C2 /* Enumerations.swift in Sources */,
 				0EDFD54219E1BE1300AF87C2 /* BasicAnimator.swift in Sources */,
 				15BB0B8E19E466F800340337 /* MathHelpers.swift in Sources */,
 				03DAC4ED19E51F0800068069 /* Trek.swift in Sources */,
 				0EDFD54619E1BF0900AF87C2 /* RightToLeftAnimator.swift in Sources */,
+				15E819EF19F6D57100DB5B50 /* LTMorphingLabel+Evaporate.swift in Sources */,
 				15B477D619E5CB8900D8A83D /* HomeSideMenuActions.swift in Sources */,
 				159404C419E937B200B4A3CA /* UINamedController.swift in Sources */,
+				15E819EE19F6D57100DB5B50 /* LTMorphingLabel+Burn.swift in Sources */,
+				15E819F119F6D57100DB5B50 /* LTMorphingLabel+Pixelate.swift in Sources */,
 				0E1D8BE219DF092A00BC003C /* AppDelegate.swift in Sources */,
+				15E819DA19F6C99200DB5B50 /* Question.swift in Sources */,
 				152651A919F578FC00EA44C9 /* QuestionButton.swift in Sources */,
 				0EDFD53E19E1BCCC00AF87C2 /* NavigationControllerDelegate.swift in Sources */,
+				15E819F219F6D57100DB5B50 /* LTMorphingLabel+Sparkle.swift in Sources */,
+				15E819F419F6D57100DB5B50 /* NSString+LTMorphingLabel.swift in Sources */,
 				03AC61ED19F05D400079A51D /* ProfileSummaryTableViewCell.swift in Sources */,
+				15E819FA19F6D8FD00DB5B50 /* Delay.swift in Sources */,
 				15BB0B9119E4670C00340337 /* RingButtonActions.swift in Sources */,
 				0E1D8C0319DF09DC00BC003C /* MainViewController.swift in Sources */,
 				0E0B0E3F19F517A4001A1E41 /* StoreTableViewCell.swift in Sources */,
 				15BB0B9719E4672900340337 /* SpringAnimation.swift in Sources */,
-				03DDD15D19EE6E9A00133FBC /* Question.swift in Sources */,
+				15E819DC19F6CA0600DB5B50 /* QuestionButtonActions.swift in Sources */,
 				0EE6A25E19F25D6C00FA56BC /* DottedLine.swift in Sources */,
+				15E819F319F6D57100DB5B50 /* LTMorphingLabel.swift in Sources */,
 				15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */,
 				03AC61F019F157EB0079A51D /* ProfileSummaryViewController.swift in Sources */,
 				0EDFD54819E1BF7800AF87C2 /* CrossDisolveAnimator.swift in Sources */,
+				15E819ED19F6D57100DB5B50 /* LTMorphingLabel+Anvil.swift in Sources */,
 				152651A719F5720400EA44C9 /* QuestionViewController.swift in Sources */,
 				03DDD15B19EBB52D00133FBC /* User.swift in Sources */,
 				0E0B0E3D19F51781001A1E41 /* ActionsTableViewCell.swift in Sources */,

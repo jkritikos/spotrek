@@ -13,8 +13,6 @@ import Foundation
 import Foundation
 import UIKit
 
-
-
 enum TransitionType {
 
     case RightToLeft,
@@ -28,6 +26,11 @@ enum Direction {
     
     case Horizontal,
          Vertical
+}
+
+enum QuestionNumber: Int {
+    
+    case A = 1, B, C, D
 }
 
 
