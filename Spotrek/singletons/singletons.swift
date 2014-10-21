@@ -27,7 +27,9 @@ class SharedEnvironment {
     //our user
     var currentUser:User!
     //available questions
-    var currentQuestionList: [Question]?
+    var currentQuestionList: [Question] {
+        return [Question(id: 1, milesWorth: 10, answerA: "To spiti mou", answerB: "To spiti sou", answerC: "H kai kapou allou", answerD: "H kai oxi", correctAnswer: 1)]
+    }
     
     var trekColors =    ["Walker":"39bbea",
         "Sailor": "fe9364",

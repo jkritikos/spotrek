@@ -11,6 +11,8 @@ import UIKit
 
 class Question {
     
+    private let singleton = SharedEnvironment.Instance()
+    
     var id:Int!
     var answerA:String!
     var answerB:String!
@@ -49,7 +51,8 @@ class Question {
         //if current trek == 1
             //retrieve from bundle
         
-        return UIImage()
+        var imagePath = singleton.resourcePath().stringByAppendingPathComponent("trek1Images/1.jpg")
+        return UIImage(contentsOfFile: imagePath)
     }
     
 }

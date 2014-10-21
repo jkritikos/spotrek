@@ -13,12 +13,16 @@ class QuestionButton: UIView {
     let trek: Trek!
     var questionNumberLabel: UILabel!
     var questionNumberLabelText: String!
+    var questionLabel: UILabel!
+    var questionLabelText: String!
 
-    init(frame: CGRect, trek: Trek, questionNumberLabelText: String) {
+
+    init(frame: CGRect, trek: Trek, questionNumberLabelText: String, questionLabelText: String) {
         super.init(frame: frame)
         
         self.trek = trek
         self.questionNumberLabelText = questionNumberLabelText
+        self.questionLabelText = questionLabelText
         
         initBackground()
     }
@@ -42,6 +46,17 @@ class QuestionButton: UIView {
         questionNumberLabel.alpha = 1.0
         questionNumberLabel.layer.zPosition = 100
         self.addSubview(questionNumberLabel)
+        
+        //Question Text
+        questionLabel = UILabel(frame: CGRectMake(90, 0, 320, 80))
+        questionLabel.textAlignment = NSTextAlignment.Left
+        questionLabel.textColor = UIColor.whiteColor()
+        questionLabel.font = UIFont(name: "GillSans", size: 30)
+        questionLabel.text = questionLabelText
+        questionLabel.alpha = 1.0
+        questionLabel.layer.zPosition = 100
+        self.addSubview(questionLabel)
+        
     }
 
     required init(coder aDecoder: NSCoder) {
