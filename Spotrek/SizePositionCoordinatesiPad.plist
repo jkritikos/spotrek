@@ -76,6 +76,10 @@
 	<dict/>
 	<key>trekStatusViewController</key>
 	<dict>
+		<key>curtainOffset</key>
+		<integer>136</integer>
+		<key>sideButtonOffsetY</key>
+		<integer>140</integer>
 		<key>btnTrekRect</key>
 		<dict>
 			<key>x</key>
@@ -94,6 +98,60 @@
 			<key>y</key>
 			<integer>90</integer>
 		</dict>
+		<key>lblStatusRect</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+			<key>width</key>
+			<integer>270</integer>
+			<key>height</key>
+			<integer>256</integer>
+		</dict>
+		<key>lblStatusFontSize1</key>
+		<integer>70</integer>
+		<key>lblStatusFontSize2</key>
+		<integer>40</integer>
+		<key>lblStatusFontSize3</key>
+		<integer>25</integer>
+		<key>btnPlayRect</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+			<key>width</key>
+			<integer>270</integer>
+			<key>height</key>
+			<integer>250</integer>
+		</dict>
+		<key>btnPlayCenter</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>646</integer>
+		</dict>
+		<key>btnPlayFontSize</key>
+		<integer>60</integer>
+		<key>dottedLineHeight</key>
+		<integer>4</integer>
+		<key>dottedLineCenterY1</key>
+		<integer>262</integer>
+		<key>dottedLineCenterY2</key>
+		<integer>510</integer>
+		<key>commonTableRowHeight</key>
+		<integer>70</integer>
+	</dict>
+	<key>ActionsTableViewCell</key>
+	<dict>
+		<key>cellHeight</key>
+		<integer>70</integer>
+		<key>labelOffsetX</key>
+		<integer>50</integer>
+		<key>fontSize</key>
+		<real>18</real>
 	</dict>
 </dict>
 </plist>

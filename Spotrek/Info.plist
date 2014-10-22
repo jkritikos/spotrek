@@ -39,6 +39,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>ARIALBLACK.TTF</string>
 		<string>GILLSANS.TTF</string>
 	</array>
 </dict>

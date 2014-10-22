@@ -1,5 +1,5 @@
 //
-//  homeSideMenu.swift
+//  HomeSideMenu.swift
 //  Spotrek
 //
 //  Created by Markos Hatzitaskos on 281/10/14.

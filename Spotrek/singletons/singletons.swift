@@ -12,12 +12,24 @@ import AVFoundation
 
 
 class SharedEnvironment {
+    
+    var appLandscapeFrame : CGRect {
+        
+        if self.iOS7 {
+            return CGRectMake (0,0,UIScreen.mainScreen().bounds.size.height,UIScreen.mainScreen().bounds.size.width)
+        }
+            
+        return UIScreen.mainScreen().bounds
+    }
+    
     //the currently selected trek
     var currentTrek:Trek!
     //our user
     var currentUser:User!
     //available questions
-    var currentQuestionList: [Question]?
+    var currentQuestionList: [Question] {
+        return [Question(id: 1, milesWorth: 10, answerA: "To spiti mou", answerB: "To spiti sou", answerC: "H kai kapou allou", answerD: "H kai oxi", correctAnswer: 1)]
+    }
     
     var trekColors =    ["Walker":"39bbea",
         "Sailor": "fe9364",
@@ -54,6 +66,9 @@ class SharedEnvironment {
             
         return Dictionary(minimumCapacity: 0)
     }
+    
+    let iOS7 = floor(NSFoundationVersionNumber) <= floor(NSFoundationVersionNumber_iOS_7_1)
+    let iOS8 = floor(NSFoundationVersionNumber) > floor(NSFoundationVersionNumber_iOS_7_1)
     
     class func Instance() -> SharedEnvironment! {
         
@@ -103,7 +118,7 @@ class SharedEnvironment {
         
         self.trekList = [trekAlpha,trekBeta,trekGamma,trekDelta,trekEpsilon,trekZeta,trekEta,trekTheta,trekIota,trekKappa,trekLamda,trekMu,trekNu,trekXi,trekOmicron,trekPi,trekRho,trekSigma,trekTau,trekUpsilon,trekPhi,trekXi,trekPsi,trekOmega]
     }
-
+    
     func isPad()->Bool{
         
         
@@ -179,8 +194,8 @@ class SharedEnvironment {
     }
 }
 
-//MARK: SharedAudioPlayer Singleton
 
+//MARK: SharedAudioPlayer Singleton
 class SharedAudioPlayer {
     
     private var mainLoopAudioPlayer:AVAudioPlayer!

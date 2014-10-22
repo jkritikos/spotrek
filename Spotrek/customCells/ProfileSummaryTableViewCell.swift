@@ -16,7 +16,7 @@ class ProfileSummaryTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         
-        super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
+        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: reuseIdentifier)
         
         optionLabel = UILabel(frame: CGRectMake(150,30,500,130))
         optionLabel.numberOfLines = 0

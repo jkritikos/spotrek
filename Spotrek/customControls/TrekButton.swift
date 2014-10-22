@@ -73,10 +73,7 @@ class TrekButton: RingButton {
     
         if trek.isLocked || trek.isCompleted {
            
-            
-           
             return
-        
        
         }else{
         
@@ -119,7 +116,6 @@ class TrekButton: RingButton {
                 let bgImage = UIImage(contentsOfFile: imagePath)
                 let bgImageView = UIImageView(image: bgImage)
                 self.addSubview(bgImageView)
-
                 self.userInteractionEnabled = false
 
             return

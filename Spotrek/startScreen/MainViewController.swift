@@ -1,5 +1,5 @@
 //
-//  mainViewController.swift
+//  MainViewController.swift
 //  Spotrek
 //
 //  Created by Yannis Belessiotis on 10/3/14.
@@ -29,13 +29,10 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
     var sideMenuButton: UIButton!
     var sideMenuButtonCenter: CGPoint!
     
-    
-    
-    
     override func loadView() {
     
-        self.view = UIView(frame:UIScreen.mainScreen().bounds)
-        self.view.backgroundColor=UIColor.whiteColor()
+        self.view = UIView(frame: singleton.appLandscapeFrame)
+        self.view.backgroundColor=UIColor.blackColor()
         
     }
     
@@ -51,9 +48,11 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
             startButtonRect = CGRectMake(rectCoordinates.x, rectCoordinates.y, rectCoordinates.width, rectCoordinates.height)
 
             var centerCoordinates = singleton.centerForImage(self.name, imageName: "startButton")
-            startButtonCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
 
+            startButtonCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
+            
             centerCoordinates = singleton.centerForImage(self.name, imageName: "spotrekLogo")
+
             spotrekLogoCenter = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
             
             centerCoordinates = singleton.centerForImage(self.name, imageName: "unlockWorldLabel")
@@ -159,8 +158,7 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
     override func viewDidAppear(animated: Bool) {
   
         SharedAudioPlayer.Instance().resumeMainLoop()
-
-        setupHomeElements()
+        
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.backgroundImage.alpha = 1.0
             }, completion: {
@@ -206,6 +204,8 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
         self.view.multipleTouchEnabled = true
         self.view.backgroundColor = UIColor.blackColor()
         self.title = "Home"
+        
+        setupHomeElements()
 
     }
     
