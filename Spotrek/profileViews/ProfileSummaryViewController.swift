@@ -20,11 +20,24 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
     var optionsTableView: UITableView!
     let profileCellIdentifier = "profileSummaryCell"
     
+    //label styling
+    let regularFont = [NSFontAttributeName:UIFont(name: "GillSans", size: 22.0)]
+    let bigFont = [NSFontAttributeName:UIFont(name: "GillSans-Bold", size: 48.0)]
+    
+    
     override func loadView() {
         
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
         self.view.backgroundColor=UIColor.lightGrayColor()
         
+        //header view
+        var headerView = ProfileSummaryHeaderView(frame: CGRectMake(0, 0, self.view.frame.width, 112))
+        self.view.addSubview(headerView)
+        
+        optionsTableView = UITableView(frame: CGRectMake(100, 120, 800, 640))
+        optionsTableView.backgroundColor = UIColor.clearColor().colorWithAlphaComponent(0.0)
+        optionsTableView.rowHeight = 160
+        self.view.addSubview(optionsTableView)
     }
     
     override func viewDidLoad() {
@@ -73,6 +86,72 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(profileCellIdentifier, forIndexPath:indexPath) as ProfileSummaryTableViewCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        switch indexPath.row {
+        case 0:
+            cell.setIcon("images/ipad/profile/profile_level.png")
+        
+            var attributedString = NSMutableAttributedString(string:"")
+            var string1 = NSMutableAttributedString(string: "YOU ARE CURRENTLY A\n", attributes:regularFont)
+            var string2 = NSMutableAttributedString(string:"WALKER", attributes:bigFont)
+            attributedString.appendAttributedString(string1)
+            attributedString.appendAttributedString(string2)
+            cell.optionLabel.attributedText = attributedString
+            
+            break
+        case 1:
+            cell.setIcon("images/ipad/profile/profile_stats.png")
+            
+            var attributedString = NSMutableAttributedString(string:"")
+            var string1 = NSMutableAttributedString(string: "YOU HAVE A TOTAL OF\n", attributes:regularFont)
+            var string2 = NSMutableAttributedString(string:"2345", attributes:bigFont)
+            var string3 = NSMutableAttributedString(string:" MILES & ", attributes:regularFont)
+            var string4 = NSMutableAttributedString(string:"7", attributes:bigFont)
+            var string5 = NSMutableAttributedString(string:" HINTS", attributes:regularFont)
+            attributedString.appendAttributedString(string1)
+            attributedString.appendAttributedString(string2)
+            attributedString.appendAttributedString(string3)
+            attributedString.appendAttributedString(string4)
+            attributedString.appendAttributedString(string5)
+            cell.optionLabel.attributedText = attributedString
+            
+            break
+        case 2:
+            cell.setIcon("images/ipad/profile/profile_gallery.png")
+            
+            var attributedString = NSMutableAttributedString(string:"")
+            var string1 = NSMutableAttributedString(string: "YOUR GALLERY INCLUDES\n", attributes:regularFont)
+            var string2 = NSMutableAttributedString(string:"42", attributes:bigFont)
+            var string3 = NSMutableAttributedString(string:" AMAZING ", attributes:regularFont)
+            var string4 = NSMutableAttributedString(string:"PLACES", attributes:bigFont)
+            attributedString.appendAttributedString(string1)
+            attributedString.appendAttributedString(string2)
+            attributedString.appendAttributedString(string3)
+            attributedString.appendAttributedString(string4)
+            cell.optionLabel.attributedText = attributedString
+            
+            break
+        case 3:
+            cell.setIcon("images/ipad/profile/profile_unlock.png")
+            
+            var attributedString = NSMutableAttributedString(string:"")
+            var string1 = NSMutableAttributedString(string: "YOU HAVE UNLOCKED\n", attributes:regularFont)
+            var string2 = NSMutableAttributedString(string:"5%", attributes:bigFont)
+            var string3 = NSMutableAttributedString(string:" OF ", attributes:regularFont)
+            var string4 = NSMutableAttributedString(string:"SPOTREK", attributes:bigFont)
+            attributedString.appendAttributedString(string1)
+            attributedString.appendAttributedString(string2)
+            attributedString.appendAttributedString(string3)
+            attributedString.appendAttributedString(string4)
+            cell.optionLabel.attributedText = attributedString
+            
+            break
+        default:
+            break
+        }
+        //cell.optionLabel = UILabel(frame: CGRectMake(50, 30, 100, 20))
+        
         //cell.textLabel.text = "Baking Soda"
         //cell.detailTextLabel.text = "1/2 cup"
         
@@ -80,6 +159,6 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        println("clicked on profile table row \(indexPath.row)")
     }
 }

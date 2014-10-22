@@ -38,6 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var singleton = SharedEnvironment.Instance()
         singleton.updateState()
         
+        //create our user
+        var user = User(userId: 1, token: "token", userName: "Christina Sigala", miles: 123, level: 1)
+        user.currentLocation = "Unknown location"
+        singleton.currentUser = user
+        
         return true
     }
 

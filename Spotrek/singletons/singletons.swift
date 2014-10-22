@@ -28,6 +28,7 @@ class SharedEnvironment {
         "Captain":"e55c66",
         "Spotreker":"5793d2"]
     
+    let trekLevels = [1:"Walker", 2:"Sailor", 3:"Pilot", 4:"Traveler", 5:"Voyager", 6:"Explorer", 7:"Captain", 8:"Spotreker"]
     
     var trekNames = ["ALPHA","BETA","GAMMA","DELTA","EPSILON","ZETA","ETA","THETA","IOTA","KAPPA","LAMBDA","MU","NU","XI","OMICRON","PI","RHO","SIGMA",
         "TAU","UPSILON","PHI","CHI","PSI","OMEGA"]

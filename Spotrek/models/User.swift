@@ -25,13 +25,18 @@ class User {
     var currentLocation:String?
     
     //spotrek level (walker, sailor etc)
-    var currentLevel:String?
+    var currentLevel:Int?
     
-    init(userId:Int, token:String, userName:String, miles:Int){
+    init(userId:Int, token:String, userName:String, miles:Int, level:Int){
         self.id = userId
         self.spotrekToken = token
         self.name = userName
         self.totalMiles = miles
+        self.currentLevel = level
+    }
+    
+    func getCurrentLevelName() -> String {
+        return SharedEnvironment.Instance().trekLevels[0]!
     }
     
 }
