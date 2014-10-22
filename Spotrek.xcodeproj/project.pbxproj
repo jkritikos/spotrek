@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0321D2C019F7F06000663F89 /* ProfileLevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321D2BF19F7F06000663F89 /* ProfileLevelsViewController.swift */; };
 		032846FD19F78DDC00BDCC26 /* ProfileSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032846FC19F78DDC00BDCC26 /* ProfileSummaryHeaderView.swift */; };
 		034DBA0919E40EBF00C905DA /* images in Resources */ = {isa = PBXBuildFile; fileRef = 034DBA0819E40EBF00C905DA /* images */; };
 		03AC61ED19F05D400079A51D /* ProfileSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC61EC19F05D400079A51D /* ProfileSummaryTableViewCell.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0321D2BF19F7F06000663F89 /* ProfileLevelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileLevelsViewController.swift; path = Spotrek/profileViews/ProfileLevelsViewController.swift; sourceTree = "<group>"; };
 		032846FC19F78DDC00BDCC26 /* ProfileSummaryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSummaryHeaderView.swift; path = Spotrek/profileViews/ProfileSummaryHeaderView.swift; sourceTree = "<group>"; };
 		034DBA0819E40EBF00C905DA /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		03AC61EC19F05D400079A51D /* ProfileSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSummaryTableViewCell.swift; path = Spotrek/customCells/ProfileSummaryTableViewCell.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				03AC61EF19F157EB0079A51D /* ProfileSummaryViewController.swift */,
 				032846FC19F78DDC00BDCC26 /* ProfileSummaryHeaderView.swift */,
+				0321D2BF19F7F06000663F89 /* ProfileLevelsViewController.swift */,
 			);
 			name = profileViews;
 			sourceTree = "<group>";
@@ -210,12 +213,9 @@
 				15BB0B8919E466F000340337 /* customControls */,
 				15BB0B8C19E466F800340337 /* helpers */,
 				03DAC4EB19E51D3D00068069 /* models */,
-				0E1D8BDD19DF092A00BC003C /* Products */,
 				03DDD15E19EFB8A700133FBC /* profileViews */,
 				15BB0B8F19E4670C00340337 /* protocols */,
 				15BB0B9219E4671D00340337 /* singletons */,
-				0E1D8BDE19DF092A00BC003C /* Spotrek */,
-				0E1D8BF419DF092A00BC003C /* SpotrekTests */,
 				15BB0B9519E4672900340337 /* springEffects */,
 				0E1D8C0119DF09A100BC003C /* startScreen */,
 				0EDFD54919E1C79600AF87C2 /* trekSelect */,
@@ -538,6 +538,7 @@
 				0EDFD54219E1BE1300AF87C2 /* BasicAnimator.swift in Sources */,
 				15BB0B8E19E466F800340337 /* MathHelpers.swift in Sources */,
 				03DAC4ED19E51F0800068069 /* Trek.swift in Sources */,
+				0321D2C019F7F06000663F89 /* ProfileLevelsViewController.swift in Sources */,
 				0EDFD54619E1BF0900AF87C2 /* RightToLeftAnimator.swift in Sources */,
 				15E819EF19F6D57100DB5B50 /* LTMorphingLabel+Evaporate.swift in Sources */,
 				15B477D619E5CB8900D8A83D /* HomeSideMenuActions.swift in Sources */,

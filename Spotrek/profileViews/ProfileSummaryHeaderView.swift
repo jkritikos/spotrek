@@ -24,13 +24,15 @@ class ProfileSummaryHeaderView: UIView, RingButtonActions {
     
     func buildView(){
         var singleton = SharedEnvironment.Instance()
+        var currentUser = singleton.currentUser
+        var trekLevelColor = singleton.trekColors[currentUser.currentLevel!]
         
         var userIcon = UIImageView(image: UIImage(named: "images/ipad/profile/profile_icon.png"))
         userIcon.center = CGPointMake(46,56)
         self.addSubview(userIcon)
 
         nameLabel = UILabel(frame: CGRectMake(96, 28, 250, 30))
-        nameLabel.textColor = UIColor.whiteColor()
+        nameLabel.textColor = UIColor(hex:trekLevelColor!)
         nameLabel.textAlignment = NSTextAlignment.Left
         nameLabel.font = UIFont(name: "GillSans", size: 23.0)
         nameLabel.text = SharedEnvironment.Instance().currentUser.name
@@ -48,7 +50,7 @@ class ProfileSummaryHeaderView: UIView, RingButtonActions {
             var trekColor = UIColor(hex: colorHex)
             
             tmpTrekButton = RingButton(frame: CGRectMake(buttonXValue, 38, 38, 38), color: trekColor, highlightColor: trekColor)
-            tmpTrekButton.keepsHighlightedState = true
+            tmpTrekButton.keepsHighlightedState = false
             tmpTrekButton.allowGestures = false
             tmpTrekButton.exclusiveTouch = true
             tmpTrekButton.delegate = self

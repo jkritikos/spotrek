@@ -18,7 +18,7 @@ class QuestionButton: UIView {
     var questionNumber: QuestionNumber!
     var questionNumberLabelText: String! {
         
-        switch questionNumber.toRaw() {
+        switch questionNumber.rawValue {
         case 1:
             return "A"
         case 2:

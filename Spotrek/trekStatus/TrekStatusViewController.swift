@@ -695,11 +695,11 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
             cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.backgroundColor = UIColor.clearColor()
-            cell.textLabel?.backgroundColor = UIColor.clearColor()
-            cell.textLabel?.textColor = UIColor.whiteColor()
-            cell.textLabel?.textAlignment = NSTextAlignment.Center
-            cell.textLabel?.numberOfLines = 3
-            cell.textLabel?.font = UIFont(name: "GillSans", size: 18.0)
+            cell.textLabel.backgroundColor = UIColor.clearColor()
+            cell.textLabel.textColor = UIColor.whiteColor()
+            cell.textLabel.textAlignment = NSTextAlignment.Center
+            cell.textLabel.numberOfLines = 3
+            cell.textLabel.font = UIFont(name: "GillSans", size: 18.0)
 
             
         }
@@ -708,14 +708,14 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         if tableView == infoTableView {
         
             currrentArray = infoDataArray
-            cell?.textLabel?.text = currrentArray[indexPath.row]
+            cell?.textLabel.text = currrentArray[indexPath.row]
             return cell
 
 
         } else if tableView == statsTableView {
             
             currrentArray = statsDataArray
-            cell?.textLabel?.text = currrentArray[indexPath.row]
+            cell?.textLabel.text = currrentArray[indexPath.row]
             return cell
 
         
@@ -729,7 +729,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         } else if tableView == storeTableView {
 
             currrentArray = storeDataArray
-            cell?.textLabel?.text = currrentArray[indexPath.row]
+            cell?.textLabel.text = currrentArray[indexPath.row]
             return cell
 
         

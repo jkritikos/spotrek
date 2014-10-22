@@ -142,7 +142,7 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
         imagePath = singleton.resourcePath().stringByAppendingPathComponent("home/menu_lines.png")
         let sideMenuButtonImage = UIImage(contentsOfFile: imagePath)
         sideMenuButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        sideMenuButton.frame = CGRectMake(0, 0, sideMenuButtonImage.size.width, sideMenuButtonImage.size.height)
+        //sideMenuButton.frame = CGRectMake(0, 0, sideMenuButtonImage?.size.width, sideMenuButtonImage?.size.height)
         sideMenuButton.setImage(sideMenuButtonImage, forState: UIControlState.Normal)
         sideMenuButton.center = sideMenuButtonCenter
         sideMenuButton.enabled = true
@@ -375,19 +375,19 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
         self.navigationController?.delegate  = self.navigationDelegate
         
         switch buttonItem.tag {
-            case HomeSideMenuButtonType.None.toRaw(): break
+            case HomeSideMenuButtonType.None.rawValue: break
             
             //Profile summary
-            case HomeSideMenuButtonType.Profile.toRaw():
+            case HomeSideMenuButtonType.Profile.rawValue:
                 let profileSummaryView = ProfileSummaryViewController(nibName: nil,bundle: nil)
                 profileSummaryView.modalPresentationStyle = UIModalPresentationStyle.Custom
                 self.navigationController?.pushViewController(profileSummaryView, animated: true)
                 break
             
-            case HomeSideMenuButtonType.Gallery.toRaw(): break
-            case HomeSideMenuButtonType.Settings.toRaw(): break
-            case HomeSideMenuButtonType.Store.toRaw(): break
-            case HomeSideMenuButtonType.Hints.toRaw(): break
+            case HomeSideMenuButtonType.Gallery.rawValue: break
+            case HomeSideMenuButtonType.Settings.rawValue: break
+            case HomeSideMenuButtonType.Store.rawValue: break
+            case HomeSideMenuButtonType.Hints.rawValue: break
             default:
                 break
     

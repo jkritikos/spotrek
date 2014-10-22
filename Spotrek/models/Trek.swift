@@ -34,9 +34,11 @@ class Trek {
     }
     
     init(trekNumber:Int, percentComplete: Int, isLocked:Bool){
+        var singleton = SharedEnvironment.Instance()
+        
         var hexColor:String!
         self.trekNumber = trekNumber
-        self.name = SharedEnvironment.Instance().trekNames[trekNumber]
+        self.name = singleton.trekNames[trekNumber]
         self.isLocked = isLocked
         self.percentComplete = percentComplete
         
@@ -48,21 +50,21 @@ class Trek {
         switch trekNumber {
         
             case 1...3:
-                hexColor = SharedEnvironment.Instance().trekColors[1]
+                hexColor = singleton.trekColors[1]
             case 4...6:
-                hexColor = SharedEnvironment.Instance().trekColors[2]
+                hexColor = singleton.trekColors[2]
             case 7...9:
-                hexColor = SharedEnvironment.Instance().trekColors[3]
+                hexColor = singleton.trekColors[3]
             case 10...12:
-                hexColor = SharedEnvironment.Instance().trekColors[4]
+                hexColor = singleton.trekColors[4]
             case 13...15:
-                hexColor = SharedEnvironment.Instance().trekColors[5]
+                hexColor = singleton.trekColors[5]
             case 16...18:
-                hexColor = SharedEnvironment.Instance().trekColors[6]
+                hexColor = singleton.trekColors[6]
             case 19...21:
-                hexColor = SharedEnvironment.Instance().trekColors[7]
+                hexColor = singleton.trekColors[7]
             case 22...24:
-                hexColor = SharedEnvironment.Instance().trekColors[8]
+                hexColor = singleton.trekColors[8]
             default:
                 self.color = UIColor.clearColor()
                 self.highlightColor = UIColor.clearColor()

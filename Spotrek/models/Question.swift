@@ -52,7 +52,7 @@ class Question {
             //retrieve from bundle
         
         var imagePath = singleton.resourcePath().stringByAppendingPathComponent("trek1Images/1.jpg")
-        return UIImage(contentsOfFile: imagePath)
+        return UIImage(contentsOfFile: imagePath)!
     }
     
 }

@@ -26,9 +26,12 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
     
     
     override func loadView() {
+        var singleton = SharedEnvironment.Instance()
+        var currentUser = singleton.currentUser
+        var backgroundColor = singleton.trekColors[currentUser.currentLevel!]
         
         self.view = UIView(frame:UIScreen.mainScreen().bounds)
-        self.view.backgroundColor=UIColor.lightGrayColor()
+        self.view.backgroundColor=UIColor(hex:backgroundColor!)
         
         //header view
         var headerView = ProfileSummaryHeaderView(frame: CGRectMake(0, 0, self.view.frame.width, 112))
