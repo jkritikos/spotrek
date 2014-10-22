@@ -83,7 +83,7 @@ class MainViewController: UIViewController, UINamedController, RingButtonActions
         self.view.addSubview(sideMenu)
         
         //Initializing colors
-        let walkerColor = UIColor(hex: singleton.trekColors["Walker"]!)
+        let walkerColor = UIColor(hex: singleton.trekColors[1]!)
         
         //Initializing background image
         var imagePath = singleton.resourcePath().stringByAppendingPathComponent("home/image1.jpg")

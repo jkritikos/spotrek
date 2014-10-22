@@ -30,20 +30,11 @@ class SharedEnvironment {
     var currentQuestionList: [Question] {
         return [Question(id: 1, milesWorth: 10, answerA: "To spiti mou", answerB: "To spiti sou", answerC: "H kai kapou allou", answerD: "H kai oxi", correctAnswer: 1)]
     }
-    
-    var trekColors =    ["Walker":"39bbea",
-        "Sailor": "fe9364",
-        "Pilot":"9cc863",
-        "Traveler":"e188bb",
-        "Voyager":"23c0a4",
-        "Explorer":"a792e3",
-        "Captain":"e55c66",
-        "Spotreker":"5793d2"]
-    
+        
+    let trekColors = [1:"#39bbea", 2:"#fe9364", 3:"#9cc863", 4:"#e188bb", 5:"#23c0a4", 6:"#a792e3", 7:"#e55c66", 8:"#5793d2"]
     let trekLevels = [1:"Walker", 2:"Sailor", 3:"Pilot", 4:"Traveler", 5:"Voyager", 6:"Explorer", 7:"Captain", 8:"Spotreker"]
     
-    var trekNames = ["ALPHA","BETA","GAMMA","DELTA","EPSILON","ZETA","ETA","THETA","IOTA","KAPPA","LAMBDA","MU","NU","XI","OMICRON","PI","RHO","SIGMA",
-        "TAU","UPSILON","PHI","CHI","PSI","OMEGA"]
+    var trekNames = [1:"ALPHA",2:"BETA",3:"GAMMA",4:"DELTA",5:"EPSILON",6:"ZETA",7:"ETA",8:"THETA",9:"IOTA",10:"KAPPA",11:"LAMBDA",12:"MU",13:"NU",14:"XI",15:"OMICRON",16:"PI",17:"RHO",18:"SIGMA",19:"TAU",20:"UPSILON",21:"PHI",22:"CHI",23:"PSI",24:"OMEGA"]
     
     var trekList: [Trek] = []
     
@@ -91,30 +82,30 @@ class SharedEnvironment {
     
     func updateState(){
       
-        var trekAlpha = Trek(trekNumber:0, percentComplete:0, isLocked:false)
-        var trekBeta = Trek(trekNumber:1, percentComplete:20, isLocked:false)
-        var trekGamma = Trek(trekNumber:2, percentComplete:100, isLocked:false)
-        var trekDelta = Trek(trekNumber:3, percentComplete:0, isLocked:true)
-        var trekEpsilon = Trek(trekNumber:4, percentComplete:0, isLocked:true)
-        var trekZeta = Trek(trekNumber:5, percentComplete:0, isLocked:true)
-        var trekEta = Trek(trekNumber:6, percentComplete:0, isLocked:true)
-        var trekTheta = Trek(trekNumber:7, percentComplete:0, isLocked:true)
-        var trekIota = Trek(trekNumber:8, percentComplete:0, isLocked:true)
-        var trekKappa = Trek(trekNumber:9, percentComplete:0, isLocked:true)
-        var trekLamda = Trek(trekNumber:10, percentComplete:0, isLocked:true)
-        var trekMu = Trek(trekNumber:11, percentComplete:0, isLocked:true)
-        var trekNu = Trek(trekNumber:12, percentComplete:0, isLocked:true)
-        var trekXi = Trek(trekNumber:13, percentComplete:0, isLocked:true)
-        var trekOmicron = Trek(trekNumber:14, percentComplete:0, isLocked:true)
-        var trekPi = Trek(trekNumber:15, percentComplete:0, isLocked:true)
-        var trekRho = Trek(trekNumber:16, percentComplete:0, isLocked:true)
-        var trekSigma = Trek(trekNumber:17, percentComplete:0, isLocked:true)
-        var trekTau = Trek(trekNumber:18, percentComplete:0, isLocked:true)
-        var trekUpsilon = Trek(trekNumber:19, percentComplete:0, isLocked:true)
-        var trekPhi = Trek(trekNumber:20, percentComplete:0, isLocked:true)
-        var trekChi = Trek(trekNumber:21, percentComplete:0, isLocked:true)
-        var trekPsi = Trek(trekNumber:22, percentComplete:0, isLocked:true)
-        var trekOmega = Trek(trekNumber:23, percentComplete:0, isLocked:true)
+        var trekAlpha = Trek(trekNumber:1, percentComplete:0, isLocked:false)
+        var trekBeta = Trek(trekNumber:2, percentComplete:20, isLocked:false)
+        var trekGamma = Trek(trekNumber:3, percentComplete:100, isLocked:false)
+        var trekDelta = Trek(trekNumber:4, percentComplete:0, isLocked:true)
+        var trekEpsilon = Trek(trekNumber:5, percentComplete:0, isLocked:true)
+        var trekZeta = Trek(trekNumber:6, percentComplete:0, isLocked:true)
+        var trekEta = Trek(trekNumber:7, percentComplete:0, isLocked:true)
+        var trekTheta = Trek(trekNumber:8, percentComplete:0, isLocked:true)
+        var trekIota = Trek(trekNumber:9, percentComplete:0, isLocked:true)
+        var trekKappa = Trek(trekNumber:10, percentComplete:0, isLocked:true)
+        var trekLamda = Trek(trekNumber:11, percentComplete:0, isLocked:true)
+        var trekMu = Trek(trekNumber:12, percentComplete:0, isLocked:true)
+        var trekNu = Trek(trekNumber:13, percentComplete:0, isLocked:true)
+        var trekXi = Trek(trekNumber:14, percentComplete:0, isLocked:true)
+        var trekOmicron = Trek(trekNumber:15, percentComplete:0, isLocked:true)
+        var trekPi = Trek(trekNumber:16, percentComplete:0, isLocked:true)
+        var trekRho = Trek(trekNumber:17, percentComplete:0, isLocked:true)
+        var trekSigma = Trek(trekNumber:18, percentComplete:0, isLocked:true)
+        var trekTau = Trek(trekNumber:19, percentComplete:0, isLocked:true)
+        var trekUpsilon = Trek(trekNumber:20, percentComplete:0, isLocked:true)
+        var trekPhi = Trek(trekNumber:21, percentComplete:0, isLocked:true)
+        var trekChi = Trek(trekNumber:22, percentComplete:0, isLocked:true)
+        var trekPsi = Trek(trekNumber:23, percentComplete:0, isLocked:true)
+        var trekOmega = Trek(trekNumber:24, percentComplete:0, isLocked:true)
         
         self.trekList = [trekAlpha,trekBeta,trekGamma,trekDelta,trekEpsilon,trekZeta,trekEta,trekTheta,trekIota,trekKappa,trekLamda,trekMu,trekNu,trekXi,trekOmicron,trekPi,trekRho,trekSigma,trekTau,trekUpsilon,trekPhi,trekXi,trekPsi,trekOmega]
     }

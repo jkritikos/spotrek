@@ -47,22 +47,22 @@ class Trek {
         
         switch trekNumber {
         
-            case 0...2:
-                hexColor = SharedEnvironment.Instance().trekColors["Walker"]
-            case 3...5:
-                hexColor = SharedEnvironment.Instance().trekColors["Sailor"]
-            case 6...8:
-                hexColor = SharedEnvironment.Instance().trekColors["Pilot"]
-            case 9...11:
-                hexColor = SharedEnvironment.Instance().trekColors["Traveler"]
-            case 12...14:
-                hexColor = SharedEnvironment.Instance().trekColors["Voyager"]
-            case 15...17:
-                hexColor = SharedEnvironment.Instance().trekColors["Explorer"]
-            case 18...20:
-                hexColor = SharedEnvironment.Instance().trekColors["Captain"]
-            case 21...23:
-                hexColor = SharedEnvironment.Instance().trekColors["Spotreker"]
+            case 1...3:
+                hexColor = SharedEnvironment.Instance().trekColors[1]
+            case 4...6:
+                hexColor = SharedEnvironment.Instance().trekColors[2]
+            case 7...9:
+                hexColor = SharedEnvironment.Instance().trekColors[3]
+            case 10...12:
+                hexColor = SharedEnvironment.Instance().trekColors[4]
+            case 13...15:
+                hexColor = SharedEnvironment.Instance().trekColors[5]
+            case 16...18:
+                hexColor = SharedEnvironment.Instance().trekColors[6]
+            case 19...21:
+                hexColor = SharedEnvironment.Instance().trekColors[7]
+            case 22...24:
+                hexColor = SharedEnvironment.Instance().trekColors[8]
             default:
                 self.color = UIColor.clearColor()
                 self.highlightColor = UIColor.clearColor()
