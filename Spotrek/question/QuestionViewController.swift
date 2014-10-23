@@ -133,7 +133,7 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
     
     func questionButtonSingleTap(sender: QuestionButton) {
         
-        if sender.questionNumber.toRaw() == question.correctAnswer {
+        if sender.questionNumber.rawValue == question.correctAnswer {
             let greenColor = UIColor(hex: singleton.trekColors[3]!)
             sender.changeBackgroundToColor(greenColor)
             

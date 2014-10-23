@@ -21,8 +21,8 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
     let profileCellIdentifier = "profileSummaryCell"
     
     //label styling
-    let regularFont = [NSFontAttributeName:UIFont(name: "GillSans", size: 22.0)]
-    let bigFont = [NSFontAttributeName:UIFont(name: "GillSans-Bold", size: 48.0)]
+    let regularFont = [NSFontAttributeName:UIFont(name: "GillSans", size: 22.0)!]
+    let bigFont = [NSFontAttributeName:UIFont(name: "GillSans-Bold", size: 48.0)!]
     
     
     override func loadView() {
@@ -91,9 +91,12 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCellWithIdentifier(profileCellIdentifier, forIndexPath:indexPath) as ProfileSummaryTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
+        
+        
         switch indexPath.row {
         case 0:
             cell.setIcon("images/ipad/profile/profile_level.png")
+            
         
             var attributedString = NSMutableAttributedString(string:"")
             var string1 = NSMutableAttributedString(string: "YOU ARE CURRENTLY A\n", attributes:regularFont)
@@ -153,6 +156,7 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
         default:
             break
         }
+        
         //cell.optionLabel = UILabel(frame: CGRectMake(50, 30, 100, 20))
         
         //cell.textLabel.text = "Baking Soda"
