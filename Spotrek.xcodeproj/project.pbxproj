@@ -22,6 +22,9 @@
 		0E1D8BE919DF092A00BC003C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1D8BE819DF092A00BC003C /* Images.xcassets */; };
 		0E1D8BF819DF092A00BC003C /* SpotrekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */; };
 		0E1D8C0319DF09DC00BC003C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D8C0219DF09DC00BC003C /* MainViewController.swift */; };
+		0E5543D119F935F3004D12DB /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5543D019F935F3004D12DB /* SimpleError.swift */; };
+		0E5543D419F93608004D12DB /* HttpPostCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5543D219F93608004D12DB /* HttpPostCommand.swift */; };
+		0E5543D519F93608004D12DB /* HttpPostCommandDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5543D319F93608004D12DB /* HttpPostCommandDelegate.swift */; };
 		0E7411AA19E997EB008D8B0A /* MTB_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A719E997EB008D8B0A /* MTB_1.wav */; };
 		0E7411AB19E997EB008D8B0A /* MTB_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A819E997EB008D8B0A /* MTB_2.wav */; };
 		0E7411AC19E997EB008D8B0A /* MTB_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E7411A919E997EB008D8B0A /* MTB_3.wav */; };
@@ -95,6 +98,9 @@
 		0E1D8BF619DF092A00BC003C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1D8BF719DF092A00BC003C /* SpotrekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotrekTests.swift; sourceTree = "<group>"; };
 		0E1D8C0219DF09DC00BC003C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Spotrek/startScreen/MainViewController.swift; sourceTree = "<group>"; };
+		0E5543D019F935F3004D12DB /* SimpleError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
+		0E5543D219F93608004D12DB /* HttpPostCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpPostCommand.swift; path = HttpPostCommand/HttpPostCommand.swift; sourceTree = "<group>"; };
+		0E5543D319F93608004D12DB /* HttpPostCommandDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpPostCommandDelegate.swift; path = HttpPostCommand/HttpPostCommandDelegate.swift; sourceTree = "<group>"; };
 		0E7411A719E997EB008D8B0A /* MTB_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_1.wav; path = sounds/MTB_1.wav; sourceTree = "<group>"; };
 		0E7411A819E997EB008D8B0A /* MTB_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_2.wav; path = sounds/MTB_2.wav; sourceTree = "<group>"; };
 		0E7411A919E997EB008D8B0A /* MTB_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MTB_3.wav; path = sounds/MTB_3.wav; sourceTree = "<group>"; };
@@ -285,6 +291,15 @@
 			name = startScreen;
 			sourceTree = "<group>";
 		};
+		0E5543CF19F93558004D12DB /* HttpPostCommand */ = {
+			isa = PBXGroup;
+			children = (
+				0E5543D219F93608004D12DB /* HttpPostCommand.swift */,
+				0E5543D319F93608004D12DB /* HttpPostCommandDelegate.swift */,
+			);
+			name = HttpPostCommand;
+			sourceTree = "<group>";
+		};
 		0E7411A619E997A4008D8B0A /* sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,7 +363,9 @@
 		15BB0B8C19E466F800340337 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0E5543CF19F93558004D12DB /* HttpPostCommand */,
 				15E819DD19F6D57100DB5B50 /* LTMorphingLabel */,
+				0E5543D019F935F3004D12DB /* SimpleError.swift */,
 				15BB0B8D19E466F800340337 /* MathHelpers.swift */,
 				15BB0B9819E4684500340337 /* UIColorHexExtension.swift */,
 				15E819F919F6D8FD00DB5B50 /* Delay.swift */,
@@ -536,6 +553,7 @@
 				0EDFD54419E1BE5200AF87C2 /* Enumerations.swift in Sources */,
 				032846FD19F78DDC00BDCC26 /* ProfileSummaryHeaderView.swift in Sources */,
 				0EDFD54219E1BE1300AF87C2 /* BasicAnimator.swift in Sources */,
+				0E5543D119F935F3004D12DB /* SimpleError.swift in Sources */,
 				15BB0B8E19E466F800340337 /* MathHelpers.swift in Sources */,
 				03DAC4ED19E51F0800068069 /* Trek.swift in Sources */,
 				0321D2C019F7F06000663F89 /* ProfileLevelsViewController.swift in Sources */,
@@ -553,11 +571,13 @@
 				15E819F419F6D57100DB5B50 /* NSString+LTMorphingLabel.swift in Sources */,
 				03AC61ED19F05D400079A51D /* ProfileSummaryTableViewCell.swift in Sources */,
 				15E819FA19F6D8FD00DB5B50 /* Delay.swift in Sources */,
+				0E5543D419F93608004D12DB /* HttpPostCommand.swift in Sources */,
 				15BB0B9119E4670C00340337 /* RingButtonActions.swift in Sources */,
 				0E1D8C0319DF09DC00BC003C /* MainViewController.swift in Sources */,
 				0E0B0E3F19F517A4001A1E41 /* StoreTableViewCell.swift in Sources */,
 				15BB0B9719E4672900340337 /* SpringAnimation.swift in Sources */,
 				15E819DC19F6CA0600DB5B50 /* QuestionButtonActions.swift in Sources */,
+				0E5543D519F93608004D12DB /* HttpPostCommandDelegate.swift in Sources */,
 				0EE6A25E19F25D6C00FA56BC /* DottedLine.swift in Sources */,
 				15E819F319F6D57100DB5B50 /* LTMorphingLabel.swift in Sources */,
 				15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */,

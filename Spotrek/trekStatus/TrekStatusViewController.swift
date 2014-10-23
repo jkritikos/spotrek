@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrekStatusViewController: UIViewController,UINamedController, UITableViewDataSource,UITableViewDelegate{
+class TrekStatusViewController: UIViewController,UINamedController, UITableViewDataSource,UITableViewDelegate , HttpPostCommandDelegate {
     
     var name = "trekStatusViewController"
     private let singleton = SharedEnvironment.Instance()
@@ -21,6 +21,7 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     private var currentTrek:Trek!
     private var btnPlay:UIButton!
+    private var questionsLoaded:Bool! = false
     
     private var leftView:UIView!
     private var rightView:UIView!
@@ -99,7 +100,8 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         initButtons()
         initDataArrays()
         initContainerViews()
-    
+        loadAvailableQuestions()
+        
     }
     
     
@@ -202,7 +204,6 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     func initPlayButton(){
     
     
-        var btnPlay:UIButton!
         var rectCoordinates = singleton.frameForImage(self.name, imageName: "btnPlay")
         btnPlay = UIButton(frame: CGRectMake(0, 0, rectCoordinates.width, rectCoordinates.height))
         btnPlay.titleLabel?.numberOfLines=2
@@ -216,8 +217,9 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
         var centerCoordinates = singleton.centerForImage(self.name, imageName: "btnPlay")
         btnPlay.center = CGPointMake(CGRectGetMidX(self.view.frame), centerCoordinates.y)
         btnPlay.addTarget(self, action:"btnPlay:" , forControlEvents: UIControlEvents.TouchUpInside)
+        btnPlay.enabled = false
         self.view.addSubview(btnPlay)
-    
+      
     
     }
     
@@ -411,7 +413,8 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
 
     
     override func viewDidAppear(animated: Bool) {
-    
+        
+     
         if !self.curtainsAreOpen {
         
             openCurtains()
@@ -739,6 +742,21 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     }
     
     
+    func loadAvailableQuestions(){
+    
+        var paramDict:Dictionary<String,String>!
+        paramDict = ["user_id":"1","trek_id":"1"]
+        var myClass:HttpPostCommand!
+        myClass = HttpPostCommand(params: paramDict, commandUrlKey: CommandUrlKey.kGetAvailableQuestionsForTrek)
+        myClass.delegate = self
+        myClass.execute()
+
+    
+    
+    }
+    
+    
+    
     //MARK: TableViewDelegatge
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? // custom view for header. will be adjusted to default or specified header height
     {
@@ -753,6 +771,25 @@ class TrekStatusViewController: UIViewController,UINamedController, UITableViewD
     
     }
     
+    //MARK:HttpPostCommandDelegate
+    func commandFailedWithError(error:SimpleError? , commandUrlKey:CommandUrlKey!){
+        
+        println("We received the following error:\(error?.message)")
+        
+    }
+    
+    func commandCompletedSuccessfully (response:NSDictionary?, commandUrlKey:CommandUrlKey!){
+        
+       
+        if commandUrlKey == CommandUrlKey.kGetAvailableQuestionsForTrek {
+            
+            self.btnPlay.enabled = true
+            println("We received the response:\(response?)")
+            
+        }
+        
+    }
+
 
        
 }

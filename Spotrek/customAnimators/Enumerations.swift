@@ -33,4 +33,11 @@ enum QuestionNumber: Int {
     case A = 1, B, C, D
 }
 
+//Http Related
+enum CommandUrlKey:String {
+    
+    case kGetAvailableQuestionsForTrek = "http://spotrek.boomar.gr/api/getAvailableQuestions" ,
+         kGetBlaBlaBla = "http://Bla.Bla.com"
+    
+}
 
