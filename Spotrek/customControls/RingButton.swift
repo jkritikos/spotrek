@@ -17,6 +17,7 @@ class RingButton: UIView {
     var touchIsActive: Bool!
     var keepsHighlightedState: Bool!
     var allowGestures: Bool!
+    var innerCircle: Bool!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +30,7 @@ class RingButton: UIView {
         touchIsActive = false
         keepsHighlightedState = false
         allowGestures = false
+        self.innerCircle = true
     }
     
     init(frame: CGRect, color: UIColor, highlightColor: UIColor) {
@@ -38,10 +40,25 @@ class RingButton: UIView {
         paintColor = color
         self.highlightColor = highlightColor
         ringSize = self.frame.size.height/20
-        currentColor = color
+        currentColor = paintColor
         touchIsActive = false
         keepsHighlightedState = false
         allowGestures = false
+        self.innerCircle = true
+    }
+    
+    init(frame: CGRect, color: UIColor, highlightColor: UIColor, innerCircle: Bool) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = UIColor.clearColor()
+        paintColor = color
+        self.highlightColor = highlightColor
+        ringSize = self.frame.size.height/20
+        currentColor = paintColor
+        touchIsActive = false
+        keepsHighlightedState = false
+        allowGestures = false
+        self.innerCircle = innerCircle
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -69,15 +86,17 @@ class RingButton: UIView {
         CGContextStrokePath(context);
         
         
-        //draw the inner circle
-        let factor: CGFloat = 2.3; //the disrance between outer ring and inner circle compared to ring size
-        let innerRectangle = CGRectMake(factor*ringSize, factor*ringSize, self.frame.size.width-2*factor*ringSize, self.frame.size.height-2*factor*ringSize);
-        CGContextAddEllipseInRect(context, innerRectangle);
-        
-        //set the fill color
-        CGContextSetFillColorWithColor(context, currentColor.CGColor);
-        
-        CGContextFillPath(context);
+        if innerCircle! {
+            //draw the inner circle
+            let factor: CGFloat = 2.3; //the disrance between outer ring and inner circle compared to ring size
+            let innerRectangle = CGRectMake(factor*ringSize, factor*ringSize, self.frame.size.width-2*factor*ringSize, self.frame.size.height-2*factor*ringSize);
+            CGContextAddEllipseInRect(context, innerRectangle);
+            
+            //set the fill color
+            CGContextSetFillColorWithColor(context, currentColor.CGColor);
+            
+            CGContextFillPath(context);
+        }
     }
     
     override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {

@@ -70,32 +70,36 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
         topBar.center = CGPointMake(CGRectGetMidX(self.view.frame), -35)
         topBar.alpha = 1.0
         self.view.addSubview(topBar)
+        
+        let hint = Hint5050Button(frame: CGRectMake(0, 0, 54, 54), color: singleton.currentTrek.color)
+        hint.center = CGPointMake(820, 34)
+        topBar.addSubview(hint)
     }
     
     func initQuestionButtons() {
         
-        let questionButton1 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.A, questionLabelText: question.answerA)
-        questionButton1.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton1.frame.width/2, 420)
+        let questionButton1 = QuestionButton(frame: CGRectMake(0, 0, 460, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.A, questionLabelText: question.answerA)
+        questionButton1.center = CGPointMake(CGRectGetMaxX(self.view.frame)+questionButton1.frame.width/2, 420)
         questionButton1.delegate = self
-        questionButton1.alpha = 0.0
+        questionButton1.alpha = 1.0
         self.view.addSubview(questionButton1)
         
-        let questionButton2 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.B, questionLabelText: question.answerB)
-        questionButton2.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton2.frame.width/2, 505)
+        let questionButton2 = QuestionButton(frame: CGRectMake(0, 0, 460, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.B, questionLabelText: question.answerB)
+        questionButton2.center = CGPointMake(CGRectGetMaxX(self.view.frame)+questionButton2.frame.width/2, 505)
         questionButton2.delegate = self
-        questionButton2.alpha = 0.0
+        questionButton2.alpha = 1.0
         self.view.addSubview(questionButton2)
         
-        let questionButton3 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.C, questionLabelText: question.answerC)
-        questionButton3.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton3.frame.width/2, 590)
+        let questionButton3 = QuestionButton(frame: CGRectMake(0, 0, 460, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.C, questionLabelText: question.answerC)
+        questionButton3.center = CGPointMake(CGRectGetMaxX(self.view.frame)+questionButton3.frame.width/2, 590)
         questionButton3.delegate = self
-        questionButton3.alpha = 0.0
+        questionButton3.alpha = 1.0
         self.view.addSubview(questionButton3)
         
-        let questionButton4 = QuestionButton(frame: CGRectMake(0, 0, 410, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.D, questionLabelText: question.answerD)
-        questionButton4.center = CGPointMake(CGRectGetMaxX(self.view.frame)-questionButton4.frame.width/2, 675)
+        let questionButton4 = QuestionButton(frame: CGRectMake(0, 0, 460, 77), trek: singleton.currentTrek, questionNumber: QuestionNumber.D, questionLabelText: question.answerD)
+        questionButton4.center = CGPointMake(CGRectGetMaxX(self.view.frame)+questionButton4.frame.width/2, 675)
         questionButton4.delegate = self
-        questionButton4.alpha = 0.0
+        questionButton4.alpha = 1.0
         self.view.addSubview(questionButton4)
         
         questionButtons = [questionButton1, questionButton2, questionButton3, questionButton4]
@@ -112,17 +116,16 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
                     self.topBar.center = CGPointMake(CGRectGetMidX(self.view.frame), 35)
                 })
                 
-                //for var i = 0; i < self.questionButtons.count; ++i {
-                                        
-                    //let delayTime = NSTimeInterval(0.25*CGFloat(i))
+                for var i = 0; i < self.questionButtons.count; i++ {
+
+                    var delayTime = NSTimeInterval(0.25*CGFloat(i))
                     
-                    //delay(delayTime) {
-                
-                for question in self.questionButtons {
-                    question.alpha = 1.0
+                    springWithDelayAndCompletion(1.0, delayTime, {
+                            self.questionButtons[i].center = CGPointMake(CGRectGetMaxX(self.view.frame)-self.questionButtons[i].frame.width/2+50, self.questionButtons[i].center.y)
+                        }, { finished in
+                            
+                    })
                 }
-                    //}
-                //}
         })
     }
 

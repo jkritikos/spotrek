@@ -66,6 +66,7 @@
 		15E819F719F6D57100DB5B50 /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E819EA19F6D57100DB5B50 /* Smoke.png */; };
 		15E819F819F6D57100DB5B50 /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E819EB19F6D57100DB5B50 /* Sparkle.png */; };
 		15E819FA19F6D8FD00DB5B50 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819F919F6D8FD00DB5B50 /* Delay.swift */; };
+		15E9386E19F97BCD00681995 /* Hint5050Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9386D19F97BCD00681995 /* Hint5050Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		15E819EA19F6D57100DB5B50 /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
 		15E819EB19F6D57100DB5B50 /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
 		15E819F919F6D8FD00DB5B50 /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		15E9386D19F97BCD00681995 /* Hint5050Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hint5050Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 				15BB0B8A19E466F000340337 /* RingButton.swift */,
 				0ED6BAAD19E6C971001CABB6 /* TrekButton.swift */,
 				152651A819F578FC00EA44C9 /* QuestionButton.swift */,
+				15E9386D19F97BCD00681995 /* Hint5050Button.swift */,
 			);
 			name = customControls;
 			path = Spotrek/customControls;
@@ -582,6 +585,7 @@
 				15E819F319F6D57100DB5B50 /* LTMorphingLabel.swift in Sources */,
 				15B477D419E5C11A00D8A83D /* HomeSideMenu.swift in Sources */,
 				03AC61F019F157EB0079A51D /* ProfileSummaryViewController.swift in Sources */,
+				15E9386E19F97BCD00681995 /* Hint5050Button.swift in Sources */,
 				0EDFD54819E1BF7800AF87C2 /* CrossDisolveAnimator.swift in Sources */,
 				15E819ED19F6D57100DB5B50 /* LTMorphingLabel+Anvil.swift in Sources */,
 				152651A719F5720400EA44C9 /* QuestionViewController.swift in Sources */,
