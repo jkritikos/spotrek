@@ -67,6 +67,7 @@
 		15E819F819F6D57100DB5B50 /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E819EB19F6D57100DB5B50 /* Sparkle.png */; };
 		15E819FA19F6D8FD00DB5B50 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E819F919F6D8FD00DB5B50 /* Delay.swift */; };
 		15E9386E19F97BCD00681995 /* Hint5050Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9386D19F97BCD00681995 /* Hint5050Button.swift */; };
+		15E9387019F98A9200681995 /* CircledNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9386F19F98A9200681995 /* CircledNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		15E819EB19F6D57100DB5B50 /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
 		15E819F919F6D8FD00DB5B50 /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 		15E9386D19F97BCD00681995 /* Hint5050Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hint5050Button.swift; sourceTree = "<group>"; };
+		15E9386F19F98A9200681995 /* CircledNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircledNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 				0ED6BAAD19E6C971001CABB6 /* TrekButton.swift */,
 				152651A819F578FC00EA44C9 /* QuestionButton.swift */,
 				15E9386D19F97BCD00681995 /* Hint5050Button.swift */,
+				15E9386F19F98A9200681995 /* CircledNumber.swift */,
 			);
 			name = customControls;
 			path = Spotrek/customControls;
@@ -589,6 +592,7 @@
 				0EDFD54819E1BF7800AF87C2 /* CrossDisolveAnimator.swift in Sources */,
 				15E819ED19F6D57100DB5B50 /* LTMorphingLabel+Anvil.swift in Sources */,
 				152651A719F5720400EA44C9 /* QuestionViewController.swift in Sources */,
+				15E9387019F98A9200681995 /* CircledNumber.swift in Sources */,
 				03DDD15B19EBB52D00133FBC /* User.swift in Sources */,
 				0E0B0E3D19F51781001A1E41 /* ActionsTableViewCell.swift in Sources */,
 			);

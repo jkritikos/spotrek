@@ -17,6 +17,10 @@ class Hint5050Button: UIView {
         
         paintColor = color
         self.backgroundColor = UIColor.clearColor()
+        
+        let circledNumber = CircledNumber(frame: CGRectMake(0, 0, 26, 26))
+        circledNumber.center = CGPointMake(53, 16)
+        self.addSubview(circledNumber)
     }
 
     required init(coder aDecoder: NSCoder) {

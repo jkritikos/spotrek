@@ -74,6 +74,10 @@ class QuestionViewController: UIViewController, UINamedController, QuestionButto
         let hint = Hint5050Button(frame: CGRectMake(0, 0, 54, 54), color: singleton.currentTrek.color)
         hint.center = CGPointMake(820, 34)
         topBar.addSubview(hint)
+        
+        var dottedLine:DottedLine! = DottedLine(frame: CGRectMake(0, 0, 4, 56), strokeColor: UIColor.whiteColor(), direction: Direction.Vertical)
+        dottedLine.center = CGPointMake(872, topBar.frame.size.height/2)
+        topBar.addSubview(dottedLine)
     }
     
     func initQuestionButtons() {
