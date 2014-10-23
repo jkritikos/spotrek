@@ -166,6 +166,28 @@ class ProfileSummaryViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("clicked on profile table row \(indexPath.row)")
+        switch indexPath.row{
+        case 0:
+            navigationDelegate.typeOfTransition = TransitionType.CrossDisolve
+            navigationDelegate.presentationDuration = 0.5
+            navigationDelegate.dismissalDuration = 0.5
+            navigationController?.delegate  = navigationDelegate
+            let profileLevelViewController = ProfileLevelsViewController(nibName: nil,bundle: nil)
+            profileLevelViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            navigationController?.pushViewController(profileLevelViewController, animated: true)
+            
+            break
+            
+        case 1:
+            break
+            
+        case 2:
+            break
+            
+        case 3:
+            break
+        default:
+            break
+        }
     }
 }
